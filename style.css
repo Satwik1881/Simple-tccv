@@ -2306,11 +2306,11 @@ a.info-content:hover {
 }
 
 .img-pastor-card-position {
-    object-position: center center;
+    object-position: center 5%;
 }
 
 .img-sister-card-position {
-    object-position: center top;
+    object-position: center 30%;
 }
 
 .pastor-individual-card:hover .pastor-profile-img {
@@ -2716,6 +2716,14 @@ a.info-content:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.michael-glow .connect-avatar-img {
+    object-position: center 18%;
+}
+
+.sami-glow .connect-avatar-img {
+    object-position: center 25%;
 }
 
 .connect-card:hover .connect-avatar-img-wrapper.michael-glow {

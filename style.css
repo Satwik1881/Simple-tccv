@@ -78,6 +78,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 body {
@@ -138,8 +139,8 @@ textarea {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     z-index: -2;
     pointer-events: none;
     overflow: hidden;
@@ -553,6 +554,7 @@ textarea {
     display: flex;
     gap: 20px;
     justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 .cta-btn {
@@ -1370,7 +1372,8 @@ textarea {
     border-radius: var(--border-radius-md);
     padding: 40px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    color: #1f2937; /* Ensure text is dark and legible since card is white */
+    color: #1f2937;
+    /* Ensure text is dark and legible since card is white */
 }
 
 /* Let's make sure placeholders and select dropdown option colors are readable on white background */
@@ -1380,23 +1383,27 @@ textarea {
     width: 100%;
     padding: 16px 20px;
     background: #ffffff;
-    border: 1px solid #cbd5e1; /* slate-300 */
+    border: 1px solid #cbd5e1;
+    /* slate-300 */
     border-radius: 10px;
-    color: #0f172a; /* slate-900 */
+    color: #0f172a;
+    /* slate-900 */
     font-size: 1rem;
     transition: var(--transition-fast);
 }
 
 .form-card-panel input::placeholder,
 .form-card-panel textarea::placeholder {
-    color: #6b7280; /* Highly visible gray placeholders */
+    color: #6b7280;
+    /* Highly visible gray placeholders */
     opacity: 0.8;
 }
 
 .form-card-panel input:focus,
 .form-card-panel select:focus,
 .form-card-panel textarea:focus {
-    border-color: #3b82f6; /* Modern Blue accent */
+    border-color: #3b82f6;
+    /* Modern Blue accent */
     background-color: #ffffff;
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
     color: #0f172a;
@@ -1451,10 +1458,12 @@ textarea {
 .touch-submit-btn {
     width: 100%;
     margin-top: 30px;
-    background: #3b82f6; /* Bold blue matching mockup */
+    background: #3b82f6;
+    /* Bold blue matching mockup */
     color: #ffffff;
     padding: 16px;
-    border-radius: 30px; /* Highly rounded pill shape in mockup */
+    border-radius: 30px;
+    /* Highly rounded pill shape in mockup */
     font-family: var(--font-heading);
     font-weight: 700;
     font-size: 1rem;
@@ -1477,7 +1486,8 @@ textarea {
 
 /* Right Panel: Contact Info Card */
 .contact-info-card-panel {
-    background: #0e121e; /* Dark navy card background matching the dark theme */
+    background: #0e121e;
+    /* Dark navy card background matching the dark theme */
     border-radius: var(--border-radius-md);
     padding: 40px;
     display: flex;
@@ -1489,7 +1499,8 @@ textarea {
 
 /* Light theme support: ensure the contact info card looks great in light theme too */
 .light-theme .contact-info-card-panel {
-    background: #0e121e; /* Keep it dark navy for nice contrast as per mockup */
+    background: #0e121e;
+    /* Keep it dark navy for nice contrast as per mockup */
     border: none;
 }
 
@@ -1518,8 +1529,10 @@ textarea {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: rgba(59, 130, 246, 0.1); /* Light blue circle wrapper */
-    color: #3b82f6; /* Blue icon */
+    background: rgba(59, 130, 246, 0.1);
+    /* Light blue circle wrapper */
+    color: #3b82f6;
+    /* Blue icon */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1544,7 +1557,8 @@ textarea {
     font-family: var(--font-heading);
     font-size: 0.95rem;
     font-weight: 700;
-    color: #94a3b8; /* Muted gray title */
+    color: #94a3b8;
+    /* Muted gray title */
 }
 
 .info-content {
@@ -1572,15 +1586,15 @@ a.info-content:hover {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    
+
     .touch-input-group.full-width {
         grid-column: span 1;
     }
-    
+
     .form-card-panel {
         padding: 24px;
     }
-    
+
     .contact-info-card-panel {
         padding: 30px 24px;
     }
@@ -1961,7 +1975,7 @@ a.info-content:hover {
     }
 
     .title-main-gradient {
-        font-size: 4.5rem;
+        font-size: 3.2rem;
     }
 }
 
@@ -2014,24 +2028,42 @@ a.info-content:hover {
         padding: 32px 24px;
     }
 
+    .nav-container {
+        padding: 12px 16px;
+    }
+
+    .logo-text {
+        font-size: 1.05rem;
+    }
+
+    .logo-accent {
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+    }
+
     .title-main-gradient {
-        font-size: 3.5rem;
+        font-size: 2.6rem;
     }
 
     .timer-num {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
     }
 
     .timer-segment {
-        min-width: 60px;
+        min-width: 48px;
     }
 
     .timer-colon {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
+        transform: translateY(-4px);
+    }
+
+    .timer-grid {
+        gap: 8px;
     }
 
     .countdown-card {
-        padding: 16px 20px;
+        padding: 16px;
     }
 
     .section-padding {
@@ -2063,7 +2095,7 @@ a.info-content:hover {
 
 @media (max-width: 480px) {
     .title-main-gradient {
-        font-size: 2.8rem;
+        font-size: 2.2rem;
     }
 
     .hero-ctas {
@@ -2087,6 +2119,40 @@ a.info-content:hover {
 
     .form-row {
         grid-template-columns: 1fr;
+    }
+
+    .branch-tab-btn {
+        font-size: 0.75rem;
+        padding: 8px 12px;
+    }
+
+    .branch-selector {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 360px) {
+    .nav-container {
+        padding: 12px 10px;
+    }
+
+    .logo-text {
+        font-size: 0.85rem;
+    }
+
+    .logo-accent {
+        font-size: 0.65rem;
+        letter-spacing: 1.5px;
+    }
+
+    .theme-toggle {
+        width: 36px;
+        height: 36px;
+        font-size: 0.95rem;
+    }
+
+    .title-main-gradient {
+        font-size: 1.7rem;
     }
 }
 
@@ -2237,6 +2303,14 @@ a.info-content:hover {
     height: 100%;
     object-fit: cover;
     transition: var(--transition-smooth);
+}
+
+.img-pastor-card-position {
+    object-position: center center;
+}
+
+.img-sister-card-position {
+    object-position: center top;
 }
 
 .pastor-individual-card:hover .pastor-profile-img {
@@ -2423,7 +2497,7 @@ a.info-content:hover {
 }
 
 /* Responsive adjustment for Mobile screens */
-@media (max-width: 500px) {
+@media (max-width: 768px) {
     .pastors-grid {
         grid-template-columns: 1fr;
         gap: 24px;
@@ -2606,12 +2680,14 @@ a.info-content:hover {
 }
 
 .connect-card:first-child:hover {
-    border-color: rgba(139, 92, 246, 0.5); /* Purple primary glow on hover */
+    border-color: rgba(139, 92, 246, 0.5);
+    /* Purple primary glow on hover */
     box-shadow: 0 20px 45px rgba(139, 92, 246, 0.15);
 }
 
 .connect-card:last-child:hover {
-    border-color: rgba(236, 72, 153, 0.5); /* Fuchsia secondary glow on hover */
+    border-color: rgba(236, 72, 153, 0.5);
+    /* Fuchsia secondary glow on hover */
     box-shadow: 0 20px 45px rgba(236, 72, 153, 0.15);
 }
 
@@ -2711,6 +2787,7 @@ a.info-content:hover {
 .connect-link.instagram {
     border-left: 3px solid #e1306c;
 }
+
 .connect-link.instagram i {
     color: #e1306c;
 }
@@ -2718,6 +2795,7 @@ a.info-content:hover {
 .connect-link.facebook {
     border-left: 3px solid #1877f2;
 }
+
 .connect-link.facebook i {
     color: #1877f2;
 }
@@ -2725,6 +2803,7 @@ a.info-content:hover {
 .connect-link.youtube {
     border-left: 3px solid #ff0000;
 }
+
 .connect-link.youtube i {
     color: #ff0000;
 }
@@ -2732,6 +2811,7 @@ a.info-content:hover {
 .connect-link.whatsapp {
     border-left: 3px solid #25d366;
 }
+
 .connect-link.whatsapp i {
     color: #25d366;
 }
@@ -2739,6 +2819,7 @@ a.info-content:hover {
 .connect-link.twitter {
     border-left: 3px solid #6b7280;
 }
+
 .connect-link.twitter i {
     color: var(--text-primary);
 }

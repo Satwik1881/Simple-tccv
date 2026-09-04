@@ -169,13 +169,38 @@ document.addEventListener('DOMContentLoaded', () => {
     startCountdown();
 
     /* ===================================================================================================================
-       4. PRIVATE PRAYER REQUEST & TESTIMONY SUBMISSION FORM
+       4. FIREBASE CLOUD DATABASE & PRAYER REQUEST SUBMISSION FORM
        ========================================================================== */
+    const firebaseConfig = {
+        apiKey: "AIzaSyBrwxl_qOCrmlgmR6_MF2fusHVIYXX5ft4",
+        authDomain: "the-calvary-church-f8917.firebaseapp.com",
+        projectId: "the-calvary-church-f8917",
+        storageBucket: "the-calvary-church-f8917.firebasestorage.app",
+        messagingSenderId: "320866691778",
+        appId: "1:320866691778:web:84b7099f48adde392b695b",
+        measurementId: "G-JKNSQGVKFY"
+    };
+
+    // Safely initialize Firebase Cloud Firestore
+    let db = null;
+    try {
+        if (typeof firebase !== 'undefined') {
+            firebase.initializeApp(firebaseConfig);
+            db = firebase.firestore();
+            console.log('Firebase Cloud Firestore initialized successfully.');
+        }
+    } catch (err) {
+        console.warn('Firebase initialization notice:', err);
+    }
+
     const prayerForm = document.getElementById('prayer-form');
 
     if (prayerForm) {
-        prayerForm.addEventListener('submit', (e) => {
+        prayerForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+
+            const submitBtn = prayerForm.querySelector('.touch-submit-btn');
+            const originalBtnText = submitBtn ? submitBtn.innerHTML : 'SUBMIT';
 
             const name = document.getElementById('form-name').value.trim() || 'Anonymous';
             const email = document.getElementById('form-email').value.trim();
@@ -201,12 +226,41 @@ document.addEventListener('DOMContentLoaded', () => {
                 timestamp: new Date().toISOString()
             };
 
-            // Retrieve existing submissions or initialize
-            const existingSubmissions = JSON.parse(localStorage.getItem('tccv-submissions')) || [];
-            existingSubmissions.unshift(submission);
-            localStorage.setItem('tccv-submissions', JSON.stringify(existingSubmissions));
+            // Loading indicator on button
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> SUBMITTING...';
+            }
 
-            // Show a personalized success toast message
+            // 1. Save directly to Firebase Cloud Firestore
+            if (db) {
+                try {
+                    await db.collection('prayer_requests').add({
+                        ...submission,
+                        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                    });
+                    console.log('Submission saved to Firebase Cloud Firestore successfully!');
+                } catch (firebaseErr) {
+                    console.error('Firebase save error:', firebaseErr);
+                }
+            }
+
+            // 2. Always keep a local backup in browser
+            try {
+                const existingSubmissions = JSON.parse(localStorage.getItem('tccv-submissions')) || [];
+                existingSubmissions.unshift(submission);
+                localStorage.setItem('tccv-submissions', JSON.stringify(existingSubmissions));
+            } catch (storageErr) {
+                console.warn('LocalStorage notice:', storageErr);
+            }
+
+            // 3. Restore button state
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            }
+
+            // 4. Show a personalized success toast message
             let successMessage = 'Thank you! Your prayer request has been received. Standing in agreement!';
             let icon = 'fa-hands-praying';
 

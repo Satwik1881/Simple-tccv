@@ -57,14 +57,47 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Close menu when a link is clicked
-    const navLinks = navMenu.querySelectorAll('a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('open');
-            mobileMenuToggle.querySelector('i').className = 'fa-solid fa-bars';
+    // Smooth scrolling with clean URL (no #hash in address bar)
+    const cleanUrlSmoothScroll = (targetId) => {
+        if (!targetId || targetId === '#') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            history.replaceState(null, '', window.location.pathname + window.location.search);
+            return;
+        }
+
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+            const headerHeight = header ? header.offsetHeight : 70;
+            const targetTop = targetEl.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+            window.scrollTo({
+                top: targetTop,
+                behavior: 'smooth'
+            });
+            // Keep the browser address bar completely clean without #hash
+            history.replaceState(null, '', window.location.pathname + window.location.search);
+        }
+    };
+
+    // Intercept all on-page hash links to keep the URL clean
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', (e) => {
+            const href = anchor.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
+                cleanUrlSmoothScroll(href);
+                // Close mobile navigation menu if open
+                if (navMenu.classList.contains('open')) {
+                    navMenu.classList.remove('open');
+                    mobileMenuToggle.querySelector('i').className = 'fa-solid fa-bars';
+                }
+            }
         });
     });
+
+    // Strip any existing hash from the address bar on initial load
+    if (window.location.hash) {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
 
     // Header scroll background adjustments
     window.addEventListener('scroll', () => {

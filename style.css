@@ -2293,7 +2293,7 @@ a.info-content:hover {
 
 .pastor-img-box {
     position: relative;
-    height: 420px;
+    height: 450px;
     overflow: hidden;
     border-bottom: 1px solid var(--border-glass);
 }
@@ -2306,11 +2306,11 @@ a.info-content:hover {
 }
 
 .img-pastor-card-position {
-    object-position: center 5%;
+    object-position: center top;
 }
 
 .img-sister-card-position {
-    object-position: center 30%;
+    object-position: center top;
 }
 
 .pastor-individual-card:hover .pastor-profile-img {
@@ -2333,8 +2333,8 @@ a.info-content:hover {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 50%;
-    background: linear-gradient(180deg, transparent 0%, var(--bg-secondary) 100%);
+    height: 22%;
+    background: linear-gradient(180deg, transparent 0%, rgba(14, 16, 23, 0.85) 100%);
     pointer-events: none;
 }
 

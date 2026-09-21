@@ -582,6 +582,8 @@ document.addEventListener('DOMContentLoaded', () => {
             modal = document.createElement('div');
             modal.id = 'sermon-video-modal';
             modal.className = 'video-modal';
+            modal.setAttribute('role', 'dialog');
+            modal.setAttribute('aria-modal', 'true');
             modal.innerHTML = `
                 <div class="video-modal-dialog">
                     <div class="video-modal-header">
@@ -593,6 +595,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="video-modal-body">
                         <iframe id="video-modal-iframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
+                    <div class="video-modal-footer">
+                        <a id="video-modal-external-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-watch-youtube" style="padding: 6px 14px; font-size: 0.85rem;">
+                            <i class="fa-brands fa-youtube"></i> Watch Directly on YouTube
+                        </a>
+                        <span class="yt-disclaimer">
+                            <i class="fa-solid fa-circle-info"></i> If playback is restricted, click button to watch on YouTube
+                        </span>
+                    </div>
                 </div>
             `;
             document.body.appendChild(modal);
@@ -601,41 +611,47 @@ document.addEventListener('DOMContentLoaded', () => {
         const iframe = document.getElementById('video-modal-iframe');
         const titleEl = document.getElementById('video-modal-title');
         const closeBtn = document.getElementById('video-modal-close-btn');
+        const extLink = document.getElementById('video-modal-external-link');
 
-        const openVideoModal = (youtubeId, title) => {
-            if (!iframe) return;
-            iframe.src = `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0`;
+        window.openVideoModal = (youtubeId, title) => {
+            if (!iframe || !youtubeId) return;
+            // Standard youtube.com embed with autoplay & jsapi
+            iframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&enablejsapi=1`;
             if (titleEl) titleEl.textContent = title || 'Watch Sermon';
+            if (extLink) extLink.href = `https://www.youtube.com/watch?v=${youtubeId}`;
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         };
 
-        const closeVideoModal = () => {
+        window.closeVideoModal = () => {
             modal.classList.remove('active');
             if (iframe) iframe.src = '';
             document.body.style.overflow = '';
         };
 
-        if (closeBtn) closeBtn.addEventListener('click', closeVideoModal);
+        if (closeBtn) closeBtn.addEventListener('click', window.closeVideoModal);
 
         modal.addEventListener('click', (e) => {
-            if (e.target === modal) closeVideoModal();
+            if (e.target === modal) window.closeVideoModal();
         });
 
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && modal.classList.contains('active')) {
-                closeVideoModal();
+                window.closeVideoModal();
             }
         });
 
-        // Delegate click for any element with data-youtube-id
+        // Delegate click for any element with data-youtube-id (excluding direct external links & buttons)
         document.addEventListener('click', (e) => {
+            const watchLink = e.target.closest('a, button, .shorts-watch-link, .btn-watch-youtube, .btn-category-view-more, .btn-view-all-category, .cta-btn');
+            if (watchLink) return; // Allow normal link opening in new tab
+
             const trigger = e.target.closest('[data-youtube-id]');
             if (trigger) {
                 e.preventDefault();
                 const videoId = trigger.getAttribute('data-youtube-id');
-                const title = trigger.getAttribute('data-video-title') || trigger.querySelector('.sermon-title')?.textContent;
-                openVideoModal(videoId, title);
+                const title = trigger.getAttribute('data-video-title') || trigger.querySelector('.sermon-title, .sermon-card-title, .shorts-title')?.textContent;
+                window.openVideoModal(videoId, title);
             }
         });
     };

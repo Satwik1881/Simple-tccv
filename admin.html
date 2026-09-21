@@ -298,16 +298,47 @@
                     <div>
                         <strong style="color: #ffffff; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
                             <i class="fa-brands fa-youtube" style="color: #ff0000; font-size: 1.2rem;"></i>
-                            YouTube Integration & 5 Sermon Categories
+                            YouTube Integration & 5 Respected Columns
                         </strong>
                         <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 4px;">
-                            Official Channel: <strong>@nmichaelpaul</strong> (Channel ID: <code>UCQvVJumt8NcPMoDmZjfN6_g</code>). All public videos are categorized into Sermon Shorts, Sunday All Live Videos, Worship Songs (Full Songs), Worship Songs (Shorts), and Live Fasting Prayer Videos.
+                            Official Channels: <strong>@nmichaelpaul</strong> &bull; <strong>@samisymphonypaul</strong>. All videos are organized into: 1. Sermon Shorts, 2. Sunday All Live Videos, 3. Worship Songs (Full), 4. Worship Songs (Shorts), 5. Live Fasting Prayer Videos.
                         </p>
                     </div>
-                    <div style="display: flex; gap: 10px;">
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
                         <button id="btn-sync-official-youtube" class="admin-btn admin-btn-secondary" style="font-size: 0.85rem;">
-                            <i class="fa-solid fa-rotate"></i> Sync Official Channel Catalog
+                            <i class="fa-solid fa-rotate"></i> Reset Verified Catalog
                         </button>
+                    </div>
+                </div>
+
+                <!-- Daily YouTube Uploads Auto-Sync Station -->
+                <div class="admin-card" style="margin-bottom: 24px; border: 1px solid rgba(56, 189, 248, 0.35); background: rgba(14, 23, 42, 0.7);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; margin-bottom: 12px;">
+                        <div>
+                            <h3 class="admin-card-title" style="margin-bottom: 4px; color: #38bdf8; display: flex; align-items: center; gap: 8px;">
+                                <i class="fa-solid fa-cloud-arrow-down"></i> Daily YouTube Uploads Auto-Sync Station
+                            </h3>
+                            <span style="font-size: 0.84rem; color: var(--text-secondary);">
+                                Fetches every new video uploaded daily to ministry channels and organizes them into their respected columns.
+                            </span>
+                        </div>
+                        <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                            <button id="btn-fetch-daily-uploads" class="admin-btn admin-btn-primary" style="font-size: 0.84rem; padding: 8px 18px; background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);">
+                                <i class="fa-solid fa-rotate"></i> Fetch Daily Uploads From YouTube
+                            </button>
+                            <button id="btn-sync-all-daily-to-columns" class="admin-btn admin-btn-secondary" style="font-size: 0.84rem; padding: 8px 16px; display: none; background: rgba(34, 197, 94, 0.15); border-color: rgba(34, 197, 94, 0.4); color: #4ade80;">
+                                <i class="fa-solid fa-check-double"></i> Sync All New To Respected Columns
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Staging Area for Fresh Daily Uploads -->
+                    <div id="admin-daily-staging-area" style="border-radius: var(--border-radius-sm); padding: 12px; background: rgba(0,0,0,0.3); border: 1px dashed rgba(56, 189, 248, 0.25);">
+                        <div id="admin-staging-placeholder" style="text-align: center; color: var(--text-muted); font-size: 0.85rem; padding: 16px 0;">
+                            <i class="fa-brands fa-youtube" style="color: #ff0000; font-size: 1.3rem; margin-right: 6px; vertical-align: middle;"></i>
+                            Click <strong>"Fetch Daily Uploads From YouTube"</strong> to inspect today's videos and sync them to their respected columns with 1 click.
+                        </div>
+                        <div id="admin-staging-grid" class="admin-staging-grid" style="display: none;"></div>
                     </div>
                 </div>
 

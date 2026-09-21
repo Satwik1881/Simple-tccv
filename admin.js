@@ -117,6 +117,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const defaultSermons = [
         {
+                "id": "ss-new-1",
+                "youtubeId": "nOUEwxlmjtM",
+                "title": "సమృద్ధి కావాలా? లేక దాన్ని మోయడానికి జ్ఞానమా? | Christian Short | nmichaelpaul",
+                "category": "sermon-shorts",
+                "categoryLabel": "Sermon Shorts",
+                "duration": "Short (58s)",
+                "date": "21 Sep 2026",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Spiritual Counsel",
+                "featured": true,
+                "hidden": false
+        },
+        {
+                "id": "ss-new-2",
+                "youtubeId": "KfrXRru2ft0",
+                "title": "నిజాన్ని ఎదుర్కో | ఆర్థిక సమస్యల నుంచి బయటపడటానికి మొదటి అడుగు | Christian Message | nmichaelpaul",
+                "category": "sermon-shorts",
+                "categoryLabel": "Sermon Shorts",
+                "duration": "Short (59s)",
+                "date": "21 Sep 2026",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Faith & Truth",
+                "featured": false,
+                "hidden": false
+        },
+        {
                 "id": "ss-1",
                 "youtubeId": "7sHpaxk16X0",
                 "title": "Don't Tell Everyone, Tell Only God | Telugu Christian Message | N Michael Paul",
@@ -377,6 +403,45 @@ document.addEventListener('DOMContentLoaded', () => {
                 "hidden": false
         },
         {
+                "id": "ws-new-1",
+                "youtubeId": "DgiqXrS9vNo",
+                "title": "ఎల్ షద్దాయ్ నా దైవమే | Elshaddai | Christian Song | Sami Symphony Paul",
+                "category": "worship-songs",
+                "categoryLabel": "Worship Songs — Full Songs",
+                "duration": "5:20",
+                "date": "21 Sep 2026",
+                "speaker": "Sis. Sami Symphony Paul",
+                "branch": "New Release",
+                "featured": true,
+                "hidden": false
+        },
+        {
+                "id": "ws-new-2",
+                "youtubeId": "mMuUS2AyA50",
+                "title": "ఎన్నిమార్లు సిలువను వేయుచు || Andhra Kristhava Keerthana || Sami Symphony Paul",
+                "category": "worship-songs",
+                "categoryLabel": "Worship Songs — Full Songs",
+                "duration": "6:10",
+                "date": "18 Sep 2026",
+                "speaker": "Sis. Sami Symphony Paul",
+                "branch": "Keerthana",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "ws-new-3",
+                "youtubeId": "dQlrbqXycZM",
+                "title": "ఎఱిగి యెఱిగి చెడిపోతివి మనసా || Andhra Kristhava Keerthana || Sami Symphony Paul",
+                "category": "worship-songs",
+                "categoryLabel": "Worship Songs — Full Songs",
+                "duration": "5:45",
+                "date": "17 Sep 2026",
+                "speaker": "Sis. Sami Symphony Paul",
+                "branch": "Keerthana",
+                "featured": false,
+                "hidden": false
+        },
+        {
                 "id": "ws-1",
                 "youtubeId": "w2QuJZ646S8",
                 "title": "Aashrayadurgama (ఆశ్రయదుర్గమా) | Full Telugu Worship Song",
@@ -491,6 +556,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 "speaker": "Pastor N. Michael Paul",
                 "branch": "Praise",
                 "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "wsh-new-1",
+                "youtubeId": "uzUuzV7kp28",
+                "title": "యేసే దేవుని ప్రేమ స్వరూపం | Yese Devuni Prema Swaroopam | Telugu Christian Song #samisymphonypaul",
+                "category": "worship-shorts",
+                "categoryLabel": "Worship Songs — Shorts",
+                "duration": "Short (55s)",
+                "date": "21 Sep 2026",
+                "speaker": "Sis. Sami Symphony Paul",
+                "branch": "Worship Short",
+                "featured": true,
                 "hidden": false
         },
         {
@@ -959,6 +1037,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (sermonPreviewImg) sermonPreviewImg.src = `https://img.youtube.com/vi/${parsedId}/hqdefault.jpg`;
                 if (sermonPreviewBadge) sermonPreviewBadge.innerHTML = `Video ID: <code>${parsedId}</code>`;
                 if (sermonPreviewLink) sermonPreviewLink.href = `https://www.youtube.com/watch?v=${parsedId}`;
+
+                // Auto-fetch title & auto-select column if fields are empty
+                const titleInput = document.getElementById('sermon-input-title');
+                const catSelect = document.getElementById('sermon-input-category');
+                const speakerInput = document.getElementById('sermon-input-speaker');
+                if (titleInput && !titleInput.value.trim()) {
+                    fetch(`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${parsedId}`)
+                        .then(r => r.json())
+                        .then(data => {
+                            if (data.title && !titleInput.value.trim()) {
+                                titleInput.value = data.title;
+                                const classification = classifyYouTubeVideo(data.title, '', data.author_name || '');
+                                if (catSelect) catSelect.value = classification.category;
+                                if (speakerInput && classification.speaker) speakerInput.value = classification.speaker;
+                            }
+                        })
+                        .catch(() => {});
+                }
             } else {
                 if (sermonPreviewContainer) sermonPreviewContainer.style.display = 'none';
             }
@@ -1620,18 +1716,254 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial Auth Check
     
+    /* ==========================================================================
+       DAILY YOUTUBE UPLOADS AUTO-SYNC ENGINE
+       ========================================================================== */
+    const classifyYouTubeVideo = (title, desc = '', author = '') => {
+        const text = (title + ' ' + desc).toLowerCase();
+        if (text.includes('fasting prayer') || text.includes('ఉపవాస') || /day\s*\d+/i.test(text)) {
+            return { category: 'fasting-prayer', label: 'Live Fasting Prayer Videos', speaker: 'Pastor N. Michael Paul', branch: 'Guntur' };
+        }
+        if (text.includes('sundayservice') || text.includes('sunday service') || text.includes('ఆదివారం') || text.includes('holy communion')) {
+            return { category: 'sunday-live', label: 'Sunday All Live Videos', speaker: 'Pastor N. Michael Paul', branch: 'Vijayawada' };
+        }
+        if (text.includes('song') || text.includes('పాట') || text.includes('sami symphony') || text.includes('keerthana') || text.includes('కీర్తన') || text.includes('choir') || author.toLowerCase().includes('sami')) {
+            if (text.includes('shorts') || text.includes('#shorts') || text.includes('short')) {
+                return { category: 'worship-shorts', label: 'Worship Songs — Shorts', speaker: 'Sis. Sami Symphony Paul', branch: 'Worship Short' };
+            } else {
+                return { category: 'worship-songs', label: 'Worship Songs — Full Songs', speaker: 'Sis. Sami Symphony Paul', branch: 'Worship Song' };
+            }
+        }
+        return { category: 'sermon-shorts', label: 'Sermon Shorts', speaker: 'Pastor N. Michael Paul', branch: 'Spiritual Counsel' };
+    };
+
+    const btnFetchDailyUploads = document.getElementById('btn-fetch-daily-uploads');
+    const btnSyncAllDailyToColumns = document.getElementById('btn-sync-all-daily-to-columns');
+    const stagingGrid = document.getElementById('admin-staging-grid');
+    const stagingPlaceholder = document.getElementById('admin-staging-placeholder');
+    let stagedDailyVideos = [];
+
+    if (btnFetchDailyUploads) {
+        btnFetchDailyUploads.addEventListener('click', async () => {
+            btnFetchDailyUploads.disabled = true;
+            btnFetchDailyUploads.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Fetching YouTube Uploads...`;
+
+            const channelIds = [
+                { id: 'UCQvVJumt8NcPMoDmZjfN6_g', name: 'N Michael Paul (@nmichaelpaul)' },
+                { id: 'UCGIDNwcGDg13Zo9dkzqhhKA', name: 'Sami Symphony Paul (@samisymphonypaul)' }
+            ];
+
+            const currentSermons = getSermons();
+            const existingIds = new Set(currentSermons.map(s => s.youtubeId));
+            stagedDailyVideos = [];
+
+            for (const ch of channelIds) {
+                try {
+                    const rssUrl = encodeURIComponent(`https://www.youtube.com/feeds/videos.xml?channel_id=${ch.id}`);
+                    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${rssUrl}`;
+                    const res = await fetch(apiUrl);
+                    if (!res.ok) continue;
+                    const data = await res.json();
+                    if (data.status !== 'ok' || !Array.isArray(data.items)) continue;
+
+                    data.items.forEach(item => {
+                        const ytId = extractYouTubeId(item.link) || extractYouTubeId(item.guid);
+                        if (!ytId) return;
+
+                        const isAlreadyPublished = existingIds.has(ytId);
+                        const classification = classifyYouTubeVideo(item.title, item.description, item.author || '');
+
+                        stagedDailyVideos.push({
+                            youtubeId: ytId,
+                            title: item.title,
+                            channel: ch.name,
+                            pubDate: item.pubDate ? item.pubDate.split(' ')[0] : 'Today',
+                            category: classification.category,
+                            speaker: classification.speaker,
+                            branch: classification.branch,
+                            isPublished: isAlreadyPublished
+                        });
+                    });
+                } catch (err) {
+                    console.warn('Error fetching channel uploads:', err);
+                }
+            }
+
+            btnFetchDailyUploads.disabled = false;
+            btnFetchDailyUploads.innerHTML = `<i class="fa-solid fa-rotate"></i> Refresh Daily Uploads`;
+
+            renderStagingGrid();
+        });
+    }
+
+    const renderStagingGrid = () => {
+        if (!stagingGrid) return;
+        stagingGrid.innerHTML = '';
+
+        if (stagedDailyVideos.length === 0) {
+            if (stagingPlaceholder) {
+                stagingPlaceholder.style.display = 'block';
+                stagingPlaceholder.innerHTML = `<span style="color: #ef4444;"><i class="fa-solid fa-circle-exclamation"></i> Could not fetch YouTube feeds right now. Please check internet connection or add videos manually.</span>`;
+            }
+            stagingGrid.style.display = 'none';
+            if (btnSyncAllDailyToColumns) btnSyncAllDailyToColumns.style.display = 'none';
+            return;
+        }
+
+        if (stagingPlaceholder) stagingPlaceholder.style.display = 'none';
+        stagingGrid.style.display = 'grid';
+
+        const unaddedCount = stagedDailyVideos.filter(v => !v.isPublished).length;
+        if (btnSyncAllDailyToColumns) {
+            btnSyncAllDailyToColumns.style.display = unaddedCount > 0 ? 'inline-flex' : 'none';
+            btnSyncAllDailyToColumns.innerHTML = `<i class="fa-solid fa-check-double"></i> Sync All ${unaddedCount} New to Columns`;
+        }
+
+        stagedDailyVideos.forEach((v, idx) => {
+            const card = document.createElement('div');
+            card.className = 'admin-staging-card';
+            card.id = `stage-card-${v.youtubeId}`;
+            card.innerHTML = `
+                <div class="stage-thumb-row">
+                    <img src="https://img.youtube.com/vi/${v.youtubeId}/hqdefault.jpg" alt="Thumb" class="stage-thumb-img">
+                    <div class="stage-details">
+                        <span class="stage-title" title="${v.title}">${v.title}</span>
+                        <div class="stage-meta">
+                            <span><i class="fa-regular fa-calendar"></i> ${v.pubDate}</span>
+                            <span>&bull;</span>
+                            <span style="color: ${v.isPublished ? '#22c55e' : '#f59e0b'}; font-weight: 600;">
+                                ${v.isPublished ? '<i class="fa-solid fa-check"></i> In Library' : '<i class="fa-solid fa-sparkles"></i> New Daily Video'}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="stage-actions-row">
+                    <div style="flex-grow: 1; display: flex; align-items: center; gap: 8px;">
+                        <span style="font-size: 0.78rem; color: var(--text-muted); white-space: nowrap;">Column:</span>
+                        <select class="admin-select stage-cat-select" data-stage-id="${v.youtubeId}" style="padding: 4px 8px; font-size: 0.78rem;" ${v.isPublished ? 'disabled' : ''}>
+                            <option value="sermon-shorts" ${v.category === 'sermon-shorts' ? 'selected' : ''}>1. Sermon Shorts</option>
+                            <option value="sunday-live" ${v.category === 'sunday-live' ? 'selected' : ''}>2. Sunday All Live Videos</option>
+                            <option value="worship-songs" ${v.category === 'worship-songs' ? 'selected' : ''}>3. Worship Songs — Full</option>
+                            <option value="worship-shorts" ${v.category === 'worship-shorts' ? 'selected' : ''}>4. Worship Songs — Shorts</option>
+                            <option value="fasting-prayer" ${v.category === 'fasting-prayer' ? 'selected' : ''}>5. Live Fasting Prayer</option>
+                        </select>
+                    </div>
+                    <div>
+                        ${v.isPublished 
+                            ? `<button class="admin-btn admin-btn-secondary" style="padding: 4px 10px; font-size: 0.75rem; opacity: 0.7;" disabled><i class="fa-solid fa-check"></i> Added</button>`
+                            : `<button class="admin-btn admin-btn-primary btn-add-single-stage" data-add-stage="${v.youtubeId}" style="padding: 4px 12px; font-size: 0.78rem; background: #0284c7;">
+                                <i class="fa-solid fa-plus"></i> Add to Column
+                               </button>`
+                        }
+                    </div>
+                </div>
+            `;
+            stagingGrid.appendChild(card);
+        });
+
+        // Single add button handler
+        document.querySelectorAll('.btn-add-single-stage').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const ytid = btn.getAttribute('data-add-stage');
+                const videoData = stagedDailyVideos.find(x => x.youtubeId === ytid);
+                if (!videoData) return;
+
+                const cardEl = document.getElementById(`stage-card-${ytid}`);
+                const selectEl = cardEl ? cardEl.querySelector('.stage-cat-select') : null;
+                const chosenCat = selectEl ? selectEl.value : videoData.category;
+
+                const catLabels = {
+                    'sermon-shorts': 'Sermon Shorts',
+                    'sunday-live': 'Sunday All Live Videos',
+                    'worship-songs': 'Worship Songs — Full Songs',
+                    'worship-shorts': 'Worship Songs — Shorts',
+                    'fasting-prayer': 'Live Fasting Prayer Videos'
+                };
+
+                const newSermon = {
+                    id: 'yt-stage-' + ytid,
+                    youtubeId: ytid,
+                    title: videoData.title,
+                    speaker: videoData.speaker,
+                    category: chosenCat,
+                    categoryLabel: catLabels[chosenCat] || chosenCat,
+                    duration: chosenCat.includes('shorts') ? 'Short' : 'Video',
+                    branch: videoData.branch,
+                    date: videoData.pubDate,
+                    featured: false,
+                    hidden: false
+                };
+
+                const sermons = getSermons();
+                sermons.unshift(newSermon);
+                saveSermons(sermons);
+                renderSermonsList();
+
+                videoData.isPublished = true;
+                btn.outerHTML = `<button class="admin-btn admin-btn-secondary" style="padding: 4px 10px; font-size: 0.75rem; opacity: 0.7;" disabled><i class="fa-solid fa-check"></i> Added</button>`;
+                if (selectEl) selectEl.disabled = true;
+
+                if (window.showToast) window.showToast(`Added to ${catLabels[chosenCat]}!`, 'fa-circle-check');
+            });
+        });
+    };
+
+    if (btnSyncAllDailyToColumns) {
+        btnSyncAllDailyToColumns.addEventListener('click', () => {
+            const unadded = stagedDailyVideos.filter(v => !v.isPublished);
+            if (unadded.length === 0) return;
+
+            const sermons = getSermons();
+            const catLabels = {
+                'sermon-shorts': 'Sermon Shorts',
+                'sunday-live': 'Sunday All Live Videos',
+                'worship-songs': 'Worship Songs — Full Songs',
+                'worship-shorts': 'Worship Songs — Shorts',
+                'fasting-prayer': 'Live Fasting Prayer Videos'
+            };
+
+            unadded.forEach(v => {
+                const cardEl = document.getElementById(`stage-card-${v.youtubeId}`);
+                const selectEl = cardEl ? cardEl.querySelector('.stage-cat-select') : null;
+                const chosenCat = selectEl ? selectEl.value : v.category;
+
+                sermons.unshift({
+                    id: 'yt-stage-' + v.youtubeId,
+                    youtubeId: v.youtubeId,
+                    title: v.title,
+                    speaker: v.speaker,
+                    category: chosenCat,
+                    categoryLabel: catLabels[chosenCat] || chosenCat,
+                    duration: chosenCat.includes('shorts') ? 'Short' : 'Video',
+                    branch: v.branch,
+                    date: v.pubDate,
+                    featured: false,
+                    hidden: false
+                });
+
+                v.isPublished = true;
+            });
+
+            saveSermons(sermons);
+            renderSermonsList();
+            renderStagingGrid();
+
+            if (window.showToast) window.showToast(`Successfully synced ${unadded.length} daily videos into their columns!`, 'fa-check-double');
+        });
+    }
+
     // YouTube Official Channel Catalog Sync
     const syncYoutubeBtn = document.getElementById('btn-sync-official-youtube');
     if (syncYoutubeBtn) {
         syncYoutubeBtn.addEventListener('click', () => {
-            if (confirm('Restore verified 39 videos from official YouTube channel @nmichaelpaul? Custom videos will be merged.')) {
+            if (confirm(`Restore verified catalog (${defaultSermons.length} videos) from official YouTube channels @nmichaelpaul & @samisymphonypaul? Custom videos will be merged.`)) {
                 const current = getSermons();
                 const defaultIds = new Set(defaultSermons.map(s => s.youtubeId));
                 const customOnly = current.filter(s => !defaultIds.has(s.youtubeId));
                 const merged = [...customOnly, ...defaultSermons];
                 saveSermons(merged);
                 renderSermonsList();
-                if (window.showToast) window.showToast('Official YouTube catalog synced successfully!', 'fa-rotate');
+                if (window.showToast) window.showToast(`Official YouTube catalog (${merged.length} videos) synced!`, 'fa-rotate');
             }
         });
     }

@@ -101,22 +101,22 @@
             <div class="sermon-cat-nav-container">
                 <div class="sermon-cat-pills" id="sermon-category-pills">
                     <button class="cat-pill-btn active" data-target-cat="all">
-                        <i class="fa-solid fa-layer-group"></i> All Categories <span class="pill-badge">49</span>
+                        <i class="fa-solid fa-layer-group"></i> All Categories <span class="pill-badge" id="pill-badge-all">55</span>
                     </button>
                     <button class="cat-pill-btn" data-target-cat="category-sermon-shorts">
-                        <i class="fa-brands fa-youtube" style="color: #ff0000;"></i> Sermon Shorts <span class="pill-badge">10</span>
+                        <i class="fa-brands fa-youtube" style="color: #ff0000;"></i> Sermon Shorts <span class="pill-badge" id="pill-badge-sermon-shorts">12</span>
                     </button>
                     <button class="cat-pill-btn" data-target-cat="category-sunday-live">
-                        <i class="fa-solid fa-church" style="color: #c084fc;"></i> Sunday All Live Videos <span class="pill-badge">10</span>
+                        <i class="fa-solid fa-church" style="color: #c084fc;"></i> Sunday All Live Videos <span class="pill-badge" id="pill-badge-sunday-live">10</span>
                     </button>
                     <button class="cat-pill-btn" data-target-cat="category-worship-songs">
-                        <i class="fa-solid fa-music" style="color: #f472b6;"></i> Worship Songs — Full Songs <span class="pill-badge">9</span>
+                        <i class="fa-solid fa-music" style="color: #f472b6;"></i> Worship Songs — Full Songs <span class="pill-badge" id="pill-badge-worship-songs">12</span>
                     </button>
                     <button class="cat-pill-btn" data-target-cat="category-worship-shorts">
-                        <i class="fa-solid fa-bolt" style="color: #fb7185;"></i> Worship Songs — Shorts <span class="pill-badge">10</span>
+                        <i class="fa-solid fa-bolt" style="color: #fb7185;"></i> Worship Songs — Shorts <span class="pill-badge" id="pill-badge-worship-shorts">11</span>
                     </button>
                     <button class="cat-pill-btn" data-target-cat="category-fasting-prayer">
-                        <i class="fa-solid fa-fire" style="color: #fbbf24;"></i> Live Fasting Prayer Videos <span class="pill-badge">10</span>
+                        <i class="fa-solid fa-fire" style="color: #fbbf24;"></i> Live Fasting Prayer Videos <span class="pill-badge" id="pill-badge-fasting-prayer">10</span>
                     </button>
                 </div>
                 <div class="sermon-quick-search-box">
@@ -129,6 +129,19 @@
         <!-- Main Video Library Container -->
         <div class="section-container" style="padding-bottom: 40px;">
             
+            <!-- Live YouTube Channels Auto-Sync Bar -->
+            <div class="yt-live-sync-bar" id="yt-live-sync-indicator">
+                <div class="yt-sync-info">
+                    <span class="pulse-dot"></span>
+                    <span><strong>Daily YouTube Sync Active:</strong> Connected to verified channels <em>@nmichaelpaul</em> &amp; <em>@samisymphonypaul</em>. New daily videos automatically update in their respected columns.</span>
+                </div>
+                <div>
+                    <button id="btn-refresh-daily-feed" class="btn-manual-sync" title="Check official YouTube channel for new daily video uploads">
+                        <i class="fa-solid fa-rotate"></i> Check for New Uploads Now
+                    </button>
+                </div>
+            </div>
+
             <!-- ==========================================================================
                  CATEGORY 1: SERMON SHORTS
                  ========================================================================== -->
@@ -140,14 +153,50 @@
                         <p class="category-desc">Short preaching clips, Bible messages, spiritual encouragement, and sermon highlights by Pastor N. Michael Paul.</p>
                     </div>
                     <div class="category-actions">
-                        <button class="btn-view-all-category" data-viewall="sermon-shorts">
-                            <i class="fa-solid fa-table-cells-large"></i> View All (10)
+                        <button class="btn-view-all-category" data-viewall="sermon-shorts" id="viewall-btn-sermon-shorts">
+                            <i class="fa-solid fa-table-cells-large"></i> View All (12)
                         </button>
                     </div>
                 </div>
                 <div class="sermon-carousel-wrapper" data-carousel-id="sermon-shorts-carousel">
                     <button class="carousel-nav-btn prev-btn" aria-label="Scroll left"><i class="fa-solid fa-chevron-left"></i></button>
                     <div class="sermon-carousel-track" id="track-sermon-shorts">
+                        <!-- Short: nOUEwxlmjtM (Daily Upload - 21 Sep 2026) -->
+                        <div class="shorts-card sermon-item" data-category="sermon-shorts" data-youtube-id="nOUEwxlmjtM" data-video-title="సమృద్ధి కావాలా? లేక దాన్ని మోయడానికి జ్ఞానమా? | Christian Short | nmichaelpaul">
+                            <span class="badge-daily-new"><i class="fa-solid fa-sparkles"></i> NEW TODAY</span>
+                            <div class="shorts-thumb-wrap">
+                                <img src="https://img.youtube.com/vi/nOUEwxlmjtM/hqdefault.jpg" alt="సమృద్ధి కావాలా? లేక దాన్ని మోయడానికి జ్ఞానమా?" class="shorts-thumb-img" loading="lazy">
+                                <span class="shorts-top-badge"><i class="fa-brands fa-youtube"></i> Sermon Shorts</span>
+                                <div class="shorts-overlay">
+                                    <div class="shorts-play-pulse" title="Play Video"><i class="fa-solid fa-play"></i></div>
+                                    <h3 class="shorts-title">సమృద్ధి కావాలా? లేక దాన్ని మోయడానికి జ్ఞానమా? | Christian Short</h3>
+                                    <div class="shorts-actions">
+                                        <span class="shorts-speaker"><i class="fa-solid fa-user-tie"></i> Pastor N. Michael Paul</span>
+                                        <a href="https://www.youtube.com/shorts/nOUEwxlmjtM" target="_blank" rel="noopener noreferrer" class="shorts-watch-link" title="Open original Short on YouTube">
+                                            <i class="fa-solid fa-arrow-up-right-from-square"></i> YouTube
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Short: KfrXRru2ft0 (Daily Upload - 21 Sep 2026) -->
+                        <div class="shorts-card sermon-item" data-category="sermon-shorts" data-youtube-id="KfrXRru2ft0" data-video-title="నిజాన్ని ఎదుర్కో | ఆర్థిక సమస్యల నుంచి బయటపడటానికి మొదటి అడుగు | Christian Message | nmichaelpaul">
+                            <span class="badge-daily-new"><i class="fa-solid fa-sparkles"></i> NEW TODAY</span>
+                            <div class="shorts-thumb-wrap">
+                                <img src="https://img.youtube.com/vi/KfrXRru2ft0/hqdefault.jpg" alt="నిజాన్ని ఎదుర్కో | ఆర్థిక సమస్యల నుంచి బయటపడటానికి మొదటి అడుగు" class="shorts-thumb-img" loading="lazy">
+                                <span class="shorts-top-badge"><i class="fa-brands fa-youtube"></i> Sermon Shorts</span>
+                                <div class="shorts-overlay">
+                                    <div class="shorts-play-pulse" title="Play Video"><i class="fa-solid fa-play"></i></div>
+                                    <h3 class="shorts-title">నిజాన్ని ఎదుర్కో | ఆర్థిక సమస్యల నుంచి బయటపడటానికి మొదటి అడుగు</h3>
+                                    <div class="shorts-actions">
+                                        <span class="shorts-speaker"><i class="fa-solid fa-user-tie"></i> Pastor N. Michael Paul</span>
+                                        <a href="https://www.youtube.com/shorts/KfrXRru2ft0" target="_blank" rel="noopener noreferrer" class="shorts-watch-link" title="Open original Short on YouTube">
+                                            <i class="fa-solid fa-arrow-up-right-from-square"></i> YouTube
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <!-- Short: 7sHpaxk16X0 -->
                         <div class="shorts-card sermon-item" data-category="sermon-shorts" data-youtube-id="7sHpaxk16X0" data-video-title="Don't Tell Everyone, Tell Only God | Telugu Christian Message | N Michael Paul">
                             <div class="shorts-thumb-wrap">
@@ -350,6 +399,7 @@
                     <div class="sermon-carousel-track" id="track-sunday-live">
                         <!-- Video: _LLUu98Wru4 -->
                         <div class="sermon-video-card sermon-item" data-category="sunday-live" data-youtube-id="_LLUu98Wru4" data-video-title="#SundayService | 20 Sep 2026 | The Calvary Church Vijayawada">
+                            <span class="badge-daily-new"><i class="fa-solid fa-sparkles"></i> LATEST SERVICE</span>
                             <div class="sermon-thumb-box">
                                 <img src="https://img.youtube.com/vi/_LLUu98Wru4/hqdefault.jpg" alt="#SundayService | 20 Sep 2026 | The Calvary Church Vijayawada" class="sermon-thumb-img" loading="lazy">
                                 <div class="sermon-play-overlay">
@@ -620,14 +670,92 @@
                         <p class="category-desc">Full-length Telugu Christian worship songs, praise anthems, and spirit-filled adoration songs from The Calvary Church.</p>
                     </div>
                     <div class="category-actions">
-                        <button class="btn-view-all-category" data-viewall="worship-songs">
-                            <i class="fa-solid fa-table-cells-large"></i> View All (9)
+                        <button class="btn-view-all-category" data-viewall="worship-songs" id="viewall-btn-worship-songs">
+                            <i class="fa-solid fa-table-cells-large"></i> View All (12)
                         </button>
                     </div>
                 </div>
                 <div class="sermon-carousel-wrapper" data-carousel-id="worship-carousel">
                     <button class="carousel-nav-btn prev-btn" aria-label="Scroll left"><i class="fa-solid fa-chevron-left"></i></button>
                     <div class="sermon-carousel-track" id="track-worship-songs">
+                        <!-- Video: DgiqXrS9vNo (Daily Upload - 21 Sep 2026) -->
+                        <div class="sermon-video-card sermon-item" data-category="worship-songs" data-youtube-id="DgiqXrS9vNo" data-video-title="ఎల్ షద్దాయ్ నా దైవమే | Elshaddai | Christian Song | Sami Symphony Paul">
+                            <span class="badge-daily-new"><i class="fa-solid fa-sparkles"></i> NEW TODAY</span>
+                            <div class="sermon-thumb-box">
+                                <img src="https://img.youtube.com/vi/DgiqXrS9vNo/hqdefault.jpg" alt="ఎల్ షద్దాయ్ నా దైవమే | Elshaddai | Sami Symphony Paul" class="sermon-thumb-img" loading="lazy">
+                                <div class="sermon-play-overlay">
+                                    <div class="sermon-play-btn" title="Play Video"><i class="fa-solid fa-play"></i></div>
+                                </div>
+                                <span class="sermon-duration-tag"><i class="fa-regular fa-clock"></i> New Release</span>
+                            </div>
+                            <div class="sermon-details">
+                                <div class="sermon-meta-line">
+                                    <span class="sermon-branch-tag" style="background: rgba(236, 72, 153, 0.15); color: #f472b6;">New Worship</span>
+                                    <span class="sermon-date-tag">21 Sep 2026</span>
+                                </div>
+                                <h3 class="sermon-card-title" title="ఎల్ షద్దాయ్ నా దైవమే | Elshaddai | Christian Song | Sami Symphony Paul">ఎల్ షద్దాయ్ నా దైవమే | Elshaddai | Sami Symphony Paul</h3>
+                                <div class="sermon-speaker-line">
+                                    <i class="fa-solid fa-user-tie"></i> Sis. Sami Symphony Paul
+                                </div>
+                                <div class="sermon-card-actions">
+                                    <a href="https://www.youtube.com/watch?v=DgiqXrS9vNo" target="_blank" rel="noopener noreferrer" class="btn-watch-youtube" title="Watch on original YouTube tab">
+                                        <i class="fa-brands fa-youtube"></i> Watch on YouTube
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Video: mMuUS2AyA50 (Daily Upload - 18 Sep 2026) -->
+                        <div class="sermon-video-card sermon-item" data-category="worship-songs" data-youtube-id="mMuUS2AyA50" data-video-title="ఎన్నిమార్లు సిలువను వేయుచు || Andhra Kristhava Keerthana || Sami Symphony Paul">
+                            <span class="badge-daily-new"><i class="fa-solid fa-sparkles"></i> LATEST</span>
+                            <div class="sermon-thumb-box">
+                                <img src="https://img.youtube.com/vi/mMuUS2AyA50/hqdefault.jpg" alt="ఎన్నిమార్లు సిలువను వేయుచు || Andhra Kristhava Keerthana" class="sermon-thumb-img" loading="lazy">
+                                <div class="sermon-play-overlay">
+                                    <div class="sermon-play-btn" title="Play Video"><i class="fa-solid fa-play"></i></div>
+                                </div>
+                                <span class="sermon-duration-tag"><i class="fa-regular fa-clock"></i> Keerthana</span>
+                            </div>
+                            <div class="sermon-details">
+                                <div class="sermon-meta-line">
+                                    <span class="sermon-branch-tag" style="background: rgba(236, 72, 153, 0.15); color: #f472b6;">Keerthana</span>
+                                    <span class="sermon-date-tag">Sep 2026</span>
+                                </div>
+                                <h3 class="sermon-card-title" title="ఎన్నిమార్లు సిలువను వేయుచు || Andhra Kristhava Keerthana">ఎన్నిమార్లు సిలువను వేయుచు || Andhra Kristhava Keerthana</h3>
+                                <div class="sermon-speaker-line">
+                                    <i class="fa-solid fa-user-tie"></i> Sis. Sami Symphony Paul
+                                </div>
+                                <div class="sermon-card-actions">
+                                    <a href="https://www.youtube.com/watch?v=mMuUS2AyA50" target="_blank" rel="noopener noreferrer" class="btn-watch-youtube" title="Watch on original YouTube tab">
+                                        <i class="fa-brands fa-youtube"></i> Watch on YouTube
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Video: dQlrbqXycZM (Daily Upload - 17 Sep 2026) -->
+                        <div class="sermon-video-card sermon-item" data-category="worship-songs" data-youtube-id="dQlrbqXycZM" data-video-title="ఎఱిగి యెఱిగి చెడిపోతివి మనసా || Andhra Kristhava Keerthana || Sami Symphony Paul">
+                            <span class="badge-daily-new"><i class="fa-solid fa-sparkles"></i> LATEST</span>
+                            <div class="sermon-thumb-box">
+                                <img src="https://img.youtube.com/vi/dQlrbqXycZM/hqdefault.jpg" alt="ఎఱిగి యెఱిగి చెడిపోతివి మనసా || Andhra Kristhava Keerthana" class="sermon-thumb-img" loading="lazy">
+                                <div class="sermon-play-overlay">
+                                    <div class="sermon-play-btn" title="Play Video"><i class="fa-solid fa-play"></i></div>
+                                </div>
+                                <span class="sermon-duration-tag"><i class="fa-regular fa-clock"></i> Keerthana</span>
+                            </div>
+                            <div class="sermon-details">
+                                <div class="sermon-meta-line">
+                                    <span class="sermon-branch-tag" style="background: rgba(236, 72, 153, 0.15); color: #f472b6;">Keerthana</span>
+                                    <span class="sermon-date-tag">Sep 2026</span>
+                                </div>
+                                <h3 class="sermon-card-title" title="ఎఱిగి యెఱిగి చెడిపోతివి మనసా || Andhra Kristhava Keerthana">ఎఱిగి యెఱిగి చెడిపోతివి మనసా || Andhra Kristhava Keerthana</h3>
+                                <div class="sermon-speaker-line">
+                                    <i class="fa-solid fa-user-tie"></i> Sis. Sami Symphony Paul
+                                </div>
+                                <div class="sermon-card-actions">
+                                    <a href="https://www.youtube.com/watch?v=dQlrbqXycZM" target="_blank" rel="noopener noreferrer" class="btn-watch-youtube" title="Watch on original YouTube tab">
+                                        <i class="fa-brands fa-youtube"></i> Watch on YouTube
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                         <!-- Video: w2QuJZ646S8 -->
                         <div class="sermon-video-card sermon-item" data-category="worship-songs" data-youtube-id="w2QuJZ646S8" data-video-title="Aashrayadurgama (ఆశ్రయదుర్గమా) | Full Telugu Worship Song">
                             <div class="sermon-thumb-box">
@@ -875,14 +1003,32 @@
                         <p class="category-desc">Short worship clips, song highlights, praise moments, and short-form Christian music content by Sis. Sami Symphony Paul & Pastor N. Michael Paul.</p>
                     </div>
                     <div class="category-actions">
-                        <button class="btn-view-all-category" data-viewall="worship-shorts">
-                            <i class="fa-solid fa-table-cells-large"></i> View All (10)
+                        <button class="btn-view-all-category" data-viewall="worship-shorts" id="viewall-btn-worship-shorts">
+                            <i class="fa-solid fa-table-cells-large"></i> View All (11)
                         </button>
                     </div>
                 </div>
                 <div class="sermon-carousel-wrapper" data-carousel-id="worship-shorts-carousel">
                     <button class="carousel-nav-btn prev-btn" aria-label="Scroll left"><i class="fa-solid fa-chevron-left"></i></button>
                     <div class="sermon-carousel-track" id="track-worship-shorts">
+                        <!-- Short: uzUuzV7kp28 (Daily Upload - 21 Sep 2026) -->
+                        <div class="shorts-card sermon-item" data-category="worship-shorts" data-youtube-id="uzUuzV7kp28" data-video-title="యేసే దేవుని ప్రేమ స్వరూపం | Yese Devuni Prema Swaroopam | Telugu Christian Song #samisymphonypaul">
+                            <span class="badge-daily-new"><i class="fa-solid fa-sparkles"></i> NEW TODAY</span>
+                            <div class="shorts-thumb-wrap">
+                                <img src="https://img.youtube.com/vi/uzUuzV7kp28/hqdefault.jpg" alt="యేసే దేవుని ప్రేమ స్వరూపం | Telugu Christian Song" class="shorts-thumb-img" loading="lazy">
+                                <span class="shorts-top-badge"><i class="fa-brands fa-youtube"></i> Worship Songs — Shorts</span>
+                                <div class="shorts-overlay">
+                                    <div class="shorts-play-pulse" title="Play Video"><i class="fa-solid fa-play"></i></div>
+                                    <h3 class="shorts-title">యేసే దేవుని ప్రేమ స్వరూపం | Yese Devuni Prema Swaroopam</h3>
+                                    <div class="shorts-actions">
+                                        <span class="shorts-speaker"><i class="fa-solid fa-user-tie"></i> Sis. Sami Symphony Paul</span>
+                                        <a href="https://www.youtube.com/shorts/uzUuzV7kp28" target="_blank" rel="noopener noreferrer" class="shorts-watch-link" title="Open original Short on YouTube">
+                                            <i class="fa-solid fa-arrow-up-right-from-square"></i> YouTube
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <!-- Short: K12gxoBDb_U -->
                         <div class="shorts-card sermon-item" data-category="worship-shorts" data-youtube-id="K12gxoBDb_U" data-video-title="నా బలమంతా నీవేనయా | Telugu Christian Song | Sami Symphony Paul">
                             <div class="shorts-thumb-wrap">
@@ -1085,6 +1231,7 @@
                     <div class="sermon-carousel-track" id="track-fasting-prayer">
                         <!-- Video: sTNvvnNgKrM -->
                         <div class="sermon-video-card sermon-item" data-category="fasting-prayer" data-youtube-id="sTNvvnNgKrM" data-video-title="21 Days Fasting Prayer | Day 12 | The Calvary Church Guntur">
+                            <span class="badge-daily-new"><i class="fa-solid fa-sparkles"></i> NEW TODAY</span>
                             <div class="sermon-thumb-box">
                                 <img src="https://img.youtube.com/vi/sTNvvnNgKrM/hqdefault.jpg" alt="21 Days Fasting Prayer | Day 12 | The Calvary Church Guntur" class="sermon-thumb-img" loading="lazy">
                                 <div class="sermon-play-overlay">
@@ -1381,27 +1528,9 @@
         </section>
     </main>
 
-    <!-- Inline Video Player Modal -->
-    <div id="video-player-modal" class="video-modal-backdrop" aria-hidden="true" role="dialog">
-        <div class="video-modal-box">
-            <div class="video-modal-header">
-                <h3 id="modal-video-title" class="video-modal-title">Sermon Video</h3>
-                <button id="close-video-modal" class="video-modal-close" aria-label="Close video player"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            <div class="video-modal-embed-wrap">
-                <iframe id="modal-video-iframe" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <div class="video-modal-footer">
-                <a id="modal-external-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-watch-youtube" style="font-size: 0.85rem;">
-                    <i class="fa-brands fa-youtube"></i> Watch Directly on YouTube
-                </a>
-            </div>
-        </div>
-    </div>
-
     <!-- Category "View All" Grid Modal -->
-    <div id="viewall-category-modal" class="viewall-modal-backdrop" aria-hidden="true" role="dialog">
-        <div class="viewall-modal-box">
+    <div id="viewall-category-modal" class="viewall-modal" aria-hidden="true" role="dialog">
+        <div class="viewall-modal-dialog">
             <div class="viewall-modal-header">
                 <div>
                     <span id="viewall-modal-badge" class="category-badge-tag">Category</span>
@@ -1554,49 +1683,210 @@
         } catch (err) {
             console.warn('Could not load custom sermons from localStorage', err);
         }
-        // Video Modal Elements
-        const modal = document.getElementById('video-player-modal');
-        const modalIframe = document.getElementById('modal-video-iframe');
-        const modalTitle = document.getElementById('modal-video-title');
-        const modalExtLink = document.getElementById('modal-external-link');
-        const closeBtn = document.getElementById('close-video-modal');
 
-        const openVideo = (youtubeId, title) => {
-            if (!youtubeId) return;
-            modalTitle.textContent = title || 'Watch Video';
-            modalIframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`;
-            modalExtLink.href = `https://www.youtube.com/watch?v=${youtubeId}`;
-            modal.classList.add('active');
-            modal.setAttribute('aria-hidden', 'false');
-            document.body.style.overflow = 'hidden';
-        };
-
-        const closeVideo = () => {
-            modal.classList.remove('active');
-            modal.setAttribute('aria-hidden', 'true');
-            modalIframe.src = '';
-            document.body.style.overflow = '';
-        };
-
-        if (closeBtn) closeBtn.addEventListener('click', closeVideo);
-        if (modal) {
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) closeVideo();
+        // Helper to update all category badges and counts dynamically
+        const updateCategoryBadges = () => {
+            const categories = ['sermon-shorts', 'sunday-live', 'worship-songs', 'worship-shorts', 'fasting-prayer'];
+            let total = 0;
+            categories.forEach(cat => {
+                const track = document.getElementById('track-' + cat);
+                const count = track ? track.querySelectorAll('.sermon-item').length : 0;
+                total += count;
+                const pill = document.getElementById('pill-badge-' + cat);
+                if (pill) pill.textContent = count;
+                const viewAllBtn = document.getElementById('viewall-btn-' + cat);
+                if (viewAllBtn) viewAllBtn.innerHTML = `<i class="fa-solid fa-table-cells-large"></i> View All (${count})`;
             });
+            const allPill = document.getElementById('pill-badge-all');
+            if (allPill) allPill.textContent = total;
+        };
+        updateCategoryBadges();
+
+        // Render a video card into its respected track
+        const renderVideoCardToTrack = (s, isNewDaily = false) => {
+            let targetTrackId = 'track-' + s.category;
+            if (s.category === 'shorts') targetTrackId = 'track-sermon-shorts';
+            const track = document.getElementById(targetTrackId);
+            if (!track) return false;
+
+            const isShort = s.category === 'sermon-shorts' || s.category === 'worship-shorts' || s.category === 'shorts';
+            const cardEl = document.createElement('div');
+            const dailyBadgeHtml = isNewDaily ? `<span class="badge-daily-new"><i class="fa-solid fa-sparkles"></i> NEW TODAY</span>` : '';
+
+            if (isShort) {
+                cardEl.className = 'shorts-card sermon-item';
+                cardEl.setAttribute('data-category', s.category);
+                cardEl.setAttribute('data-youtube-id', s.youtubeId);
+                cardEl.setAttribute('data-video-title', s.title);
+                cardEl.innerHTML = `
+                    ${dailyBadgeHtml}
+                    <div class="shorts-thumb-wrap">
+                        <img src="https://img.youtube.com/vi/${s.youtubeId}/hqdefault.jpg" alt="${s.title}" class="shorts-thumb-img" loading="lazy">
+                        <span class="shorts-top-badge"><i class="fa-brands fa-youtube"></i> ${s.categoryLabel || 'Shorts'}</span>
+                        <div class="shorts-overlay">
+                            <div class="shorts-play-pulse" title="Play Video"><i class="fa-solid fa-play"></i></div>
+                            <h3 class="shorts-title">${s.title}</h3>
+                            <div class="shorts-actions">
+                                <span class="shorts-speaker"><i class="fa-solid fa-user-tie"></i> ${s.speaker || 'Pastor N. Michael Paul'}</span>
+                                <a href="https://www.youtube.com/shorts/${s.youtubeId}" target="_blank" rel="noopener noreferrer" class="shorts-watch-link" title="Open original Short on YouTube">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> YouTube
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else {
+                cardEl.className = 'sermon-video-card sermon-item';
+                cardEl.setAttribute('data-category', s.category);
+                cardEl.setAttribute('data-youtube-id', s.youtubeId);
+                cardEl.setAttribute('data-video-title', s.title);
+                cardEl.innerHTML = `
+                    ${dailyBadgeHtml}
+                    <div class="sermon-thumb-box">
+                        <img src="https://img.youtube.com/vi/${s.youtubeId}/hqdefault.jpg" alt="${s.title}" class="sermon-thumb-img" loading="lazy">
+                        <div class="sermon-play-overlay">
+                            <div class="sermon-play-btn" title="Play Video"><i class="fa-solid fa-play"></i></div>
+                        </div>
+                        <span class="sermon-duration-tag"><i class="fa-regular fa-clock"></i> ${s.duration || 'Video'}</span>
+                    </div>
+                    <div class="sermon-details">
+                        <div class="sermon-meta-line">
+                            <span class="sermon-branch-tag" style="background: rgba(168, 85, 247, 0.15); color: #c084fc;">${s.branch || 'New'}</span>
+                            <span class="sermon-date-tag">${s.date || 'Recent'}</span>
+                        </div>
+                        <h3 class="sermon-card-title" title="${s.title}">${s.title}</h3>
+                        <div class="sermon-speaker-line">
+                            <i class="fa-solid fa-user-tie"></i> ${s.speaker || 'Pastor N. Michael Paul'}
+                        </div>
+                        <div class="sermon-card-actions">
+                            <a href="https://www.youtube.com/watch?v=${s.youtubeId}" target="_blank" rel="noopener noreferrer" class="btn-watch-youtube" title="Watch on original YouTube tab">
+                                <i class="fa-brands fa-youtube"></i> Watch on YouTube
+                            </a>
+                        </div>
+                    </div>
+                `;
+            }
+            track.prepend(cardEl);
+            return true;
+        };
+
+        // Classify video into respected category column
+        const classifyYouTubeVideo = (title, desc = '', author = '') => {
+            const text = (title + ' ' + desc).toLowerCase();
+            if (text.includes('fasting prayer') || text.includes('ఉపవాస') || /day\s*\d+/i.test(text)) {
+                return { category: 'fasting-prayer', label: 'Live Fasting Prayer Videos', speaker: 'Pastor N. Michael Paul', branch: 'Fasting Prayer' };
+            }
+            if (text.includes('sundayservice') || text.includes('sunday service') || text.includes('ఆదివారం') || text.includes('holy communion')) {
+                return { category: 'sunday-live', label: 'Sunday All Live Videos', speaker: 'Pastor N. Michael Paul', branch: 'Sunday Service' };
+            }
+            if (text.includes('song') || text.includes('పాట') || text.includes('sami symphony') || text.includes('keerthana') || text.includes('కీర్తన') || text.includes('choir') || author.toLowerCase().includes('sami')) {
+                if (text.includes('shorts') || text.includes('#shorts') || text.includes('short')) {
+                    return { category: 'worship-shorts', label: 'Worship Songs — Shorts', speaker: 'Sis. Sami Symphony Paul', branch: 'Worship Short' };
+                } else {
+                    return { category: 'worship-songs', label: 'Worship Songs — Full Songs', speaker: 'Sis. Sami Symphony Paul', branch: 'Worship Song' };
+                }
+            }
+            return { category: 'sermon-shorts', label: 'Sermon Shorts', speaker: 'Pastor N. Michael Paul', branch: 'Spiritual Message' };
+        };
+
+        const extractYtId = (url) => {
+            if (!url) return null;
+            const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=|shorts\/))([\w-]{11})/);
+            return match ? match[1] : (url.length === 11 ? url : null);
+        };
+
+        // Auto-Sync Daily Videos from official YouTube Channel feeds
+        const syncDailyYouTubeUploads = async (isManualClick = false) => {
+            const refreshBtn = document.getElementById('btn-refresh-daily-feed');
+            if (refreshBtn) {
+                refreshBtn.disabled = true;
+                refreshBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Checking YouTube Channels...`;
+            }
+
+            const channelIds = [
+                'UCQvVJumt8NcPMoDmZjfN6_g', // @nmichaelpaul
+                'UCGIDNwcGDg13Zo9dkzqhhKA'  // @samisymphonypaul
+            ];
+
+            const existingYtIds = new Set(Array.from(document.querySelectorAll('.sermon-item')).map(c => c.getAttribute('data-youtube-id')));
+            let newlyAdded = 0;
+
+            for (const chId of channelIds) {
+                try {
+                    const rssUrl = encodeURIComponent(`https://www.youtube.com/feeds/videos.xml?channel_id=${chId}`);
+                    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${rssUrl}`;
+                    const res = await fetch(apiUrl);
+                    if (!res.ok) continue;
+                    const data = await res.json();
+                    if (data.status !== 'ok' || !Array.isArray(data.items)) continue;
+
+                    data.items.forEach(item => {
+                        const ytId = extractYtId(item.link) || extractYtId(item.guid);
+                        if (!ytId || existingYtIds.has(ytId)) return;
+
+                        const classification = classifyYouTubeVideo(item.title, item.description, item.author || '');
+                        const sermonObj = {
+                            id: 'yt-daily-' + ytId,
+                            youtubeId: ytId,
+                            title: item.title,
+                            category: classification.category,
+                            categoryLabel: classification.label,
+                            speaker: classification.speaker,
+                            branch: classification.branch,
+                            date: item.pubDate ? item.pubDate.split(' ')[0] : 'Today',
+                            duration: classification.category.includes('shorts') ? 'Short' : 'New Video',
+                            featured: false,
+                            hidden: false
+                        };
+
+                        if (renderVideoCardToTrack(sermonObj, true)) {
+                            existingYtIds.add(ytId);
+                            newlyAdded++;
+
+                            // Merge into localStorage
+                            try {
+                                const stored = JSON.parse(localStorage.getItem('tccv-sermons') || '[]');
+                                if (!stored.some(x => x.youtubeId === ytId)) {
+                                    stored.unshift(sermonObj);
+                                    localStorage.setItem('tccv-sermons', JSON.stringify(stored));
+                                }
+                            } catch (e) {}
+                        }
+                    });
+                } catch (err) {
+                    console.warn('Channel sync error for ' + chId, err);
+                }
+            }
+
+            updateCategoryBadges();
+
+            if (refreshBtn) {
+                refreshBtn.disabled = false;
+                if (newlyAdded > 0) {
+                    refreshBtn.innerHTML = `<i class="fa-solid fa-check" style="color:#22c55e;"></i> Added ${newlyAdded} New Daily Video${newlyAdded > 1 ? 's' : ''}!`;
+                    setTimeout(() => {
+                        refreshBtn.innerHTML = `<i class="fa-solid fa-rotate"></i> Check for New Uploads Now`;
+                    }, 4000);
+                } else {
+                    refreshBtn.innerHTML = isManualClick ? `<i class="fa-solid fa-check"></i> All Channels Up-to-Date!` : `<i class="fa-solid fa-rotate"></i> Check for New Uploads Now`;
+                    if (isManualClick) {
+                        setTimeout(() => {
+                            refreshBtn.innerHTML = `<i class="fa-solid fa-rotate"></i> Check for New Uploads Now`;
+                        }, 3000);
+                    }
+                }
+            }
+        };
+
+        // Trigger auto-sync in background on load
+        setTimeout(() => syncDailyYouTubeUploads(false), 800);
+
+        // Manual button click
+        const manualRefreshBtn = document.getElementById('btn-refresh-daily-feed');
+        if (manualRefreshBtn) {
+            manualRefreshBtn.addEventListener('click', () => syncDailyYouTubeUploads(true));
         }
 
-        // Handle inline video clicks on sermon cards (except when clicking direct YouTube link)
-        document.addEventListener('click', (e) => {
-            const watchLink = e.target.closest('.shorts-watch-link, .btn-watch-youtube, .btn-category-view-more, .btn-view-all-category, .cta-btn');
-            if (watchLink) return; // Allow normal link opening in new tab
-
-            const card = e.target.closest('.sermon-item, .shorts-card, .sermon-video-card');
-            if (card) {
-                const ytid = card.getAttribute('data-youtube-id');
-                const title = card.getAttribute('data-video-title');
-                if (ytid) openVideo(ytid, title);
-            }
-        });
 
         // Carousels horizontal navigation
         document.querySelectorAll('.sermon-carousel-wrapper').forEach(wrapper => {
@@ -1718,11 +2008,10 @@
             });
         }
 
-        // Keydown escape to close modals
+        // Keydown escape to close category view all modal
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                if (modal.classList.contains('active')) closeVideo();
-                if (viewAllModal.classList.contains('active')) closeViewAll();
+            if (e.key === 'Escape' && viewAllModal && viewAllModal.classList.contains('active')) {
+                closeViewAll();
             }
         });
     });

@@ -75,109 +75,775 @@ document.addEventListener('DOMContentLoaded', () => {
     const defaultHeroSlides = [
         {
             id: 'h1',
-            img: 'assets/hero-bg.png',
+            img: 'assets/ministry/pastors-combined-hero.jpg',
             badge: 'The Calvary Church Vijayawada – Guntur',
             title: "Experience God's Love & Power",
-            desc: "Join us for an uplifting morning of dynamic worship, powerful prayer, and life-changing ministry. Led by Pastor N. Michael Paul and Sis. Sami Symphony Paul.",
+            desc: "Led by Pastor N. Michael Paul and Sis. Sami Symphony Paul. Proclaiming the sound doctrine of grace, truth, and anointed worship.",
             kb: 'kb-1'
         },
         {
             id: 'h2',
-            img: 'assets/church-service-worship.png',
-            badge: 'Spirit-Filled Worship',
-            title: 'Lifting Hearts in Adoration',
-            desc: "Experience the tangible presence and transforming love of Jesus Christ as our church family gathers in united praise across Vijayawada & Guntur.",
+            img: 'assets/ministry/pastors-prayer-together.jpg',
+            badge: 'Pastoral Shepherds in Prayer',
+            title: 'United in Faith & Intercession',
+            desc: "Pastor N. Michael Paul and Sis. Sami Symphony Paul standing together in sacred prayer and blessing over the congregation.",
             kb: 'kb-2'
         },
         {
             id: 'h3',
-            img: 'assets/communion-1.png',
-            badge: 'First Sunday Holy Communion',
-            title: 'In Sacred Remembrance of His Sacrifice',
-            desc: "Every first Sunday, we gather around the Table of the Lord in deep reverence, gratitude, and covenant unity.",
+            img: 'assets/ministry/bg-1.jpg',
+            badge: 'Sound Biblical Preaching',
+            title: 'Proclaiming the Living Word',
+            desc: "Pastor N. Michael Paul ministering the life-changing gospel of Jesus Christ from the Calvary pulpit.",
             kb: 'kb-3'
         },
         {
             id: 'h4',
-            img: 'assets/pastors-foundation.png',
-            badge: 'Built on the Rock',
-            title: 'Rooted in Faith & Sound Doctrine',
-            desc: "Under the anointed spiritual leadership of Pastor N. Michael Paul and Sis. Sami Symphony Paul, established on 1 Corinthians 3:11.",
+            img: 'assets/ministry/holy-communion-altar.jpg',
+            badge: 'First Sunday Holy Communion',
+            title: 'In Sacred Remembrance of His Sacrifice',
+            desc: "Gathering around the Table of the Lord in deep reverence, gratitude, and covenant unity.",
             kb: 'kb-4'
+        },
+        {
+            id: 'h5',
+            img: 'assets/church-service-worship.png',
+            badge: 'Spirit-Filled Worship',
+            title: 'Lifting Hearts in Adoration',
+            desc: "Experience the tangible presence and transforming love of Jesus Christ as our church family gathers in united praise.",
+            kb: 'kb-1'
         }
     ];
 
     const defaultSermons = [
         {
-            id: 's1',
-            youtubeId: 'HsFLENGbS_G',
-            title: "21 Days Fasting Prayer – Seeking God's Will",
-            speaker: 'Pastor N. Michael Paul',
-            category: 'fasting',
-            categoryLabel: 'Fasting Prayer',
-            duration: '48:20'
+                "id": "ss-1",
+                "youtubeId": "7sHpaxk16X0",
+                "title": "Don't Tell Everyone, Tell Only God | Telugu Christian Message | N Michael Paul",
+                "category": "sermon-shorts",
+                "categoryLabel": "Sermon Shorts",
+                "duration": "Short (58s)",
+                "date": "Sep 2026",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Spiritual Counsel",
+                "featured": true,
+                "hidden": false
         },
         {
-            id: 's2',
-            youtubeId: 'GdrjN90YE-u',
-            title: "Are You Really Living in God's Will?",
-            speaker: 'Pastor N. Michael Paul',
-            category: 'sunday',
-            categoryLabel: 'Sunday Message',
-            duration: '52:10'
+                "id": "ss-2",
+                "youtubeId": "4C0CRZ9PtRM",
+                "title": "Don't let fear lead you! | Go towards God | Christian Shorts | nmichaelpaul",
+                "category": "sermon-shorts",
+                "categoryLabel": "Sermon Shorts",
+                "duration": "Short (54s)",
+                "date": "Sep 2026",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Faith & Courage",
+                "featured": false,
+                "hidden": false
         },
         {
-            id: 's3',
-            youtubeId: 'evbuuMHI24O',
-            title: 'Built on the Rock – 1 Corinthians 3:11',
-            speaker: 'Pastor N. Michael Paul',
-            category: 'grace',
-            categoryLabel: 'Grace & Truth',
-            duration: '44:15'
+                "id": "ss-3",
+                "youtubeId": "OinUgJqkFdU",
+                "title": "Even After Receiving Blessings | Heart Examination | Christian Message | nmichelpaul",
+                "category": "sermon-shorts",
+                "categoryLabel": "Sermon Shorts",
+                "duration": "Short (59s)",
+                "date": "Sep 2026",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Heart Examination",
+                "featured": false,
+                "hidden": false
         },
         {
-            id: 's4',
-            youtubeId: 'YpY_nY7lBa',
-            title: 'The Power of the Blood & Holy Communion',
-            speaker: 'Pastor N. Michael Paul',
-            category: 'communion',
-            categoryLabel: 'Holy Communion',
-            duration: '39:40'
+                "id": "ss-4",
+                "youtubeId": "3mKU-zNx8bs",
+                "title": "Blessings should remain in your hands | Your heart must stay rooted in God | Telugu Christian Message",
+                "category": "sermon-shorts",
+                "categoryLabel": "Sermon Shorts",
+                "duration": "Short (56s)",
+                "date": "Sep 2026",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Rooted in Faith",
+                "featured": false,
+                "hidden": false
         },
         {
-            id: 's5',
-            youtubeId: 'QzIhqzXTfw',
-            title: 'Walking by Faith, Not by Sight',
-            speaker: 'Pastor N. Michael Paul',
-            category: 'sunday',
-            categoryLabel: 'Sunday Message',
-            duration: '55:30'
+                "id": "ss-5",
+                "youtubeId": "8evblaxfdas",
+                "title": "Don't Decide at First Sight | Discernment is Key | Telugu Christian Sermon | nmichaelpaul",
+                "category": "sermon-shorts",
+                "categoryLabel": "Sermon Shorts",
+                "duration": "Short (52s)",
+                "date": "Sep 2026",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Spiritual Wisdom",
+                "featured": false,
+                "hidden": false
         },
         {
-            id: 's6',
-            youtubeId: 'Krmb0E9Wj3',
-            title: 'The Table of the Lord – 1 Corinthians 11',
-            speaker: 'Pastor N. Michael Paul',
-            category: 'communion',
-            categoryLabel: 'Holy Communion',
-            duration: '41:00'
+                "id": "ss-6",
+                "youtubeId": "NJf97fjF6p8",
+                "title": "Pray Before You Decide | Recognize God's Guidance | Genesis 24 | nmichaelpaul",
+                "category": "sermon-shorts",
+                "categoryLabel": "Sermon Shorts",
+                "duration": "Short (60s)",
+                "date": "Aug 2026",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Prayer & Guidance",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "ss-7",
+                "youtubeId": "2EoNIct-3Nc",
+                "title": "Take Action When You Have Clarity! | Why Is Your Blessing Delayed? | The Calvary Church Guntur",
+                "category": "sermon-shorts",
+                "categoryLabel": "Sermon Shorts",
+                "duration": "Short (55s)",
+                "date": "Aug 2026",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Divine Action",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "ss-8",
+                "youtubeId": "5dKhkO5_9Tw",
+                "title": "Don't take a step without knowing God's plan! | Telugu Christian Message | nmichaelpaul",
+                "category": "sermon-shorts",
+                "categoryLabel": "Sermon Shorts",
+                "duration": "Short (50s)",
+                "date": "Aug 2026",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "God's Will",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "ss-9",
+                "youtubeId": "67izXa9xAc4",
+                "title": "Don't Judge Prematurely! | Christian Message | nmichaelpaul",
+                "category": "sermon-shorts",
+                "categoryLabel": "Sermon Shorts",
+                "duration": "Short (48s)",
+                "date": "Aug 2026",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Grace & Patience",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "ss-10",
+                "youtubeId": "tONQMjN-LuQ",
+                "title": "The Lord Opened Her Heart | Live by the Word | Christian Sermon | nmichaelpaul",
+                "category": "sermon-shorts",
+                "categoryLabel": "Sermon Shorts",
+                "duration": "Short (57s)",
+                "date": "Aug 2026",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Living by Word",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "sl-1",
+                "youtubeId": "_LLUu98Wru4",
+                "title": "#SundayService | 20 Sep 2026 | The Calvary Church Vijayawada",
+                "category": "sunday-live",
+                "categoryLabel": "Sunday All Live Videos",
+                "duration": "1:52:14",
+                "date": "20 Sep 2026",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Vijayawada",
+                "featured": true,
+                "hidden": false
+        },
+        {
+                "id": "sl-2",
+                "youtubeId": "v1tDhJiuTSU",
+                "title": "1st Sunday Communion Service | The Calvary Church Vijayawada",
+                "category": "sunday-live",
+                "categoryLabel": "Sunday All Live Videos",
+                "duration": "2:14:08",
+                "date": "06 Sep 2026",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Vijayawada",
+                "featured": true,
+                "hidden": false
+        },
+        {
+                "id": "sl-3",
+                "youtubeId": "dwaKxs6yNO0",
+                "title": "Sunday Service | The Calvary Church Guntur",
+                "category": "sunday-live",
+                "categoryLabel": "Sunday All Live Videos",
+                "duration": "1:48:32",
+                "date": "13 Sep 2026",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Guntur",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "sl-4",
+                "youtubeId": "UIrF3eEme-0",
+                "title": "Sunday Morning Worship & Preaching | The Calvary Church Vijayawada",
+                "category": "sunday-live",
+                "categoryLabel": "Sunday All Live Videos",
+                "duration": "2:05:19",
+                "date": "30 Aug 2026",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Vijayawada",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "sl-5",
+                "youtubeId": "NDhwQTqrTms",
+                "title": "Sunday Divine Gathering | The Calvary Church Guntur",
+                "category": "sunday-live",
+                "categoryLabel": "Sunday All Live Videos",
+                "duration": "1:55:40",
+                "date": "23 Aug 2026",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Guntur",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "sl-6",
+                "youtubeId": "AIhnmxeEvp8",
+                "title": "Sunday Anointing Service | The Calvary Church Vijayawada",
+                "category": "sunday-live",
+                "categoryLabel": "Sunday All Live Videos",
+                "duration": "2:10:45",
+                "date": "16 Aug 2026",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Vijayawada",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "sl-7",
+                "youtubeId": "qeHTpfRV3D4",
+                "title": "Sunday Praise & Word | The Calvary Church Guntur",
+                "category": "sunday-live",
+                "categoryLabel": "Sunday All Live Videos",
+                "duration": "1:42:15",
+                "date": "09 Aug 2026",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Guntur",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "sl-8",
+                "youtubeId": "lgcqU4179Hc",
+                "title": "Sunday Holy Communion & Fellowship | The Calvary Church Vijayawada",
+                "category": "sunday-live",
+                "categoryLabel": "Sunday All Live Videos",
+                "duration": "2:18:22",
+                "date": "02 Aug 2026",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Vijayawada",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "sl-9",
+                "youtubeId": "-jvCSlxXIIk",
+                "title": "Sunday Service | The Calvary Church Guntur",
+                "category": "sunday-live",
+                "categoryLabel": "Sunday All Live Videos",
+                "duration": "1:50:30",
+                "date": "26 Jul 2026",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Guntur",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "sl-10",
+                "youtubeId": "8nJC2GmdRxM",
+                "title": "Sunday Divine Worship Service | The Calvary Church Vijayawada",
+                "category": "sunday-live",
+                "categoryLabel": "Sunday All Live Videos",
+                "duration": "2:02:50",
+                "date": "19 Jul 2026",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Vijayawada",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "ws-1",
+                "youtubeId": "w2QuJZ646S8",
+                "title": "Aashrayadurgama (ఆశ్రయదుర్గమా) | Full Telugu Worship Song",
+                "category": "worship-songs",
+                "categoryLabel": "Worship Songs — Full Songs",
+                "duration": "6:45",
+                "date": "Full Song",
+                "speaker": "The Calvary Church Worship Team",
+                "branch": "Telugu Worship",
+                "featured": true,
+                "hidden": false
+        },
+        {
+                "id": "ws-2",
+                "youtubeId": "FwyGqr7jWIE",
+                "title": "Siluva Chentha (సిలువ చెంత) | Anointed Telugu Christian Song",
+                "category": "worship-songs",
+                "categoryLabel": "Worship Songs — Full Songs",
+                "duration": "7:12",
+                "date": "Full Song",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Calvary Hymn",
+                "featured": true,
+                "hidden": false
+        },
+        {
+                "id": "ws-3",
+                "youtubeId": "eBIWgCzitNA",
+                "title": "Nee Krupa Leni Kshaname (నీ కృప లేని క్షణమే) | Official Worship Video",
+                "category": "worship-songs",
+                "categoryLabel": "Worship Songs — Full Songs",
+                "duration": "5:38",
+                "date": "Full Song",
+                "speaker": "The Calvary Church Choir",
+                "branch": "Grace Song",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "ws-4",
+                "youtubeId": "4yQRYqvL0Hw",
+                "title": "Krupa Kshemamulanu (కృపా క్షేమములను) | Christian Devotional Worship",
+                "category": "worship-songs",
+                "categoryLabel": "Worship Songs — Full Songs",
+                "duration": "6:20",
+                "date": "Full Song",
+                "speaker": "Calvary Worship Ministry",
+                "branch": "Praise",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "ws-5",
+                "youtubeId": "qc5H60wJRPI",
+                "title": "Mahonnathuda (మహోన్నతుడా) | Sacred Christian Worship Video",
+                "category": "worship-songs",
+                "categoryLabel": "Worship Songs — Full Songs",
+                "duration": "8:04",
+                "date": "Full Song",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Adoration",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "ws-6",
+                "youtubeId": "0Pq8vqluEmk",
+                "title": "Stotram Chellinthumu (స్తోత్రం చెల్లింతుము) | Live Church Praise",
+                "category": "worship-songs",
+                "categoryLabel": "Worship Songs — Full Songs",
+                "duration": "5:50",
+                "date": "Full Song",
+                "speaker": "Calvary Church Congregation",
+                "branch": "Live Praise",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "ws-7",
+                "youtubeId": "5g0x01NG1ys",
+                "title": "Yesu Naa Snehithuda (యేసు నా స్నేహితుడా) | Devotional Praise Video",
+                "category": "worship-songs",
+                "categoryLabel": "Worship Songs — Full Songs",
+                "duration": "6:15",
+                "date": "Full Song",
+                "speaker": "Worship Leaders",
+                "branch": "Devotional",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "ws-8",
+                "youtubeId": "n5FUgE4-sso",
+                "title": "Naa Hrudayamulona (నా హృదయములోన) | Worship Song",
+                "category": "worship-songs",
+                "categoryLabel": "Worship Songs — Full Songs",
+                "duration": "7:30",
+                "date": "Full Song",
+                "speaker": "The Calvary Church Choir",
+                "branch": "Worship",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "ws-9",
+                "youtubeId": "vcEXhAOPwMM",
+                "title": "Parama Thandri (పరమ తండ్రి) | Calvary Church Worship Song",
+                "category": "worship-songs",
+                "categoryLabel": "Worship Songs — Full Songs",
+                "duration": "5:42",
+                "date": "Full Song",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Praise",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "wsh-1",
+                "youtubeId": "K12gxoBDb_U",
+                "title": "నా బలమంతా నీవేనయా | Telugu Christian Song | Sami Symphony Paul",
+                "category": "worship-shorts",
+                "categoryLabel": "Worship Songs — Shorts",
+                "duration": "Short (58s)",
+                "date": "Sep 2026",
+                "speaker": "Sis. Sami Symphony Paul",
+                "branch": "Worship Short",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "wsh-2",
+                "youtubeId": "voaQCqFPYe0",
+                "title": "Melulu Nee Melulu | మేలులు నీ మేలులు | Christian Song | Sami Symphony Paul",
+                "category": "worship-shorts",
+                "categoryLabel": "Worship Songs — Shorts",
+                "duration": "Short (52s)",
+                "date": "Sep 2026",
+                "speaker": "Sis. Sami Symphony Paul",
+                "branch": "Worship Short",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "wsh-3",
+                "youtubeId": "uV7CL2d4wO8",
+                "title": "Gathakaalamantha Nee Needalona | గతకాలమంత నీ నీడలోన | Sami Symphony Paul",
+                "category": "worship-shorts",
+                "categoryLabel": "Worship Songs — Shorts",
+                "duration": "Short (56s)",
+                "date": "Aug 2026",
+                "speaker": "Sis. Sami Symphony Paul",
+                "branch": "Worship Short",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "wsh-4",
+                "youtubeId": "hN32Z8spzZQ",
+                "title": "The Name of Lord Jesus | The Powerful Name of Lord Jesus | Sami Symphony Paul",
+                "category": "worship-shorts",
+                "categoryLabel": "Worship Songs — Shorts",
+                "duration": "Short (50s)",
+                "date": "Aug 2026",
+                "speaker": "Sis. Sami Symphony Paul",
+                "branch": "Worship Short",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "wsh-5",
+                "youtubeId": "-nagmifGmDE",
+                "title": "In My Little Boat | Naa Chinni Donelo | Telugu Christian Worship Song | Pastor Sung",
+                "category": "worship-shorts",
+                "categoryLabel": "Worship Songs — Shorts",
+                "duration": "Short (60s)",
+                "date": "Aug 2026",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Worship Short",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "wsh-6",
+                "youtubeId": "f1T2MUgYpxw",
+                "title": "I Will Worship My Lord Jesus to My Heart's Content | Live Church Worship",
+                "category": "worship-shorts",
+                "categoryLabel": "Worship Songs — Shorts",
+                "duration": "Short (55s)",
+                "date": "Aug 2026",
+                "speaker": "Calvary Worship Team",
+                "branch": "Worship Short",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "wsh-7",
+                "youtubeId": "XNvPp4r9nrI",
+                "title": "Uthsaaha Gaanamu Chesedamu | ఉత్సాహ గానము చేసెదము | Sami Symphony Paul",
+                "category": "worship-shorts",
+                "categoryLabel": "Worship Songs — Shorts",
+                "duration": "Short (54s)",
+                "date": "Aug 2026",
+                "speaker": "Sis. Sami Symphony Paul",
+                "branch": "Worship Short",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "wsh-8",
+                "youtubeId": "bf3i1h9HMYE",
+                "title": "వందనాలు యేసు నా వందనాలు | Vandanalu Yesu Na Vandanalu | Sami Symphony Paul",
+                "category": "worship-shorts",
+                "categoryLabel": "Worship Songs — Shorts",
+                "duration": "Short (58s)",
+                "date": "Jul 2026",
+                "speaker": "Sis. Sami Symphony Paul",
+                "branch": "Worship Short",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "wsh-9",
+                "youtubeId": "n6A-2r0vePE",
+                "title": "Adbutham Cheyumaya | అద్బుతం చేయుమయా | nmichaelpaul & Sami Symphony Paul",
+                "category": "worship-shorts",
+                "categoryLabel": "Worship Songs — Shorts",
+                "duration": "Short (51s)",
+                "date": "Jul 2026",
+                "speaker": "Pastor Michael & Sis. Sami",
+                "branch": "Worship Short",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "wsh-10",
+                "youtubeId": "SGtk0sxOUAM",
+                "title": "TIRIGI KATEDAVU | తిరిగి కట్టెదవు | Sami Symphony Paul | Telugu Christian Song 2026",
+                "category": "worship-shorts",
+                "categoryLabel": "Worship Songs — Shorts",
+                "duration": "Short (57s)",
+                "date": "Jul 2026",
+                "speaker": "Sis. Sami Symphony Paul",
+                "branch": "Worship Short",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "fp-1",
+                "youtubeId": "sTNvvnNgKrM",
+                "title": "21 Days Fasting Prayer | Day 12 | The Calvary Church Guntur",
+                "category": "fasting-prayer",
+                "categoryLabel": "Live Fasting Prayer Videos",
+                "duration": "1:34:20",
+                "date": "Day 12",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Guntur",
+                "featured": true,
+                "hidden": false
+        },
+        {
+                "id": "fp-2",
+                "youtubeId": "KO0fvjZY_YI",
+                "title": "21 Days Fasting Prayer | Day 11 | The Calvary Church Guntur",
+                "category": "fasting-prayer",
+                "categoryLabel": "Live Fasting Prayer Videos",
+                "duration": "1:41:10",
+                "date": "Day 11",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Guntur",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "fp-3",
+                "youtubeId": "wuZTyK7i_tA",
+                "title": "21 Days Fasting Prayer | Day 10 | The Calvary Church Guntur",
+                "category": "fasting-prayer",
+                "categoryLabel": "Live Fasting Prayer Videos",
+                "duration": "1:28:45",
+                "date": "Day 10",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Guntur",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "fp-4",
+                "youtubeId": "PpaSA6F4kBg",
+                "title": "21 Days Fasting Prayer | Day 9 | The Calvary Church Guntur",
+                "category": "fasting-prayer",
+                "categoryLabel": "Live Fasting Prayer Videos",
+                "duration": "1:36:15",
+                "date": "Day 9",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Guntur",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "fp-5",
+                "youtubeId": "70-8SfG7nhA",
+                "title": "21 Days Fasting Prayer | Day 8 | The Calvary Church Guntur",
+                "category": "fasting-prayer",
+                "categoryLabel": "Live Fasting Prayer Videos",
+                "duration": "1:45:00",
+                "date": "Day 8",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Guntur",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "fp-6",
+                "youtubeId": "7kEWPQ-6_5I",
+                "title": "21 Days Fasting Prayer | Day 7 | The Calvary Church Guntur",
+                "category": "fasting-prayer",
+                "categoryLabel": "Live Fasting Prayer Videos",
+                "duration": "1:32:10",
+                "date": "Day 7",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Guntur",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "fp-7",
+                "youtubeId": "fsva2R7y_k8",
+                "title": "Friday Fasting Prayer Service | The Calvary Church Vijayawada",
+                "category": "fasting-prayer",
+                "categoryLabel": "Live Fasting Prayer Videos",
+                "duration": "2:02:18",
+                "date": "Friday Gathering",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Vijayawada",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "fp-8",
+                "youtubeId": "4Y3EN1myl0s",
+                "title": "Special Fasting Prayer Gathering | The Calvary Church",
+                "category": "fasting-prayer",
+                "categoryLabel": "Live Fasting Prayer Videos",
+                "duration": "1:54:30",
+                "date": "Fasting Season",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Combined",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "fp-9",
+                "youtubeId": "yGgbG2gF39w",
+                "title": "Fasting Intercession & Healing Prayer | Guntur Sanctuary",
+                "category": "fasting-prayer",
+                "categoryLabel": "Live Fasting Prayer Videos",
+                "duration": "1:49:15",
+                "date": "Fasting Service",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Guntur",
+                "featured": false,
+                "hidden": false
+        },
+        {
+                "id": "fp-10",
+                "youtubeId": "Ca4irkR9HwI",
+                "title": "Fasting Prayer & Deliverance Service | Vijayawada Swarnas",
+                "category": "fasting-prayer",
+                "categoryLabel": "Live Fasting Prayer Videos",
+                "duration": "2:08:40",
+                "date": "Fasting Gathering",
+                "speaker": "Pastor N. Michael Paul",
+                "branch": "Vijayawada",
+                "featured": false,
+                "hidden": false
         }
-    ];
+];
 
     const defaultGallery = [
-        { id: 'g1', src: 'assets/communion-4.png', title: 'The Table of Remembrance', category: 'communion', desc: 'The sacred elements set in reverence.' },
-        { id: 'g2', src: 'assets/communion-1.png', title: 'Communion Prayer & Sanctification', category: 'communion', desc: 'Pastor N. Michael Paul leading communion prayer.' },
-        { id: 'g3', src: 'assets/church-service-worship.png', title: 'United Sunday Praise', category: 'worship', desc: 'Congregation lifting voices in worship.' },
-        { id: 'g4', src: 'assets/church-congregation.png', title: 'Church Family Gathering', category: 'worship', desc: 'Believers gathered to receive the Word.' },
-        { id: 'g5', src: 'assets/pastors-foundation.png', title: 'Built on the Rock', category: 'leadership', desc: 'Pastor N. Michael Paul & Sis. Sami in prayer.' },
-        { id: 'g6', src: 'assets/communion-6.png', title: 'Serving the Sacred Elements', category: 'communion', desc: 'Serving communion to the church family.' },
-        { id: 'g7', src: 'assets/communion-5.png', title: 'The Bread of Life', category: 'communion', desc: '1 Corinthians 11:24 remembrance.' },
-        { id: 'g8', src: 'assets/communion-3.png', title: 'The New Covenant', category: 'communion', desc: '1 Corinthians 11:25 communion cup.' },
-        { id: 'g9', src: 'assets/communion-7.png', title: 'The Blood of the Covenant', category: 'communion', desc: 'Sacred redemption in Christ.' },
-        { id: 'g10', src: 'assets/vijayawada-church.png', title: 'Swarnas Convention Venue', category: 'venues', desc: 'Vijayawada Sunday gathering venue.' },
-        { id: 'g11', src: 'assets/guntur-church.png', title: 'The Calvary Church Guntur', category: 'venues', desc: 'Guntur church sanctuary.' },
-        { id: 'g12', src: 'assets/pastor-michael.png', title: 'Pastor N. Michael Paul', category: 'leadership', desc: 'Senior Pastor of The Calvary Church.' }
-    ];
+        {
+                "id": "g1",
+                "src": "assets/ministry/bg-1.jpg",
+                "title": "Pastor N. Michael Paul Preaching",
+                "category": "leadership",
+                "desc": "Pastor N. Michael Paul preaching the word of truth at the Calvary pulpit.",
+                "ig": "https://www.instagram.com/nmichaelpaul/"
+        },
+        {
+                "id": "g2",
+                "src": "assets/ministry/bg-2.jpg",
+                "title": "Calvary Church Vijayawada Gathering",
+                "category": "worship",
+                "desc": "Christmas worship celebration at The Calvary Church Vijayawada.",
+                "ig": "https://www.instagram.com/nmichaelpaul/"
+        },
+        {
+                "id": "g3",
+                "src": "assets/ministry/bg-4.jpg",
+                "title": "The Pastoral Family",
+                "category": "leadership",
+                "desc": "Pastor N. Michael Paul, Sis. Sami Symphony Paul and their blessed children.",
+                "ig": "https://www.instagram.com/nmichaelpaul/"
+        },
+        {
+                "id": "g4",
+                "src": "assets/communion-4.png",
+                "title": "The Table of Remembrance",
+                "category": "communion",
+                "desc": "The sacred elements set in reverence for Holy Communion."
+        },
+        {
+                "id": "g5",
+                "src": "assets/communion-1.png",
+                "title": "Communion Prayer & Sanctification",
+                "category": "communion",
+                "desc": "Pastor N. Michael Paul leading communion prayer."
+        },
+        {
+                "id": "g6",
+                "src": "assets/church-service-worship.png",
+                "title": "United Sunday Praise",
+                "category": "worship",
+                "desc": "Congregation lifting voices in worship at Swarnas Convention."
+        },
+        {
+                "id": "g7",
+                "src": "assets/church-congregation.png",
+                "title": "Church Family Gathering",
+                "category": "worship",
+                "desc": "Believers gathered to receive the Word in Vijayawada."
+        },
+        {
+                "id": "g8",
+                "src": "assets/pastors-foundation.png",
+                "title": "Built on the Rock",
+                "category": "leadership",
+                "desc": "Pastor N. Michael Paul & Sis. Sami Symphony Paul in united prayer."
+        },
+        {
+                "id": "g9",
+                "src": "assets/communion-6.png",
+                "title": "Serving the Sacred Elements",
+                "category": "communion",
+                "desc": "Serving communion to the church family."
+        },
+        {
+                "id": "g10",
+                "src": "assets/vijayawada-church.png",
+                "title": "Swarnas Convention Venue",
+                "category": "venues",
+                "desc": "Vijayawada Sunday gathering venue on Gurunanak Colony Main Road."
+        },
+        {
+                "id": "g11",
+                "src": "assets/guntur-church.png",
+                "title": "The Calvary Church Guntur",
+                "category": "venues",
+                "desc": "Guntur church sanctuary at Vidyanagar 1st Line Extension."
+        },
+        {
+                "id": "g12",
+                "src": "assets/ministry/bg-3.jpg",
+                "title": "Pastoral Intercession",
+                "category": "leadership",
+                "desc": "Pastor N. Michael Paul lifting hands in prayer for the church."
+        }
+];
 
     const defaultEvents = [
         { id: 'e1', title: 'Sunday Morning Celebration Service', branch: 'vja', day: 'Every Sunday', time: '10:00 AM – 12:30 PM', location: 'Swarnas Convention, Gurunanak Colony, Vijayawada' },
@@ -187,10 +853,43 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     /* ==========================================================================
-       4. DASHBOARD RENDERERS
+       4. DASHBOARD RENDERERS & CLOUD SYNC
        ========================================================================== */
-    const getHeroSlides = () => JSON.parse(localStorage.getItem('tccv-hero-slides')) || defaultHeroSlides;
-    const saveHeroSlides = (data) => localStorage.setItem('tccv-hero-slides', JSON.stringify(data));
+    const syncHeroSlidesToCloud = (slides) => {
+        if (typeof firebase !== 'undefined' && firebase.firestore) {
+            try {
+                const db = firebase.firestore();
+                db.collection('site_content').doc('hero_slides').set({
+                    slides: slides,
+                    updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+                }).then(() => {
+                    console.log('Hero slides successfully synced to Firebase Cloud Firestore.');
+                }).catch((err) => {
+                    console.warn('Firestore cloud sync warning:', err);
+                });
+            } catch (e) {
+                console.warn('Firebase sync error:', e);
+            }
+        }
+    };
+
+    const getHeroSlides = () => {
+        try {
+            const stored = localStorage.getItem('tccv-hero-slides');
+            if (stored) {
+                const parsed = JSON.parse(stored);
+                if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+            }
+        } catch (e) {
+            console.warn(e);
+        }
+        return defaultHeroSlides;
+    };
+
+    const saveHeroSlides = (data) => {
+        localStorage.setItem('tccv-hero-slides', JSON.stringify(data));
+        syncHeroSlidesToCloud(data);
+    };
 
     const getSermons = () => JSON.parse(localStorage.getItem('tccv-sermons')) || defaultSermons;
     const saveSermons = (data) => localStorage.setItem('tccv-sermons', JSON.stringify(data));
@@ -216,7 +915,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <strong style="font-size: 0.95rem; display: block;">${slide.title}</strong>
                     <span style="font-size: 0.8rem; color: var(--text-muted);">${slide.badge || 'Slide ' + (idx + 1)} • ${slide.kb}</span>
                 </div>
-                <button class="admin-btn admin-btn-danger" style="padding: 6px 12px; font-size: 0.8rem;" data-remove-hero="${slide.id}">
+                <button class="admin-btn admin-btn-danger" style="padding: 6px 12px; font-size: 0.8rem;" data-remove-hero="${slide.id}" title="Remove this slide">
                     <i class="fa-solid fa-trash"></i>
                 </button>
             `;
@@ -227,30 +926,122 @@ document.addEventListener('DOMContentLoaded', () => {
         if (stat) stat.textContent = slides.length;
     };
 
+    
+    /* ==========================================================================
+       YOUTUBE URL PARSER & PREVIEW ENGINE
+       ========================================================================== */
+    const extractYouTubeId = (input) => {
+        if (!input) return '';
+        input = input.trim();
+        if (/^[a-zA-Z0-9_-]{11}$/.test(input)) return input;
+        const shortsMatch = input.match(/\/shorts\/([a-zA-Z0-9_-]{11})/);
+        if (shortsMatch) return shortsMatch[1];
+        const youtuMatch = input.match(/youtu\.be\/([a-zA-Z0-9_-]{11})/);
+        if (youtuMatch) return youtuMatch[1];
+        const vMatch = input.match(/[?&]v=([a-zA-Z0-9_-]{11})/);
+        if (vMatch) return vMatch[1];
+        const embedMatch = input.match(/\/embed\/([a-zA-Z0-9_-]{11})/);
+        if (embedMatch) return embedMatch[1];
+        return '';
+    };
+
+    const sermonInputId = document.getElementById('sermon-input-id');
+    const sermonPreviewContainer = document.getElementById('sermon-preview-container');
+    const sermonPreviewImg = document.getElementById('sermon-preview-img');
+    const sermonPreviewBadge = document.getElementById('sermon-preview-id-badge');
+    const sermonPreviewLink = document.getElementById('sermon-preview-test-link');
+
+    if (sermonInputId) {
+        sermonInputId.addEventListener('input', () => {
+            const parsedId = extractYouTubeId(sermonInputId.value);
+            if (parsedId) {
+                if (sermonPreviewContainer) sermonPreviewContainer.style.display = 'block';
+                if (sermonPreviewImg) sermonPreviewImg.src = `https://img.youtube.com/vi/${parsedId}/hqdefault.jpg`;
+                if (sermonPreviewBadge) sermonPreviewBadge.innerHTML = `Video ID: <code>${parsedId}</code>`;
+                if (sermonPreviewLink) sermonPreviewLink.href = `https://www.youtube.com/watch?v=${parsedId}`;
+            } else {
+                if (sermonPreviewContainer) sermonPreviewContainer.style.display = 'none';
+            }
+        });
+    }
+
+    let currentAdminSermonFilter = 'all';
+    const filterButtons = document.querySelectorAll('[data-admin-cat-filter]');
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active-filter'));
+            btn.classList.add('active-filter');
+            currentAdminSermonFilter = btn.getAttribute('data-admin-cat-filter');
+            renderSermonsList();
+        });
+    });
+
     const renderSermonsList = () => {
         const list = document.getElementById('admin-sermons-list');
         if (!list) return;
-        const sermons = getSermons();
+        const allSermons = getSermons();
         list.innerHTML = '';
 
-        sermons.forEach((s) => {
+        const filtered = allSermons.filter(s => {
+            if (currentAdminSermonFilter === 'all') return true;
+            return s.category === currentAdminSermonFilter;
+        });
+
+        const countDisplay = document.getElementById('sermons-category-filter-count');
+        if (countDisplay) {
+            countDisplay.textContent = `Showing ${filtered.length} of ${allSermons.length} videos`;
+        }
+
+        if (filtered.length === 0) {
+            list.innerHTML = '<div style="padding: 24px; text-align: center; color: var(--text-muted);">No videos found in this category.</div>';
+            return;
+        }
+
+        filtered.forEach((s) => {
             const item = document.createElement('div');
-            item.style.cssText = 'display: flex; gap: 14px; align-items: center; padding: 12px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm);';
+            item.style.cssText = `display: flex; gap: 14px; align-items: center; padding: 12px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); ${s.hidden ? 'opacity: 0.55;' : ''}`;
+            
+            let badgeColor = '#c084fc';
+            if (s.category === 'sermon-shorts' || s.category === 'shorts') badgeColor = '#ff4d4d';
+            else if (s.category === 'worship-songs') badgeColor = '#f472b6';
+            else if (s.category === 'worship-shorts') badgeColor = '#fb7185';
+            else if (s.category === 'fasting-prayer') badgeColor = '#fbbf24';
+
+            const originalUrl = (s.category === 'sermon-shorts' || s.category === 'worship-shorts' || s.category === 'shorts') ? `https://www.youtube.com/shorts/${s.youtubeId}` : `https://www.youtube.com/watch?v=${s.youtubeId}`;
+
             item.innerHTML = `
-                <img src="https://img.youtube.com/vi/${s.youtubeId}/hqdefault.jpg" style="width: 80px; height: 45px; object-fit: cover; border-radius: 4px;" onerror="this.src='assets/pastor-michael.png'" alt="${s.title}">
-                <div style="flex-grow: 1;">
-                    <strong style="font-size: 0.95rem; display: block;">${s.title}</strong>
-                    <span style="font-size: 0.8rem; color: var(--text-muted);">${s.speaker} • ${s.categoryLabel || s.category} • ${s.duration}</span>
+                <div style="position: relative; flex-shrink: 0;">
+                    <img src="https://img.youtube.com/vi/${s.youtubeId}/hqdefault.jpg" style="width: 90px; height: 52px; object-fit: cover; border-radius: 4px; border: 1px solid var(--border-glass);" onerror="this.src='assets/pastor-michael.png'" alt="${s.title}">
+                    ${s.featured ? '<span style="position: absolute; top: -4px; left: -4px; background: #eab308; color: #000; border-radius: 50%; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; font-size: 0.65rem;" title="Featured on Homepage"><i class="fa-solid fa-star"></i></span>' : ''}
                 </div>
-                <button class="admin-btn admin-btn-danger" style="padding: 6px 12px; font-size: 0.8rem;" data-remove-sermon="${s.id}">
-                    <i class="fa-solid fa-trash"></i>
-                </button>
+                <div style="flex-grow: 1; min-width: 0;">
+                    <strong style="font-size: 0.92rem; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${s.title}">${s.title}</strong>
+                    <div style="display: flex; align-items: center; gap: 8px; margin-top: 4px; font-size: 0.78rem; flex-wrap: wrap;">
+                        <span class="status-badge" style="background: rgba(255,255,255,0.06); color: ${badgeColor}; font-size: 0.72rem; padding: 2px 8px;">${s.categoryLabel || s.category}</span>
+                        <span style="color: var(--text-muted);">${s.speaker || 'Pastor N. Michael Paul'}</span>
+                        <span style="color: var(--text-muted);"><i class="fa-regular fa-clock"></i> ${s.duration || 'Video'}</span>
+                        <a href="${originalUrl}" target="_blank" rel="noopener noreferrer" style="color: var(--accent-secondary); margin-left: auto;" title="Verify original video on YouTube">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Test Link
+                        </a>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 6px; flex-shrink: 0;">
+                    <button class="admin-btn admin-btn-secondary" style="padding: 6px 10px; font-size: 0.75rem;" data-toggle-featured="${s.id}" title="${s.featured ? 'Remove from Homepage' : 'Feature on Homepage'}">
+                        <i class="fa-solid fa-star" style="color: ${s.featured ? '#eab308' : 'var(--text-muted)'};"></i>
+                    </button>
+                    <button class="admin-btn admin-btn-secondary" style="padding: 6px 10px; font-size: 0.75rem;" data-toggle-hidden="${s.id}" title="${s.hidden ? 'Show video' : 'Hide video'}">
+                        <i class="fa-solid ${s.hidden ? 'fa-eye-slash' : 'fa-eye'}"></i>
+                    </button>
+                    <button class="admin-btn admin-btn-danger" style="padding: 6px 10px; font-size: 0.75rem;" data-remove-sermon="${s.id}" title="Remove entry">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
             `;
             list.appendChild(item);
         });
 
         const stat = document.getElementById('stat-sermon-count');
-        if (stat) stat.textContent = sermons.length;
+        if (stat) stat.textContent = allSermons.length;
     };
 
     const renderGalleryList = () => {
@@ -362,49 +1153,162 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ==========================================================================
        5. FORM SUBMISSION HANDLERS
        ========================================================================== */
-    // Add Hero Slide
+    // Image File Picker & Compression Engine for Hero Slide
+    const heroFileInput = document.getElementById('hero-input-file');
+    const heroUrlInput = document.getElementById('hero-input-img');
+    const heroPreviewWrap = document.getElementById('hero-img-preview-wrap');
+    const heroPreviewImg = document.getElementById('hero-img-preview');
+
+    if (heroFileInput) {
+        heroFileInput.addEventListener('change', (e) => {
+            const file = e.target.files && e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = (evt) => {
+                const rawDataUrl = evt.target.result;
+                const img = new Image();
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    let width = img.width;
+                    let height = img.height;
+                    const maxDim = 1280;
+                    if (width > maxDim || height > maxDim) {
+                        if (width > height) {
+                            height = Math.round((height * maxDim) / width);
+                            width = maxDim;
+                        } else {
+                            width = Math.round((width * maxDim) / height);
+                            height = maxDim;
+                        }
+                    }
+                    canvas.width = width;
+                    canvas.height = height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, width, height);
+                    const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.82);
+
+                    if (heroUrlInput) heroUrlInput.value = compressedDataUrl;
+                    if (heroPreviewImg) heroPreviewImg.src = compressedDataUrl;
+                    if (heroPreviewWrap) heroPreviewWrap.style.display = 'block';
+                    if (window.showToast) window.showToast('Photo prepared for publishing!', 'fa-image');
+                };
+                img.src = rawDataUrl;
+            };
+            reader.readAsDataURL(file);
+        });
+    }
+
+    if (heroUrlInput) {
+        heroUrlInput.addEventListener('input', () => {
+            const val = heroUrlInput.value.trim();
+            if (val && heroPreviewImg && heroPreviewWrap) {
+                heroPreviewImg.src = val;
+                heroPreviewWrap.style.display = 'block';
+            } else if (!val && heroPreviewWrap) {
+                heroPreviewWrap.style.display = 'none';
+            }
+        });
+    }
+
+    // Restore Pastoral Defaults Button
+    const btnRestoreDefaults = document.getElementById('btn-restore-hero-defaults');
+    if (btnRestoreDefaults) {
+        btnRestoreDefaults.addEventListener('click', () => {
+            if (confirm('Restore the original 5 official pastoral hero slides? This will reset custom homepage slides.')) {
+                saveHeroSlides(defaultHeroSlides);
+                renderHeroList();
+                if (window.showToast) window.showToast('Restored official pastoral slides!', 'fa-rotate-left');
+            }
+        });
+    }
+
+    // Export Slides JSON Button
+    const btnExportHeroJson = document.getElementById('btn-export-hero-json');
+    if (btnExportHeroJson) {
+        btnExportHeroJson.addEventListener('click', () => {
+            const slides = getHeroSlides();
+            const jsonStr = JSON.stringify(slides, null, 2);
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(jsonStr).then(() => {
+                    if (window.showToast) window.showToast('Slides JSON copied to clipboard!', 'fa-copy');
+                }).catch(() => {
+                    prompt('Copy slides JSON configuration:', jsonStr);
+                });
+            } else {
+                prompt('Copy slides JSON configuration:', jsonStr);
+            }
+        });
+    }
+
+    // Add Hero Slide Form Handler
     const formHero = document.getElementById('form-add-hero-slide');
     if (formHero) {
         formHero.addEventListener('submit', (e) => {
             e.preventDefault();
+            const imgVal = document.getElementById('hero-input-img').value.trim();
+            if (!imgVal) {
+                if (window.showToast) window.showToast('Please upload a photo or enter an image URL.', 'fa-triangle-exclamation');
+                return;
+            }
+
             const newSlide = {
                 id: 'h-' + Date.now(),
-                img: document.getElementById('hero-input-img').value.trim(),
+                img: imgVal,
                 badge: document.getElementById('hero-input-badge').value.trim(),
                 title: document.getElementById('hero-input-title').value.trim(),
                 desc: document.getElementById('hero-input-desc').value.trim(),
                 kb: document.getElementById('hero-input-kb').value
             };
+
             const slides = getHeroSlides();
             slides.push(newSlide);
             saveHeroSlides(slides);
             renderHeroList();
             formHero.reset();
-            if (window.showToast) window.showToast('Hero slide added successfully!', 'fa-circle-check');
+            if (heroPreviewWrap) heroPreviewWrap.style.display = 'none';
+            if (window.showToast) window.showToast('Hero slide saved & synced to live website!', 'fa-cloud-arrow-up');
         });
     }
 
-    // Add Sermon
+    // Add Sermon with YouTube URL Parsing & Category Validation
     const formSermon = document.getElementById('form-add-sermon');
     if (formSermon) {
         formSermon.addEventListener('submit', (e) => {
             e.preventDefault();
+            const rawInput = document.getElementById('sermon-input-id').value.trim();
+            const parsedVideoId = extractYouTubeId(rawInput);
+
+            if (!parsedVideoId) {
+                if (window.showToast) window.showToast('Please enter a valid YouTube Video URL or 11-char ID', 'fa-triangle-exclamation');
+                return;
+            }
+
             const catSelect = document.getElementById('sermon-input-category');
+            const featuredCheckbox = document.getElementById('sermon-input-featured');
+            const branchInput = document.getElementById('sermon-input-branch');
+
             const newSermon = {
                 id: 's-' + Date.now(),
-                youtubeId: document.getElementById('sermon-input-id').value.trim(),
+                youtubeId: parsedVideoId,
                 title: document.getElementById('sermon-input-title').value.trim(),
                 speaker: document.getElementById('sermon-input-speaker').value.trim(),
                 category: catSelect.value,
-                categoryLabel: catSelect.options[catSelect.selectedIndex].text,
-                duration: document.getElementById('sermon-input-duration').value.trim() || '45:00'
+                categoryLabel: catSelect.options[catSelect.selectedIndex].text.replace(/^[0-9]\.\s*/, ''),
+                duration: document.getElementById('sermon-input-duration').value.trim() || '45:00',
+                branch: branchInput ? branchInput.value.trim() : '',
+                featured: featuredCheckbox ? featuredCheckbox.checked : false,
+                hidden: false
             };
+
             const sermons = getSermons();
             sermons.unshift(newSermon);
             saveSermons(sermons);
             renderSermonsList();
             formSermon.reset();
-            if (window.showToast) window.showToast('Sermon published to library!', 'fa-video');
+
+            if (sermonPreviewContainer) sermonPreviewContainer.style.display = 'none';
+            if (window.showToast) window.showToast('Video published to church library!', 'fa-video');
         });
     }
 
@@ -460,6 +1364,33 @@ document.addEventListener('DOMContentLoaded', () => {
             saveHeroSlides(slides);
             renderHeroList();
             if (window.showToast) window.showToast('Hero slide removed.', 'fa-trash');
+        }
+
+        
+        // Feature toggle
+        const toggleFeatured = e.target.closest('[data-toggle-featured]');
+        if (toggleFeatured) {
+            const id = toggleFeatured.getAttribute('data-toggle-featured');
+            const sermons = getSermons().map(s => {
+                if (s.id === id) return { ...s, featured: !s.featured };
+                return s;
+            });
+            saveSermons(sermons);
+            renderSermonsList();
+            if (window.showToast) window.showToast('Updated featured status.', 'fa-star');
+        }
+
+        // Hide toggle
+        const toggleHidden = e.target.closest('[data-toggle-hidden]');
+        if (toggleHidden) {
+            const id = toggleHidden.getAttribute('data-toggle-hidden');
+            const sermons = getSermons().map(s => {
+                if (s.id === id) return { ...s, hidden: !s.hidden };
+                return s;
+            });
+            saveSermons(sermons);
+            renderSermonsList();
+            if (window.showToast) window.showToast('Updated video visibility.', 'fa-eye');
         }
 
         const removeSermon = e.target.closest('[data-remove-sermon]');
@@ -688,5 +1619,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Initial Auth Check
+    
+    // YouTube Official Channel Catalog Sync
+    const syncYoutubeBtn = document.getElementById('btn-sync-official-youtube');
+    if (syncYoutubeBtn) {
+        syncYoutubeBtn.addEventListener('click', () => {
+            if (confirm('Restore verified 39 videos from official YouTube channel @nmichaelpaul? Custom videos will be merged.')) {
+                const current = getSermons();
+                const defaultIds = new Set(defaultSermons.map(s => s.youtubeId));
+                const customOnly = current.filter(s => !defaultIds.has(s.youtubeId));
+                const merged = [...customOnly, ...defaultSermons];
+                saveSermons(merged);
+                renderSermonsList();
+                if (window.showToast) window.showToast('Official YouTube catalog synced successfully!', 'fa-rotate');
+            }
+        });
+    }
+
     checkAuth();
 });

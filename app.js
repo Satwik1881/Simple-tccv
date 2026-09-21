@@ -73,23 +73,68 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ==========================================================================
-       3. CINEMATIC HERO CAROUSEL CONTROLLER
+       3. CINEMATIC HERO CAROUSEL CONTROLLER (WITH DYNAMIC SYNC)
        ========================================================================== */
     const initHeroCarousel = () => {
         const heroSection = document.getElementById('hero');
-        const heroSlides = document.querySelectorAll('.hero-slide');
+        if (!heroSection) return;
+
+        const heroSlidesContainer = heroSection.querySelector('.hero-slides');
+        const indicatorsContainer = document.getElementById('hero-indicators');
         const prevBtn = document.getElementById('hero-prev-btn');
         const nextBtn = document.getElementById('hero-next-btn');
-        const indicators = document.querySelectorAll('.hero-indicator');
+
+        // Check if custom slides exist in localStorage
+        let activeSlides = null;
+        try {
+            const stored = localStorage.getItem('tccv-hero-slides');
+            if (stored) {
+                const parsed = JSON.parse(stored);
+                if (Array.isArray(parsed) && parsed.length > 0) {
+                    activeSlides = parsed;
+                }
+            }
+        } catch (err) {
+            console.warn('Error reading stored hero slides:', err);
+        }
+
+        // Render slides if custom slides exist
+        if (activeSlides && heroSlidesContainer) {
+            heroSlidesContainer.innerHTML = '';
+            activeSlides.forEach((slide, idx) => {
+                const slideEl = document.createElement('div');
+                slideEl.className = `hero-slide ${idx === 0 ? 'active' : ''} ${slide.kb || 'kb-1'}`;
+                slideEl.innerHTML = `<div class="hero-slide-bg" style="background-image: url('${slide.img}')"></div>`;
+                heroSlidesContainer.appendChild(slideEl);
+            });
+
+            if (indicatorsContainer) {
+                indicatorsContainer.innerHTML = '';
+                activeSlides.forEach((_, idx) => {
+                    const indEl = document.createElement('div');
+                    indEl.className = `hero-indicator ${idx === 0 ? 'active' : ''}`;
+                    indEl.innerHTML = '<div class="indicator-fill"></div>';
+                    indicatorsContainer.appendChild(indEl);
+                });
+            }
+        }
+
+        let heroSlides = heroSection.querySelectorAll('.hero-slide');
+        let indicators = heroSection.querySelectorAll('.hero-indicator');
 
         if (!heroSlides || heroSlides.length === 0) return;
 
         let currentHeroIndex = 0;
         let heroTimer = null;
-        const totalSlides = heroSlides.length;
+        let totalSlides = heroSlides.length;
         const slideDuration = 6500; // 6.5s per slide
 
         const showHeroSlide = (index) => {
+            heroSlides = heroSection.querySelectorAll('.hero-slide');
+            indicators = heroSection.querySelectorAll('.hero-indicator');
+            totalSlides = heroSlides.length;
+            if (totalSlides === 0) return;
+
             if (index < 0) index = totalSlides - 1;
             if (index >= totalSlides) index = 0;
             currentHeroIndex = index;
@@ -103,7 +148,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     const bg = slide.querySelector('.hero-slide-bg');
                     if (bg) {
                         bg.style.animation = 'none';
-                        // Trigger reflow
                         void bg.offsetWidth;
                         bg.style.animation = '';
                     }
@@ -114,6 +158,24 @@ document.addEventListener('DOMContentLoaded', () => {
             indicators.forEach((indicator, idx) => {
                 indicator.classList.toggle('active', idx === currentHeroIndex);
             });
+
+            // If active custom slide has custom text, optionally reflect it
+            if (activeSlides && activeSlides[currentHeroIndex]) {
+                const s = activeSlides[currentHeroIndex];
+                const badgeEl = heroSection.querySelector('.hero-slide-badge');
+                const titleEl = heroSection.querySelector('.hero-title');
+                const descEl = heroSection.querySelector('.hero-description');
+
+                if (badgeEl && s.badge) {
+                    badgeEl.innerHTML = `<i class="fa-solid fa-church"></i> ${s.badge}`;
+                }
+                if (titleEl && s.title) {
+                    titleEl.innerHTML = `<span class="title-main-gradient">${s.title.toUpperCase()}</span>`;
+                }
+                if (descEl && s.desc) {
+                    descEl.textContent = s.desc;
+                }
+            }
         };
 
         const nextHeroSlide = () => {
@@ -137,60 +199,101 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         if (nextBtn) {
-            nextBtn.addEventListener('click', () => {
+            nextBtn.onclick = () => {
                 nextHeroSlide();
                 startHeroAutoplay();
-            });
+            };
         }
 
         if (prevBtn) {
-            prevBtn.addEventListener('click', () => {
+            prevBtn.onclick = () => {
                 prevHeroSlide();
                 startHeroAutoplay();
-            });
-        }
-
-        indicators.forEach((indicator, idx) => {
-            indicator.addEventListener('click', () => {
-                showHeroSlide(idx);
-                startHeroAutoplay();
-            });
-        });
-
-        // Pause on hover
-        if (heroSection) {
-            heroSection.addEventListener('mouseenter', stopHeroAutoplay);
-            heroSection.addEventListener('mouseleave', startHeroAutoplay);
-
-            // Touch swipe support
-            let touchStartX = 0;
-            let touchEndX = 0;
-
-            heroSection.addEventListener('touchstart', (e) => {
-                touchStartX = e.changedTouches[0].screenX;
-            }, { passive: true });
-
-            heroSection.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                handleHeroSwipe();
-            }, { passive: true });
-
-            const handleHeroSwipe = () => {
-                const diff = touchEndX - touchStartX;
-                if (Math.abs(diff) > 50) {
-                    if (diff < 0) {
-                        nextHeroSlide();
-                    } else {
-                        prevHeroSlide();
-                    }
-                    startHeroAutoplay();
-                }
             };
         }
+
+        const attachIndicatorEvents = () => {
+            indicators = heroSection.querySelectorAll('.hero-indicator');
+            indicators.forEach((indicator, idx) => {
+                indicator.onclick = () => {
+                    showHeroSlide(idx);
+                    startHeroAutoplay();
+                };
+            });
+        };
+        attachIndicatorEvents();
+
+        // Pause on hover
+        heroSection.addEventListener('mouseenter', stopHeroAutoplay);
+        heroSection.addEventListener('mouseleave', startHeroAutoplay);
+
+        // Touch swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        heroSection.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        heroSection.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            const diff = touchEndX - touchStartX;
+            if (Math.abs(diff) > 50) {
+                if (diff < 0) {
+                    nextHeroSlide();
+                } else {
+                    prevHeroSlide();
+                }
+                startHeroAutoplay();
+            }
+        }, { passive: true });
 
         // Initialize hero
         showHeroSlide(0);
         startHeroAutoplay();
+
+        // Cloud sync from Firebase Firestore if available
+        if (typeof firebase !== 'undefined' && firebase.firestore) {
+            try {
+                const cloudDb = firebase.firestore();
+                cloudDb.collection('site_content').doc('hero_slides').get().then((doc) => {
+                    if (doc.exists && doc.data().slides && doc.data().slides.length > 0) {
+                        const cloudSlides = doc.data().slides;
+                        const currentJson = JSON.stringify(activeSlides || []);
+                        const cloudJson = JSON.stringify(cloudSlides);
+                        if (currentJson !== cloudJson) {
+                            activeSlides = cloudSlides;
+                            localStorage.setItem('tccv-hero-slides', cloudJson);
+                            // Re-render slides
+                            if (heroSlidesContainer) {
+                                heroSlidesContainer.innerHTML = '';
+                                activeSlides.forEach((slide, idx) => {
+                                    const slideEl = document.createElement('div');
+                                    slideEl.className = `hero-slide ${idx === 0 ? 'active' : ''} ${slide.kb || 'kb-1'}`;
+                                    slideEl.innerHTML = `<div class="hero-slide-bg" style="background-image: url('${slide.img}')"></div>`;
+                                    heroSlidesContainer.appendChild(slideEl);
+                                });
+                            }
+                            if (indicatorsContainer) {
+                                indicatorsContainer.innerHTML = '';
+                                activeSlides.forEach((_, idx) => {
+                                    const indEl = document.createElement('div');
+                                    indEl.className = `hero-indicator ${idx === 0 ? 'active' : ''}`;
+                                    indEl.innerHTML = '<div class="indicator-fill"></div>';
+                                    indicatorsContainer.appendChild(indEl);
+                                });
+                            }
+                            attachIndicatorEvents();
+                            showHeroSlide(0);
+                        }
+                    }
+                }).catch(err => {
+                    console.log('Hero slides cloud sync notice:', err);
+                });
+            } catch (cloudErr) {
+                console.warn('Firestore hero check error:', cloudErr);
+            }
+        }
     };
 
     initHeroCarousel();

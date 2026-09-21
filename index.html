@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Join us for Sunday Service at The Calvary Church Vijayawada, led by Pastor N Michael Paul and Sis. Sami Symphony Paul. Service starts at 10:00 AM at Swarnas Convention, Vijayawada.">
+        content="Welcome to The Calvary Church Vijayawada – Guntur. Led by Pastor N. Michael Paul and Sis. Sami Symphony Paul. Join us for Sunday Worship in Vijayawada (10:00 AM) & Guntur (06:00 AM).">
     <meta name="keywords"
-        content="Calvary Church, Vijayawada, Sunday Service, Pastor N Michael Paul, Sis Sami Symphony Paul, Swarna's Convention, Church Vijayawada">
-    <title>Sunday Service - The Calvary Church Vijayawada</title>
+        content="The Calvary Church, Calvary Church Vijayawada, Calvary Church Guntur, Pastor N Michael Paul, Sis Sami Symphony Paul, Dr N Jayapaul, Swarnas Convention Vijayawada, Sunday Service, Telugu Christian Sermons">
+    <title>The Calvary Church Vijayawada – Guntur | Pastor N. Michael Paul</title>
 
     <!-- Google Fonts: Outfit (Headings) and Inter (Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,11 +17,11 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
-    <!-- FontAwesome for Premium Icons -->
+    <!-- FontAwesome 6.5.1 for Premium Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=31">
+    <link rel="stylesheet" href="style.css?v=35">
 </head>
 
 <body class="dark-theme">
@@ -35,19 +35,21 @@
     <!-- Navigation Header -->
     <header id="main-header" class="glass-nav">
         <div class="nav-container">
-            <a href="#" class="logo-link" id="nav-logo">
+            <a href="index.html" class="logo-link" id="nav-logo">
                 <span class="logo-accent">THE CALVARY CHURCH</span>
-                <span class="logo-text">VIJAYAWADA - GUNTUR</span>
+                <span class="logo-text">VIJAYAWADA – GUNTUR</span>
             </a>
 
             <nav class="nav-links" id="nav-menu">
-                <a href="#hero" class="active">Home</a>
-                <a href="#pastors">Our Pastors</a>
-                <a href="#foundation">Our Foundation</a>
-                <a href="#holy-communion">Communion</a>
-                <a href="#service-info">Service Info</a>
-                <a href="#prayer-wall">Prayer Request</a>
-                <a href="#contact">Contact</a>
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="pastors.html">Pastors</a>
+                <a href="sermons.html">Sermons</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="ministries.html">Ministries</a>
+                <a href="events.html">Events</a>
+                <a href="contact.html">Prayer & Contact</a>
+                <a href="admin.html" title="Media Team Portal"><i class="fa-solid fa-shield-halved"></i> Admin</a>
             </nav>
 
             <div class="nav-actions">
@@ -66,47 +68,66 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- ==========================================================================
+             CINEMATIC ANIMATED HERO CAROUSEL
+             ========================================================================== -->
         <section id="hero" class="hero-section">
             <div class="hero-slides">
-                <div class="hero-slide active" style="background-image: url('assets/hero-bg.png')"></div>
+                <!-- Slide 1: Welcome & Church Overview -->
+                <div class="hero-slide active kb-1">
+                    <div class="hero-slide-bg" style="background-image: url('assets/hero-bg.png')"></div>
+                </div>
+                <!-- Slide 2: Worship & Gatherings -->
+                <div class="hero-slide kb-2">
+                    <div class="hero-slide-bg" style="background-image: url('assets/church-service-worship.png')"></div>
+                </div>
+                <!-- Slide 3: Sacred Communion -->
+                <div class="hero-slide kb-3">
+                    <div class="hero-slide-bg" style="background-image: url('assets/communion-1.png')"></div>
+                </div>
+                <!-- Slide 4: Spiritual Foundation -->
+                <div class="hero-slide kb-4">
+                    <div class="hero-slide-bg" style="background-image: url('assets/pastors-foundation.png')"></div>
+                </div>
             </div>
+
             <div class="hero-overlay"></div>
+
             <div class="hero-content-wrapper">
                 <div class="hero-text-block">
-
+                    <div class="hero-slide-badge animate-reveal">
+                        <i class="fa-solid fa-church"></i> The Calvary Church Vijayawada – Guntur
+                    </div>
 
                     <h1 class="hero-title animate-reveal">
-                        <span class="title-main-gradient">THE CALVARY CHURCH VIJAYAWADA - GUNTUR</span>
+                        <span class="title-main-gradient">EXPERIENCE GOD'S LOVE & POWER</span>
                     </h1>
 
                     <p class="hero-description animate-fade-in-delay">
-                        Join us for an uplifting morning of dynamic worship, powerful prayer, and life-changing
-                        ministry.
-                        Led by Pastor N Michael Paul & Sis. Sami Symphony Paul.
+                        Welcome to a vibrant fellowship founded on faith, devoted to sound biblical truth, and passionate about worship. Led by <strong>Pastor N. Michael Paul</strong> and <strong>Sis. Sami Symphony Paul</strong>.
                     </p>
 
-                    <!-- Call to Actions -->
+                    <!-- Hero Call to Action Buttons -->
                     <div class="hero-ctas animate-fade-in-delay-3">
-                        <a href="#service-info" class="cta-btn primary-btn">
-                            <i class="fa-solid fa-location-dot"></i> Get Directions
+                        <a href="sermons.html" class="cta-btn primary-btn">
+                            <i class="fa-solid fa-play"></i> Watch Sermons
                         </a>
-                        <a href="#prayer-wall" class="cta-btn secondary-btn">
-                            <i class="fa-solid fa-hand-holding-heart"></i> Send Prayer Request
+                        <a href="#service-info" class="cta-btn secondary-btn">
+                            <i class="fa-solid fa-location-dot"></i> Join This Sunday
+                        </a>
+                        <a href="about.html" class="cta-btn secondary-btn">
+                            <i class="fa-solid fa-book-bible"></i> Explore Our Church
                         </a>
                     </div>
                 </div>
 
-                <!-- Countdown Timer Card -->
+                <!-- Dual Branch Live Countdown Card -->
                 <div class="countdown-card glass-panel animate-fade-in-delay-2">
-                    <!-- Branch Selector Slider -->
                     <div class="branch-selector">
-                        <button id="btn-branch-vja" class="branch-tab-btn active" data-branch="vja">Vijayawada
-                            SERVICE</button>
+                        <button id="btn-branch-vja" class="branch-tab-btn active" data-branch="vja">Vijayawada SERVICE</button>
                         <button id="btn-branch-gnt" class="branch-tab-btn" data-branch="gnt">Guntur SERVICE</button>
                     </div>
-                    <h3 class="countdown-title">COUNTDOWN TO <span id="countdown-branch-label">VIJAYAWADA</span> SERVICE
-                    </h3>
+                    <h3 class="countdown-title">COUNTDOWN TO <span id="countdown-branch-label">VIJAYAWADA</span> SERVICE</h3>
                     <div class="timer-grid">
                         <div class="timer-segment">
                             <span id="days" class="timer-num">00</span>
@@ -128,7 +149,26 @@
                             <span class="timer-label">Secs</span>
                         </div>
                     </div>
+                    <div style="margin-top: 14px; text-align: center; font-size: 0.82rem; color: var(--text-secondary);">
+                        <i class="fa-regular fa-clock"></i> Vijayawada: 10:00 AM | Guntur: 06:00 AM
+                    </div>
                 </div>
+            </div>
+
+            <!-- Hero Carousel Controls & Indicators -->
+            <div class="hero-controls">
+                <button class="hero-nav-btn" id="hero-prev-btn" aria-label="Previous slide">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <div class="hero-indicators" id="hero-indicators">
+                    <div class="hero-indicator active"><div class="indicator-fill"></div></div>
+                    <div class="hero-indicator"><div class="indicator-fill"></div></div>
+                    <div class="hero-indicator"><div class="indicator-fill"></div></div>
+                    <div class="hero-indicator"><div class="indicator-fill"></div></div>
+                </div>
+                <button class="hero-nav-btn" id="hero-next-btn" aria-label="Next slide">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
             </div>
 
             <!-- Bottom Scroll indicator -->
@@ -137,52 +177,43 @@
             </a>
         </section>
 
-        <!-- Pastoral Profile Section -->
+        <!-- ==========================================================================
+             SECTION 5A: PASTORAL LEADERSHIP CAROUSEL / SPOTLIGHT
+             ========================================================================== -->
         <section id="pastors" class="pastors-section section-padding">
             <div class="section-container">
                 <div class="section-header">
-                    <span class="section-subtitle">Spiritual Leadership</span>
+                    <span class="section-subtitle">Spiritual Shepherds</span>
                     <h2 class="section-title">MEET OUR PASTORS</h2>
                     <div class="header-divider"></div>
+                    <p class="section-description" style="max-width: 700px; margin: 0 auto;">
+                        Faithfully proclaiming the uncompromised Word of God with love, authority, and pastoral care across Vijayawada and Guntur.
+                    </p>
                 </div>
 
                 <div class="pastors-grid">
                     <!-- PASTOR N MICHAEL PAUL CARD -->
                     <div class="pastor-individual-card glass-panel animate-on-scroll">
                         <div class="pastor-img-box">
-                            <img src="assets/pastor-michael-card.png?v=3" alt="Pastor N Michael Paul"
-                                class="pastor-profile-img img-pastor-card-position">
+                            <img src="assets/pastor-michael-card.png" alt="Pastor N Michael Paul" class="pastor-profile-img img-pastor-card-position">
                             <div class="pastor-img-overlay"></div>
                         </div>
                         <div class="pastor-info-box">
-                            <span class="pastor-label">Pastor</span>
+                            <span class="pastor-label">Lead Pastor</span>
                             <h3 class="pastor-name">Pastor N Michael Paul</h3>
                             <p class="pastor-individual-bio">
-                                Pastor N Michael Paul is the Second son of Dr. N Jayapaul. A visionary leader, powerful
-                                teacher, and shepherding guide
-                                dedicated to preaching the sound message of grace. With a calling to lead and counsel,
-                                he guides both our Vijayawada and Guntur church branches with dynamic, sound teaching,
-                                inspiring a deeper relationship with God.
+                                Pastor N. Michael Paul is the second son of Dr. N. Jayapaul. A visionary leader, dynamic preacher, and shepherd dedicated to preaching the sound gospel of grace. He leads both our Vijayawada and Guntur churches with sound doctrine and a heart for revival.
                             </p>
                             <div class="pastor-individual-badges">
-                                <span class="badge"><i class="fa-solid fa-microphone"></i> Powerful Preaching</span>
-                                <span class="badge"><i class="fa-solid fa-book-open"></i> Sound Doctrine</span>
+                                <span class="badge"><i class="fa-solid fa-microphone"></i> Sound Preaching</span>
+                                <span class="badge"><i class="fa-solid fa-book-bible"></i> Grace & Truth</span>
                             </div>
                             <div class="pastor-individual-socials">
-                                <a href="https://www.instagram.com/nmichaelpaul?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                                    target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram"><i
-                                        class="fa-brands fa-instagram"></i></a>
-                                <a href="https://www.facebook.com/nmichaelpaul" target="_blank"
-                                    rel="noopener noreferrer" class="social-link" title="Facebook"><i
-                                        class="fa-brands fa-facebook-f"></i></a>
-                                <a href="https://www.youtube.com/@nmichaelpaul" target="_blank"
-                                    rel="noopener noreferrer" class="social-link" title="YouTube"><i
-                                        class="fa-brands fa-youtube"></i></a>
-                                <a href="https://whatsapp.com/channel/0029VaQO65VIt5s43cfuXr3v" target="_blank"
-                                    rel="noopener noreferrer" class="social-link" title="WhatsApp Channel"><i
-                                        class="fa-brands fa-whatsapp"></i></a>
-                                <a href="https://x.com/nmichaelpaul" target="_blank" rel="noopener noreferrer"
-                                    class="social-link" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                                <a href="https://www.instagram.com/nmichaelpaul" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/nmichaelpaul" target="_blank" rel="noopener noreferrer" class="social-link" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="https://www.youtube.com/@nmichaelpaul" target="_blank" rel="noopener noreferrer" class="social-link" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                                <a href="https://whatsapp.com/channel/0029VaQO65VIt5s43cfuXr3v" target="_blank" rel="noopener noreferrer" class="social-link" title="WhatsApp Channel"><i class="fa-brands fa-whatsapp"></i></a>
+                                <a href="https://x.com/nmichaelpaul" target="_blank" rel="noopener noreferrer" class="social-link" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
                             </div>
                         </div>
                     </div>
@@ -190,168 +221,157 @@
                     <!-- SIS. SAMI SYMPHONY PAUL CARD -->
                     <div class="pastor-individual-card glass-panel animate-on-scroll">
                         <div class="pastor-img-box">
-                            <img src="assets/sister-sami-card.png?v=3" alt="Sis. Sami Symphony Paul"
-                                class="pastor-profile-img img-sister-card-position">
+                            <img src="assets/sister-sami-card.png" alt="Sis. Sami Symphony Paul" class="pastor-profile-img img-sister-card-position">
                             <div class="pastor-img-overlay"></div>
                         </div>
                         <div class="pastor-info-box">
                             <span class="pastor-label">Co-Pastor & Worship Leader</span>
                             <h3 class="pastor-name">Sis. Sami Symphony Paul</h3>
                             <p class="pastor-individual-bio">
-                                Sis. Sami Symphony Paul serves alongside her husband in leading our church family. A
-                                passionate worship leader and caring counselor, she directs early morning gatherings,
-                                oversees women's ministries, and inspires spiritual growth in Guntur & Vijayawada.
+                                Sis. Sami Symphony Paul serves alongside her husband in leading our church family. An anointed worship leader and compassionate counselor, she directs worship services, leads women's gatherings, and inspires deep spiritual intimacy with God.
                             </p>
                             <div class="pastor-individual-badges">
-                                <span class="badge"><i class="fa-solid fa-music"></i> Worship Ministry</span>
+                                <span class="badge"><i class="fa-solid fa-music"></i> Worship Anointing</span>
                                 <span class="badge"><i class="fa-solid fa-heart"></i> Pastoral Care</span>
                             </div>
                             <div class="pastor-individual-socials">
-                                <a href="https://www.instagram.com/samisymphonypaul" target="_blank"
-                                    rel="noopener noreferrer" class="social-link" title="Instagram"><i
-                                        class="fa-brands fa-instagram"></i></a>
-                                <a href="https://www.facebook.com/samisymphonypaul" target="_blank"
-                                    rel="noopener noreferrer" class="social-link" title="Facebook"><i
-                                        class="fa-brands fa-facebook-f"></i></a>
-                                <a href="https://youtube.com/@samisymphonypaul?si=CH5aVdea45ml08rK" target="_blank"
-                                    rel="noopener noreferrer" class="social-link" title="YouTube"><i
-                                        class="fa-brands fa-youtube"></i></a>
+                                <a href="https://www.instagram.com/samisymphonypaul" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/samisymphonypaul" target="_blank" rel="noopener noreferrer" class="social-link" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="https://youtube.com/@samisymphonypaul" target="_blank" rel="noopener noreferrer" class="social-link" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Foundation of Faith Section -->
-        <section id="foundation" class="foundation-section">
-            <div class="section-container foundation-grid animate-on-scroll">
-                <div class="foundation-image-col">
-                    <div class="foundation-img-box glass-panel">
-                        <img src="assets/pastors-foundation.png"
-                            alt="Pastor N Michael Paul and Sis. Sami Symphony Paul in Prayer" class="foundation-img">
-                        <div class="foundation-img-overlay"></div>
-                    </div>
-                </div>
-                <div class="foundation-text-col">
-                    <span class="section-subtitle">Our Firm Foundation</span>
-                    <h2 class="section-title align-left">BUILT ON THE ROCK</h2>
-                    <div class="header-divider align-left"></div>
-                    <p class="foundation-desc">
-                        In The Calvary Church Vijayawada, we stand firmly built upon the unshakeable foundation of faith
-                        in Jesus Christ. Under the faithful leadership and spiritual oversight of Pastor N Michael Paul
-                        and Sis. Sami Symphony Paul, our church family is rooted in the truth of God's Word.
-                    </p>
-                    <p class="foundation-desc">
-                        "For no other foundation can anyone lay than that which is laid, which is Jesus Christ." — 1
-                        Corinthians 3:11. With deep devotion and sound teaching, we continue to grow together as a
-                        family of believers, established in faith and abounding in thanksgiving.
-                    </p>
-                    <div class="foundation-badges">
-                        <div class="foundation-badge">
-                            <i class="fa-solid fa-cross badge-icon"></i>
-                            <span></span>
-                        </div>
-                        <div class="foundation-badge">
-                            <i class="fa-solid fa-anchor badge-icon"></i>
-                            <span></span>
-                        </div>
-                        <div class="foundation-badge">
-                            <i class="fa-solid fa-users badge-icon"></i>
-                            <span></span>
-                        </div>
-                    </div>
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="pastors.html" class="cta-btn secondary-btn">
+                        <i class="fa-solid fa-user-group"></i> View Complete Pastoral Biography & Ministry
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Social Media Connection Section -->
-        <section id="social-connect" class="social-connect-section section-padding">
+        <!-- ==========================================================================
+             SECTION 5C: FEATURED SERMONS CAROUSEL
+             ========================================================================== -->
+        <section id="sermons-featured" class="section-padding" style="background: rgba(14, 16, 23, 0.4);">
             <div class="section-container">
                 <div class="section-header">
-                    <span class="section-subtitle">Stay Connected</span>
-                    <h2 class="section-title">CONNECT WITH US ON SOCIAL MEDIA</h2>
+                    <span class="section-subtitle">Sound Doctrine & Preaching</span>
+                    <h2 class="section-title">FEATURED SERMONS & MESSAGES</h2>
                     <div class="header-divider"></div>
+                    <p class="section-description">
+                        Watch powerful Telugu sermons and messages from Pastor N. Michael Paul's YouTube ministry.
+                    </p>
                 </div>
 
-                <div class="connect-grid">
-                    <!-- PASTOR MICHAEL SOCIALS CARD -->
-                    <div class="connect-card glass-panel animate-on-scroll">
-                        <div class="connect-header">
-                            <div class="connect-avatar-img-wrapper michael-glow">
-                                <img src="assets/pastor-michael.png" alt="Pastor N Michael Paul"
-                                    class="connect-avatar-img">
+                <div class="c-carousel-wrapper">
+                    <div class="c-carousel-track">
+                        <!-- Sermon Card 1 -->
+                        <div class="c-carousel-card sermon-card" data-youtube-id="HsFLENGbS_G" data-video-title="21 Days Fasting Prayer - Seeking God's Will">
+                            <div class="sermon-thumb-wrap">
+                                <img src="assets/church-service-worship.png" alt="21 Days Fasting Prayer" class="sermon-thumb-img">
+                                <div class="sermon-play-overlay">
+                                    <div class="sermon-play-btn"><i class="fa-solid fa-play"></i></div>
+                                </div>
+                                <span class="sermon-duration-tag"><i class="fa-solid fa-clock"></i> 48:20</span>
                             </div>
-                            <div class="connect-pastor-info">
-                                <h3 class="connect-pastor-name">Pastor N Michael Paul</h3>
-                                <span class="connect-pastor-role">Lead Pastor</span>
+                            <div class="sermon-info">
+                                <div class="sermon-meta-row">
+                                    <span class="sermon-category-tag">Fasting Prayer</span>
+                                    <span class="sermon-date">Recent Series</span>
+                                </div>
+                                <h3 class="sermon-title">21 Days Fasting Prayer – Seeking God's Will</h3>
+                                <div class="sermon-speaker">
+                                    <i class="fa-solid fa-user-tie"></i> Pastor N. Michael Paul
+                                </div>
                             </div>
                         </div>
-                        <div class="connect-links">
-                            <a href="https://www.instagram.com/nmichaelpaul?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                                target="_blank" rel="noopener noreferrer" class="connect-link instagram"
-                                title="Instagram">
-                                <i class="fa-brands fa-instagram"></i>
-                                <span>Instagram</span>
-                            </a>
-                            <a href="https://www.facebook.com/nmichaelpaul" target="_blank" rel="noopener noreferrer"
-                                class="connect-link facebook" title="Facebook">
-                                <i class="fa-brands fa-facebook-f"></i>
-                                <span>Facebook</span>
-                            </a>
-                            <a href="https://www.youtube.com/@nmichaelpaul" target="_blank" rel="noopener noreferrer"
-                                class="connect-link youtube" title="YouTube">
-                                <i class="fa-brands fa-youtube"></i>
-                                <span>YouTube</span>
-                            </a>
-                            <a href="https://whatsapp.com/channel/0029VaQO65VIt5s43cfuXr3v" target="_blank"
-                                rel="noopener noreferrer" class="connect-link whatsapp" title="WhatsApp Channel">
-                                <i class="fa-brands fa-whatsapp"></i>
-                                <span>WhatsApp Channel</span>
-                            </a>
-                            <a href="https://x.com/nmichaelpaul" target="_blank" rel="noopener noreferrer"
-                                class="connect-link twitter" title="X (Twitter)">
-                                <i class="fa-brands fa-x-twitter"></i>
-                                <span>X (Twitter)</span>
-                            </a>
+
+                        <!-- Sermon Card 2 -->
+                        <div class="c-carousel-card sermon-card" data-youtube-id="GdrjN90YE-u" data-video-title="Are You Really Living in God's Will?">
+                            <div class="sermon-thumb-wrap">
+                                <img src="assets/pastor-michael.png" alt="Are You Really Living in God's Will?" class="sermon-thumb-img">
+                                <div class="sermon-play-overlay">
+                                    <div class="sermon-play-btn"><i class="fa-solid fa-play"></i></div>
+                                </div>
+                                <span class="sermon-duration-tag"><i class="fa-solid fa-clock"></i> 52:10</span>
+                            </div>
+                            <div class="sermon-info">
+                                <div class="sermon-meta-row">
+                                    <span class="sermon-category-tag">Sunday Message</span>
+                                    <span class="sermon-date">Sunday Gathering</span>
+                                </div>
+                                <h3 class="sermon-title">Are You Really Living in God's Will?</h3>
+                                <div class="sermon-speaker">
+                                    <i class="fa-solid fa-user-tie"></i> Pastor N. Michael Paul
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sermon Card 3 -->
+                        <div class="c-carousel-card sermon-card" data-youtube-id="evbuuMHI24O" data-video-title="Built on the Rock - 1 Corinthians 3:11">
+                            <div class="sermon-thumb-wrap">
+                                <img src="assets/pastors-foundation.png" alt="Built on the Rock" class="sermon-thumb-img">
+                                <div class="sermon-play-overlay">
+                                    <div class="sermon-play-btn"><i class="fa-solid fa-play"></i></div>
+                                </div>
+                                <span class="sermon-duration-tag"><i class="fa-solid fa-clock"></i> 44:15</span>
+                            </div>
+                            <div class="sermon-info">
+                                <div class="sermon-meta-row">
+                                    <span class="sermon-category-tag">Grace & Truth</span>
+                                    <span class="sermon-date">Foundation Word</span>
+                                </div>
+                                <h3 class="sermon-title">Built on the Rock – 1 Corinthians 3:11</h3>
+                                <div class="sermon-speaker">
+                                    <i class="fa-solid fa-user-tie"></i> Pastor N. Michael Paul
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sermon Card 4 -->
+                        <div class="c-carousel-card sermon-card" data-youtube-id="YpY_nY7lBa" data-video-title="The Power of the Blood & Holy Communion">
+                            <div class="sermon-thumb-wrap">
+                                <img src="assets/communion-4.png" alt="Holy Communion Message" class="sermon-thumb-img">
+                                <div class="sermon-play-overlay">
+                                    <div class="sermon-play-btn"><i class="fa-solid fa-play"></i></div>
+                                </div>
+                                <span class="sermon-duration-tag"><i class="fa-solid fa-clock"></i> 39:40</span>
+                            </div>
+                            <div class="sermon-info">
+                                <div class="sermon-meta-row">
+                                    <span class="sermon-category-tag">Communion Ordinance</span>
+                                    <span class="sermon-date">First Sunday</span>
+                                </div>
+                                <h3 class="sermon-title">The Power of the Blood & Holy Communion</h3>
+                                <div class="sermon-speaker">
+                                    <i class="fa-solid fa-user-tie"></i> Pastor N. Michael Paul
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- SISTER SAMI SOCIALS CARD -->
-                    <div class="connect-card glass-panel animate-on-scroll">
-                        <div class="connect-header">
-                            <div class="connect-avatar-img-wrapper sami-glow">
-                                <img src="assets/sister-sami.png" alt="Sis. Sami Symphony Paul"
-                                    class="connect-avatar-img">
-                            </div>
-                            <div class="connect-pastor-info">
-                                <h3 class="connect-pastor-name">Sis. Sami Symphony Paul</h3>
-                                <span class="connect-pastor-role">Co-Pastor & Worship Leader</span>
-                            </div>
-                        </div>
-                        <div class="connect-links">
-                            <a href="https://www.instagram.com/samisymphonypaul" target="_blank"
-                                rel="noopener noreferrer" class="connect-link instagram" title="Instagram">
-                                <i class="fa-brands fa-instagram"></i>
-                                <span>Instagram</span>
-                            </a>
-                            <a href="https://www.facebook.com/samisymphonypaul" target="_blank"
-                                rel="noopener noreferrer" class="connect-link facebook" title="Facebook">
-                                <i class="fa-brands fa-facebook-f"></i>
-                                <span>Facebook</span>
-                            </a>
-                            <a href="https://youtube.com/@samisymphonypaul?si=CH5aVdea45ml08rK" target="_blank"
-                                rel="noopener noreferrer" class="connect-link youtube" title="YouTube">
-                                <i class="fa-brands fa-youtube"></i>
-                                <span>YouTube</span>
-                            </a>
+                    <div class="c-carousel-controls">
+                        <div class="c-dots"></div>
+                        <div class="c-nav-group">
+                            <button class="c-nav-btn prev-btn" aria-label="Previous sermon"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="c-nav-btn next-btn" aria-label="Next sermon"><i class="fa-solid fa-chevron-right"></i></button>
                         </div>
                     </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="sermons.html" class="cta-btn primary-btn">
+                        <i class="fa-brands fa-youtube"></i> Explore All Video Sermons
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Holy Communion Section with Carousel -->
+        <!-- ==========================================================================
+             SECTION 5E: HOLY COMMUNION SERVICE CAROUSEL
+             ========================================================================== -->
         <section id="holy-communion" class="communion-section section-padding">
             <div class="section-container">
                 <div class="section-header">
@@ -359,7 +379,7 @@
                     <h2 class="section-title">HOLY COMMUNION SERVICE</h2>
                     <div class="header-divider"></div>
                     <p class="section-description">
-                        Every First Sunday we do have a Holy Communion Sunday in remembrance of His Sacrifice.
+                        Every First Sunday of the month, we partake in Holy Communion in remembrance of Christ's sacrifice.
                     </p>
                 </div>
 
@@ -371,27 +391,23 @@
                                 <img src="assets/communion-4.png" alt="The Table of Remembrance" class="carousel-image">
                                 <div class="slide-caption">
                                     <h3>The Table of Remembrance</h3>
-                                    <p>The bread and cup prepared in reverence, keeping the remembrance of His sacrifice
-                                        at the heart of our service.</p>
+                                    <p>The bread and cup prepared in reverence, keeping the remembrance of His sacrifice at the center of worship.</p>
                                 </div>
                             </div>
                             <!-- Slide 2 -->
                             <div class="carousel-slide">
-                                <img src="assets/communion-1.png" alt="Communion Prayer and Thanksgiving"
-                                    class="carousel-image">
+                                <img src="assets/communion-1.png" alt="Communion Prayer and Thanksgiving" class="carousel-image">
                                 <div class="slide-caption">
                                     <h3>Prayer & Thanksgiving</h3>
-                                    <p>Pastor N Michael Paul leading the congregation in prayer, sanctifying the
-                                        elements
-                                        in a spirit of gratitude.</p>
+                                    <p>Pastor N. Michael Paul sanctifying the elements in prayer and leading the congregation in thanksgiving.</p>
                                 </div>
                             </div>
                             <!-- Slide 3 -->
                             <div class="carousel-slide">
-                                <img src="assets/communion-6.png" alt="Serving the Communion" class="carousel-image">
+                                <img src="assets/communion-6.png" alt="Serving the Elements" class="carousel-image">
                                 <div class="slide-caption">
-                                    <h3>Serving the Communion</h3>
-                                    <p>Serving the elements to the church family in unity and Christian fellowship.</p>
+                                    <h3>Serving the Elements</h3>
+                                    <p>Serving the body and blood of Christ to believers in unity, love, and sacred fellowship.</p>
                                 </div>
                             </div>
                             <!-- Slide 4 -->
@@ -399,8 +415,7 @@
                                 <img src="assets/communion-5.png" alt="The Bread of Life" class="carousel-image">
                                 <div class="slide-caption">
                                     <h3>The Bread of Life</h3>
-                                    <p>"Take, eat; this is My body which is broken for you; do this in remembrance of
-                                        Me." — 1 Corinthians 11:24</p>
+                                    <p>"Take, eat; this is My body which is broken for you; do this in remembrance of Me." — 1 Corinthians 11:24</p>
                                 </div>
                             </div>
                             <!-- Slide 5 -->
@@ -408,21 +423,17 @@
                                 <img src="assets/communion-3.png" alt="The New Covenant" class="carousel-image">
                                 <div class="slide-caption">
                                     <h3>The New Covenant</h3>
-                                    <p>"This cup is the new covenant in My blood. This do, as often as you drink it, in
-                                        remembrance of Me." — 1 Corinthians 11:25</p>
+                                    <p>"This cup is the new covenant in My blood. This do, as often as you drink it, in remembrance of Me." — 1 Corinthians 11:25</p>
                                 </div>
                             </div>
                             <!-- Slide 6 -->
                             <div class="carousel-slide">
-                                <img src="assets/communion-7.png" alt="The Blood of the Covenant"
-                                    class="carousel-image">
+                                <img src="assets/communion-7.png" alt="The Cleansing Blood" class="carousel-image">
                                 <div class="slide-caption">
-                                    <h3>The Blood of the Covenant</h3>
-                                    <p>Symbolizing the cleansing blood of Jesus Christ, poured out for many for the
-                                        remission of sins.</p>
+                                    <h3>The Cleansing Blood</h3>
+                                    <p>Symbolizing the precious blood of Jesus Christ, poured out for many for the remission of sins.</p>
                                 </div>
                             </div>
-
                         </div>
                     </div>
 
@@ -434,7 +445,7 @@
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
 
-                    <!-- Carousel Indicators -->
+                    <!-- Indicators -->
                     <div class="carousel-indicators" id="communion-indicators">
                         <span class="indicator active" data-slide="0"></span>
                         <span class="indicator" data-slide="1"></span>
@@ -447,16 +458,337 @@
             </div>
         </section>
 
-        <!-- Service & Location Details Section -->
+        <!-- ==========================================================================
+             SECTION 5D: UPCOMING EVENTS & GATHERINGS CAROUSEL
+             ========================================================================== -->
+        <section id="events-preview" class="section-padding" style="background: rgba(14, 16, 23, 0.4);">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-subtitle">Calendar of Gatherings</span>
+                    <h2 class="section-title">UPCOMING CHURCH EVENTS</h2>
+                    <div class="header-divider"></div>
+                    <p class="section-description">
+                        Mark your calendar and join us in worship. Export any event directly to your Google Calendar or device calendar.
+                    </p>
+                </div>
+
+                <div class="c-carousel-wrapper">
+                    <div class="c-carousel-track">
+                        <!-- Event 1: Vijayawada Sunday Morning -->
+                        <div class="c-carousel-card event-card">
+                            <div class="event-card-header">
+                                <div class="event-date-box">
+                                    <span class="event-month">Every Sun</span>
+                                    <span class="event-day">10</span>
+                                </div>
+                                <span class="event-badge badge-vja">Vijayawada</span>
+                            </div>
+                            <h3 class="event-title">Sunday Morning Celebration</h3>
+                            <div class="event-info-items">
+                                <div class="event-info-item">
+                                    <i class="fa-regular fa-clock"></i> 10:00 AM – 12:30 PM
+                                </div>
+                                <div class="event-info-item">
+                                    <i class="fa-solid fa-location-dot"></i> Swarnas Convention, Gurunanak Colony, Vijayawada
+                                </div>
+                            </div>
+                            <div class="event-actions">
+                                <button class="event-cal-btn" data-title="Vijayawada Sunday Morning Service" data-location="Swarnas Convention, Gurunanak Colony Main Rd, Vijayawada" data-time="10:00" data-desc="Sunday morning worship and preaching with Pastor N. Michael Paul.">
+                                    <i class="fa-regular fa-calendar-plus"></i> Add to Calendar
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Event 2: Guntur Dawn Gathering -->
+                        <div class="c-carousel-card event-card">
+                            <div class="event-card-header">
+                                <div class="event-date-box">
+                                    <span class="event-month">Every Sun</span>
+                                    <span class="event-day">06</span>
+                                </div>
+                                <span class="event-badge badge-gnt">Guntur</span>
+                            </div>
+                            <h3 class="event-title">Early Dawn Sunday Service</h3>
+                            <div class="event-info-items">
+                                <div class="event-info-item">
+                                    <i class="fa-regular fa-clock"></i> 06:00 AM – 08:30 AM
+                                </div>
+                                <div class="event-info-item">
+                                    <i class="fa-solid fa-location-dot"></i> The Calvary Church, Vidyanagar 1st Line Ext., Guntur
+                                </div>
+                            </div>
+                            <div class="event-actions">
+                                <button class="event-cal-btn" data-title="Guntur Early Dawn Service" data-location="The Calvary Church, Vidyanagar 1st Line Ext., Guntur" data-time="06:00" data-desc="Early dawn worship gathering led by Sis. Sami Symphony Paul & Pastor N. Michael Paul.">
+                                    <i class="fa-regular fa-calendar-plus"></i> Add to Calendar
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Event 3: Holy Communion Sunday -->
+                        <div class="c-carousel-card event-card">
+                            <div class="event-card-header">
+                                <div class="event-date-box">
+                                    <span class="event-month">1st Sun</span>
+                                    <span class="event-day">01</span>
+                                </div>
+                                <span class="event-badge badge-special">Ordinance</span>
+                            </div>
+                            <h3 class="event-title">Monthly Holy Communion</h3>
+                            <div class="event-info-items">
+                                <div class="event-info-item">
+                                    <i class="fa-regular fa-clock"></i> Vijayawada 10:00 AM | Guntur 06:00 AM
+                                </div>
+                                <div class="event-info-item">
+                                    <i class="fa-solid fa-location-dot"></i> Both Church Branches
+                                </div>
+                            </div>
+                            <div class="event-actions">
+                                <button class="event-cal-btn" data-title="Monthly Holy Communion Sunday" data-location="The Calvary Church Vijayawada & Guntur" data-time="10:00" data-desc="Sacred ordinance of Holy Communion in remembrance of Jesus Christ.">
+                                    <i class="fa-regular fa-calendar-plus"></i> Add to Calendar
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Event 4: 21 Days Fasting Prayer -->
+                        <div class="c-carousel-card event-card">
+                            <div class="event-card-header">
+                                <div class="event-date-box">
+                                    <span class="event-month">Special</span>
+                                    <span class="event-day">21</span>
+                                </div>
+                                <span class="event-badge badge-special">Revival</span>
+                            </div>
+                            <h3 class="event-title">21 Days Fasting & Prayer</h3>
+                            <div class="event-info-items">
+                                <div class="event-info-item">
+                                    <i class="fa-regular fa-clock"></i> Daily Sessions & Livestreams
+                                </div>
+                                <div class="event-info-item">
+                                    <i class="fa-solid fa-location-dot"></i> In-Person & YouTube Live
+                                </div>
+                            </div>
+                            <div class="event-actions">
+                                <button class="event-cal-btn" data-title="21 Days Fasting Prayer Gathering" data-location="The Calvary Church Vijayawada & YouTube" data-time="18:00" data-desc="Annual churchwide fasting and intercessory prayer season.">
+                                    <i class="fa-regular fa-calendar-plus"></i> Add to Calendar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="c-carousel-controls">
+                        <div class="c-dots"></div>
+                        <div class="c-nav-group">
+                            <button class="c-nav-btn prev-btn" aria-label="Previous event"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="c-nav-btn next-btn" aria-label="Next event"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="events.html" class="cta-btn secondary-btn">
+                        <i class="fa-solid fa-calendar-days"></i> View Full Church Calendar & Schedule
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             SECTION 5F: MINISTRIES PREVIEW CAROUSEL
+             ========================================================================== -->
+        <section id="ministries-preview" class="section-padding">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-subtitle">Serving God's Kingdom</span>
+                    <h2 class="section-title">CHURCH MINISTRIES</h2>
+                    <div class="header-divider"></div>
+                    <p class="section-description">
+                        Explore the various ministry arms through which God transforms lives, fosters spiritual growth, and blesses our community.
+                    </p>
+                </div>
+
+                <div class="c-carousel-wrapper">
+                    <div class="c-carousel-track">
+                        <!-- Ministry 1 -->
+                        <div class="c-carousel-card ministry-card">
+                            <div class="ministry-icon-banner">
+                                <div class="ministry-icon-circle"><i class="fa-solid fa-music"></i></div>
+                                <div class="ministry-header-text">
+                                    <h3>Worship Ministry</h3>
+                                    <span class="ministry-leader-badge">Led by Sis. Sami Symphony Paul</span>
+                                </div>
+                            </div>
+                            <div class="ministry-body">
+                                <p class="ministry-scripture">"God is spirit, and those who worship Him must worship in spirit and truth." — John 4:24</p>
+                                <p class="ministry-desc">Anointed music, choral worship, and congregational singing designed to lead believers into the holy presence of God.</p>
+                                <div class="ministry-schedule-tag">
+                                    <i class="fa-regular fa-clock"></i> Active every Sunday & Praise Gatherings
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ministry 2 -->
+                        <div class="c-carousel-card ministry-card">
+                            <div class="ministry-icon-banner">
+                                <div class="ministry-icon-circle"><i class="fa-solid fa-female"></i></div>
+                                <div class="ministry-header-text">
+                                    <h3>Women's Fellowship</h3>
+                                    <span class="ministry-leader-badge">Led by Sis. Sami Symphony Paul</span>
+                                </div>
+                            </div>
+                            <div class="ministry-body">
+                                <p class="ministry-scripture">"Strength and honor are her clothing; she shall rejoice in time to come." — Proverbs 31:25</p>
+                                <p class="ministry-desc">Empowering sisters through prayer, discipleship, mutual encouragement, and compassionate community outreach.</p>
+                                <div class="ministry-schedule-tag">
+                                    <i class="fa-regular fa-clock"></i> Weekly Gatherings & Special Retreats
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ministry 3 -->
+                        <div class="c-carousel-card ministry-card">
+                            <div class="ministry-icon-banner">
+                                <div class="ministry-icon-circle"><i class="fa-solid fa-fire"></i></div>
+                                <div class="ministry-header-text">
+                                    <h3>Youth & NextGen</h3>
+                                    <span class="ministry-leader-badge">Pastoral Oversight</span>
+                                </div>
+                            </div>
+                            <div class="ministry-body">
+                                <p class="ministry-scripture">"Let no one despise your youth, but be an example to the believers in word and conduct." — 1 Tim 4:12</p>
+                                <p class="ministry-desc">Inspiring teens and young adults to live purposefully for Jesus Christ, grounded in biblical convictions.</p>
+                                <div class="ministry-schedule-tag">
+                                    <i class="fa-regular fa-clock"></i> Monthly Youth Fellowship & Mentorship
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ministry 4 -->
+                        <div class="c-carousel-card ministry-card">
+                            <div class="ministry-icon-banner">
+                                <div class="ministry-icon-circle"><i class="fa-solid fa-hands-holding-child"></i></div>
+                                <div class="ministry-header-text">
+                                    <h3>Children's Ministry</h3>
+                                    <span class="ministry-leader-badge">Sunday School Teachers</span>
+                                </div>
+                            </div>
+                            <div class="ministry-body">
+                                <p class="ministry-scripture">"Train up a child in the way he should go, and when he is old he will not depart." — Prov 22:6</p>
+                                <p class="ministry-desc">Nurturing faith in our youngest members through creative Bible stories, memory verses, and joyful songs.</p>
+                                <div class="ministry-schedule-tag">
+                                    <i class="fa-regular fa-clock"></i> Every Sunday Morning at 10:00 AM
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="c-carousel-controls">
+                        <div class="c-dots"></div>
+                        <div class="c-nav-group">
+                            <button class="c-nav-btn prev-btn" aria-label="Previous ministry"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="c-nav-btn next-btn" aria-label="Next ministry"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="ministries.html" class="cta-btn primary-btn">
+                        <i class="fa-solid fa-hand-holding-heart"></i> View All Ministries & Volunteer
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             SECTION 5G: SOCIAL MEDIA HIGHLIGHTS
+             ========================================================================== -->
+        <section id="social-connect" class="social-connect-section section-padding" style="background: rgba(14, 16, 23, 0.4);">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-subtitle">Stay Connected</span>
+                    <h2 class="section-title">FOLLOW OUR DIGITAL MINISTRY</h2>
+                    <div class="header-divider"></div>
+                    <p class="section-description">
+                        Receive daily encouragement, livestreams, short devotionals, and church announcements across all official social channels.
+                    </p>
+                </div>
+
+                <div class="connect-grid">
+                    <!-- PASTOR MICHAEL SOCIALS CARD -->
+                    <div class="connect-card glass-panel animate-on-scroll">
+                        <div class="connect-header">
+                            <div class="connect-avatar-img-wrapper michael-glow">
+                                <img src="assets/pastor-michael.png" alt="Pastor N Michael Paul" class="connect-avatar-img">
+                            </div>
+                            <div class="connect-pastor-info">
+                                <h3 class="connect-pastor-name">Pastor N Michael Paul</h3>
+                                <span class="connect-pastor-role">Lead Pastor & Global Influencer</span>
+                            </div>
+                        </div>
+                        <div class="connect-links">
+                            <a href="https://www.youtube.com/@nmichaelpaul" target="_blank" rel="noopener noreferrer" class="connect-link youtube" title="YouTube Channel">
+                                <i class="fa-brands fa-youtube"></i>
+                                <span>YouTube (@nmichaelpaul)</span>
+                            </a>
+                            <a href="https://www.instagram.com/nmichaelpaul" target="_blank" rel="noopener noreferrer" class="connect-link instagram" title="Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                                <span>Instagram (@nmichaelpaul)</span>
+                            </a>
+                            <a href="https://www.facebook.com/nmichaelpaul" target="_blank" rel="noopener noreferrer" class="connect-link facebook" title="Facebook">
+                                <i class="fa-brands fa-facebook-f"></i>
+                                <span>Facebook (@nmichaelpaul)</span>
+                            </a>
+                            <a href="https://whatsapp.com/channel/0029VaQO65VIt5s43cfuXr3v" target="_blank" rel="noopener noreferrer" class="connect-link whatsapp" title="WhatsApp Channel">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                <span>Official WhatsApp Channel</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- SISTER SAMI SOCIALS CARD -->
+                    <div class="connect-card glass-panel animate-on-scroll">
+                        <div class="connect-header">
+                            <div class="connect-avatar-img-wrapper sami-glow">
+                                <img src="assets/sister-sami.png" alt="Sis. Sami Symphony Paul" class="connect-avatar-img">
+                            </div>
+                            <div class="connect-pastor-info">
+                                <h3 class="connect-pastor-name">Sis. Sami Symphony Paul</h3>
+                                <span class="connect-pastor-role">Co-Pastor & Worship Leader</span>
+                            </div>
+                        </div>
+                        <div class="connect-links">
+                            <a href="https://youtube.com/@samisymphonypaul" target="_blank" rel="noopener noreferrer" class="connect-link youtube" title="YouTube Channel">
+                                <i class="fa-brands fa-youtube"></i>
+                                <span>YouTube (@samisymphonypaul)</span>
+                            </a>
+                            <a href="https://www.instagram.com/samisymphonypaul" target="_blank" rel="noopener noreferrer" class="connect-link instagram" title="Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                                <span>Instagram (@samisymphonypaul)</span>
+                            </a>
+                            <a href="https://www.facebook.com/samisymphonypaul" target="_blank" rel="noopener noreferrer" class="connect-link facebook" title="Facebook">
+                                <i class="fa-brands fa-facebook-f"></i>
+                                <span>Facebook (@samisymphonypaul)</span>
+                            </a>
+                            <a href="tel:+8144123456" class="connect-link whatsapp" title="Helpline">
+                                <i class="fa-solid fa-phone"></i>
+                                <span>Prayer Helpline: +91 8144123456</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             SERVICE & LOCATION DETAILS SECTION
+             ========================================================================== -->
         <section id="service-info" class="service-info-section section-padding">
             <div class="section-container">
                 <div class="section-header">
-                    <span class="section-subtitle">Our Gatherings</span>
+                    <span class="section-subtitle">Join Us in Person</span>
                     <h2 class="section-title">SUNDAY SERVICES & LOCATIONS</h2>
                     <div class="header-divider"></div>
                     <p class="section-description">
-                        Join us at either of our active branches. Same powerful message and pastoral leadership, serving
-                        two thriving city communities.
+                        We welcome you and your family to worship with us at either of our active branches in Vijayawada or Guntur.
                     </p>
                 </div>
 
@@ -464,7 +796,6 @@
                     <!-- VIJAYAWADA BRANCH CARD -->
                     <div class="info-card-left branch-card-detail">
                         <div class="venue-showcase-panel glass-panel animate-on-scroll">
-                            <!-- Styled Address Header Block in Poster Style -->
                             <div class="address-poster-header vja-header">
                                 <span class="header-bold-tag">VIJAYAWADA SERVICE</span>
                             </div>
@@ -473,8 +804,7 @@
                                 <div class="branch-time-indicator">
                                     <i class="fa-solid fa-clock"></i> STARTS AT 10:00 AM
                                 </div>
-                                <h3 class="venue-name"><i class="fa-solid fa-hotel icon-hotel"></i> SWARNAS CONVENTION
-                                </h3>
+                                <h3 class="venue-name"><i class="fa-solid fa-hotel icon-hotel"></i> SWARNAS CONVENTION</h3>
                                 <p class="venue-address-details">
                                     Gurunanak Colony Main Road,<br>
                                     Infront of Donbosco High School,<br>
@@ -483,12 +813,11 @@
 
                                 <div class="details-phone-strip">
                                     <span class="details-label">FOR DETAILS:</span>
-                                    <a href="tel:8144123456" class="details-value">8144123456</a>
+                                    <a href="tel:8144123456" class="details-value">+91 8144123456</a>
                                 </div>
 
                                 <div class="map-container-mockup">
-                                    <img src="assets/vijayawada-church.png" alt="Swarnas Convention Vijayawada Location"
-                                        class="map-bg">
+                                    <img src="assets/vijayawada-church.png" alt="Swarnas Convention Vijayawada Location" class="map-bg">
                                     <div class="map-overlay">
                                         <div class="map-pin pin-vja">
                                             <div class="pin-pulse"></div>
@@ -497,8 +826,7 @@
                                         <div class="map-tooltip">
                                             <h5>Swarnas Convention</h5>
                                             <p>Gurunanak Colony, Vijayawada</p>
-                                            <a href="https://maps.google.com/?q=Swarnas+Convention+Gurunanak+Colony+Vijayawada"
-                                                target="_blank" class="map-link-btn">
+                                            <a href="https://maps.google.com/?q=Swarnas+Convention+Gurunanak+Colony+Vijayawada" target="_blank" class="map-link-btn">
                                                 Open Google Maps <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                             </a>
                                         </div>
@@ -506,8 +834,7 @@
                                 </div>
 
                                 <div class="action-buttons-group">
-                                    <a href="https://maps.google.com/?q=Swarnas+Convention+Gurunanak+Colony+Vijayawada"
-                                        target="_blank" class="venue-btn primary-action">
+                                    <a href="https://maps.google.com/?q=Swarnas+Convention+Gurunanak+Colony+Vijayawada" target="_blank" class="venue-btn primary-action">
                                         <i class="fa-solid fa-route"></i> Navigate via GPS
                                     </a>
                                 </div>
@@ -518,7 +845,6 @@
                     <!-- GUNTUR BRANCH CARD -->
                     <div class="info-card-right branch-card-detail">
                         <div class="venue-showcase-panel glass-panel animate-on-scroll">
-                            <!-- Styled Address Header Block in Poster Style -->
                             <div class="address-poster-header gnt-header">
                                 <span class="header-bold-tag">GUNTUR SERVICE</span>
                             </div>
@@ -527,8 +853,7 @@
                                 <div class="branch-time-indicator time-gnt">
                                     <i class="fa-solid fa-clock"></i> STARTS AT 06:00 AM
                                 </div>
-                                <h3 class="venue-name"><i class="fa-solid fa-church icon-church-orange"></i> THE CALVARY
-                                    CHURCH</h3>
+                                <h3 class="venue-name"><i class="fa-solid fa-church icon-church-orange"></i> THE CALVARY CHURCH</h3>
                                 <p class="venue-address-details">
                                     Vidyanagar 1st Line Extension,<br>
                                     New RTO Office Road, Near Aaditri Apartments,<br>
@@ -537,12 +862,11 @@
 
                                 <div class="details-phone-strip details-gnt">
                                     <span class="details-label">FOR DETAILS:</span>
-                                    <a href="tel:8144123456" class="details-value">8144123456</a>
+                                    <a href="tel:8144123456" class="details-value">+91 8144123456</a>
                                 </div>
 
                                 <div class="map-container-mockup">
-                                    <img src="assets/guntur-church.png" alt="The Calvary Church Guntur Location"
-                                        class="map-bg">
+                                    <img src="assets/guntur-church.png" alt="The Calvary Church Guntur Location" class="map-bg">
                                     <div class="map-overlay">
                                         <div class="map-pin pin-gnt">
                                             <div class="pin-pulse pulse-gnt"></div>
@@ -551,8 +875,7 @@
                                         <div class="map-tooltip">
                                             <h5>The Calvary Church</h5>
                                             <p>Vidyanagar, Guntur</p>
-                                            <a href="https://maps.app.goo.gl/oteY1XMa8VdzAvPS6" target="_blank"
-                                                class="map-link-btn btn-gnt">
+                                            <a href="https://maps.app.goo.gl/oteY1XMa8VdzAvPS6" target="_blank" class="map-link-btn btn-gnt">
                                                 Open Google Maps <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                             </a>
                                         </div>
@@ -560,8 +883,7 @@
                                 </div>
 
                                 <div class="action-buttons-group">
-                                    <a href="https://maps.app.goo.gl/oteY1XMa8VdzAvPS6" target="_blank"
-                                        class="venue-btn primary-action action-gnt">
+                                    <a href="https://maps.app.goo.gl/oteY1XMa8VdzAvPS6" target="_blank" class="venue-btn primary-action action-gnt">
                                         <i class="fa-solid fa-route"></i> Navigate via GPS
                                     </a>
                                 </div>
@@ -572,20 +894,23 @@
             </div>
         </section>
 
-        <!-- Interactive Prayer Request Section -->
+        <!-- ==========================================================================
+             PRAYER REQUEST & CONTACT SECTION
+             ========================================================================== -->
         <section id="prayer-wall" class="prayer-request-section section-padding">
             <div class="section-container">
                 <div class="section-header">
-                    <h2 class="section-title">Get In Touch With Us</h2>
+                    <span class="section-subtitle">We Are Standing In Agreement</span>
+                    <h2 class="section-title">SEND YOUR PRAYER REQUEST</h2>
                     <div class="header-divider"></div>
-                    <p class="section-description"
-                        style="text-transform: uppercase; font-size: 0.95rem; letter-spacing: 1px; margin-top: 20px;">
-                        WE ARE READY TO PRAY FOR YOU. SEND YOUR PRAYER REQUESTS<br>SHARE YOUR TESTIMONIES
+                    <p class="section-description" style="margin-top: 20px;">
+                        "The effective, fervent prayer of a righteous man avails much." — James 5:16.<br>
+                        Share your burden or testimony; our pastoral team and prayer warriors will pray for you.
                     </p>
                 </div>
 
                 <div class="prayer-contact-grid animate-on-scroll">
-                    <!-- Left: Form Card -->
+                    <!-- Form Card -->
                     <div class="form-card-panel">
                         <form id="prayer-form" class="touch-form">
                             <div class="form-grid-layout">
@@ -604,7 +929,7 @@
                                             <option value="Tamil Nadu">Tamil Nadu</option>
                                             <option value="Karnataka">Karnataka</option>
                                             <option value="Maharashtra">Maharashtra</option>
-                                            <option value="Other">Other</option>
+                                            <option value="Other">Other State / Country</option>
                                         </select>
                                     </div>
                                     <div class="touch-input-group">
@@ -616,34 +941,32 @@
                                         <input type="email" id="form-email" placeholder="Your Email*" required>
                                     </div>
                                     <div class="touch-input-group">
-                                        <input type="number" id="form-age" placeholder="Age*" required min="1"
-                                            max="120">
+                                        <input type="number" id="form-age" placeholder="Age*" required min="1" max="120">
                                     </div>
                                     <div class="touch-input-group">
                                         <input type="text" id="form-city" placeholder="City / Town*" required>
                                     </div>
                                     <div class="touch-input-group">
                                         <select id="form-type" required>
-                                            <option value="" disabled selected>Prayer Burden / Testimonies*</option>
+                                            <option value="" disabled selected>Request Type*</option>
                                             <option value="Prayer Request">🙏 Prayer Request</option>
-                                            <option value="Testimony">✨ Testimony / Praise</option>
-                                            <option value="Healing">❤️ Healing Request</option>
-                                            <option value="Other">Other Request</option>
+                                            <option value="Healing">❤️ Divine Healing</option>
+                                            <option value="Testimony">✨ Praise / Testimony</option>
+                                            <option value="Other">General Concern</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
                             <div class="touch-input-group full-width" style="margin-top: 20px;">
-                                <textarea id="form-message" rows="5"
-                                    placeholder="Type your prayer request or testimony here...*" required></textarea>
+                                <textarea id="form-message" rows="5" placeholder="Type your prayer request, burden, or praise report here...*" required></textarea>
                             </div>
-                            <button type="submit" class="touch-submit-btn">SUBMIT</button>
+                            <button type="submit" class="touch-submit-btn">SUBMIT TO PRAYER TEAM</button>
                         </form>
                     </div>
 
-                    <!-- Right: Contact Card -->
+                    <!-- Contact Card -->
                     <div class="contact-info-card-panel">
-                        <h3 class="contact-info-title">Contact Info</h3>
+                        <h3 class="contact-info-title">Church Office & Helplines</h3>
 
                         <div class="contact-info-list">
                             <div class="contact-info-item">
@@ -651,11 +974,18 @@
                                     <i class="fa-solid fa-location-dot"></i>
                                 </div>
                                 <div class="contact-info-text-box">
-                                    <span class="info-label">Our Location</span>
-                                    <p class="info-content">Gurunanak Colony Main Road,
-                                        Infront of Donbosco High School,
-                                        Vijayawada, Andhra Pradesh.
-                                    </p>
+                                    <span class="info-label">Vijayawada Gathering</span>
+                                    <p class="info-content">Swarnas Convention, Gurunanak Colony Main Rd, Infront of Donbosco School, Vijayawada.</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon-box">
+                                    <i class="fa-solid fa-church"></i>
+                                </div>
+                                <div class="contact-info-text-box">
+                                    <span class="info-label">Guntur Gathering</span>
+                                    <p class="info-content">The Calvary Church, Vidyanagar 1st Line Extension, New RTO Office Road, Guntur.</p>
                                 </div>
                             </div>
 
@@ -664,8 +994,8 @@
                                     <i class="fa-solid fa-envelope"></i>
                                 </div>
                                 <div class="contact-info-text-box">
-                                    <span class="info-label">Email Us</span>
-                                    <a href="mailto:njayapaul@gmail.com" class="info-content">michaelpaul@gmail.com</a>
+                                    <span class="info-label">Prayer Requests Email</span>
+                                    <a href="mailto:Prayers@calvary.co.in" class="info-content">Prayers@calvary.co.in</a>
                                 </div>
                             </div>
 
@@ -674,7 +1004,7 @@
                                     <i class="fa-solid fa-phone"></i>
                                 </div>
                                 <div class="contact-info-text-box">
-                                    <span class="info-label">Call Us</span>
+                                    <span class="info-label">Helpline Number</span>
                                     <a href="tel:+8144123456" class="info-content">+91 8144123456</a>
                                 </div>
                             </div>
@@ -691,24 +1021,18 @@
             <div class="section-container footer-grid">
                 <!-- Column 1: Church info -->
                 <div class="footer-col col-about">
-                    <a href="#" class="footer-logo">
+                    <a href="index.html" class="footer-logo">
                         <span class="logo-accent">TCCV</span>
                         <span class="logo-text">CALVARY CHURCH</span>
                     </a>
                     <p class="footer-desc">
-                        A vibrant community of believers dedicated to experiencing the love of God, preaching the word
-                        of truth, and serving our community in Vijayawada.
+                        A vibrant community of believers dedicated to experiencing the love of God, preaching the word of truth, and serving our communities in Vijayawada and Guntur.
                     </p>
                     <div class="footer-social-links">
-                        <a href="https://www.facebook.com/nmichaelpaul" target="_blank" rel="noopener noreferrer"
-                            class="social-circle" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="https://www.youtube.com/@nmichaelpaul" target="_blank" rel="noopener noreferrer"
-                            class="social-circle" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="https://www.instagram.com/nmichaelpaul?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                            target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="Instagram"><i
-                                class="fa-brands fa-instagram"></i></a>
-                        <a href="https://x.com/nmichaelpaul" target="_blank" rel="noopener noreferrer"
-                            class="social-circle" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.facebook.com/nmichaelpaul" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.youtube.com/@nmichaelpaul" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/nmichaelpaul" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://x.com/nmichaelpaul" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
                     </div>
                 </div>
 
@@ -716,25 +1040,33 @@
                 <div class="footer-col col-links">
                     <h4 class="footer-title">QUICK LINKS</h4>
                     <div class="footer-links-list">
-                        <a href="#hero"><i class="fa-solid fa-chevron-right"></i> Home</a>
-                        <a href="#pastors"><i class="fa-solid fa-chevron-right"></i> Our Pastors</a>
-                        <a href="#foundation"><i class="fa-solid fa-chevron-right"></i> Our Foundation</a>
-                        <a href="#holy-communion"><i class="fa-solid fa-chevron-right"></i> Communion</a>
-                        <a href="#service-info"><i class="fa-solid fa-chevron-right"></i> Service Info</a>
-                        <a href="#prayer-wall"><i class="fa-solid fa-chevron-right"></i> Prayer Request</a>
+                        <a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a>
+                        <a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Our Church</a>
+                        <a href="pastors.html"><i class="fa-solid fa-chevron-right"></i> Our Pastors</a>
+                        <a href="sermons.html"><i class="fa-solid fa-chevron-right"></i> Sermons Library</a>
+                        <a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Photo Gallery</a>
+                        <a href="ministries.html"><i class="fa-solid fa-chevron-right"></i> Ministries</a>
+                        <a href="events.html"><i class="fa-solid fa-chevron-right"></i> Church Events</a>
+                        <a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Prayer Request</a>
                     </div>
                 </div>
 
                 <!-- Column 3: Contact Details -->
                 <div class="footer-col col-contact">
-                    <h4 class="footer-title">CONTACT DETAILS</h4>
+                    <h4 class="footer-title">GATHERINGS & CONTACT</h4>
                     <div class="footer-contact-items">
                         <div class="contact-item">
                             <i class="fa-solid fa-location-dot"></i>
                             <span>
-                                <strong>Swarnas Convention</strong><br>
-                                Gurunanak Colony Main Road,<br>
-                                Infront of Donbosco High School, Vijayawada
+                                <strong>Vijayawada (10:00 AM)</strong><br>
+                                Swarnas Convention, Gurunanak Colony Main Rd, Vijayawada
+                            </span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-church"></i>
+                            <span>
+                                <strong>Guntur (06:00 AM)</strong><br>
+                                The Calvary Church, Vidyanagar 1st Line Ext., Guntur
                             </span>
                         </div>
                         <div class="contact-item">
@@ -743,7 +1075,7 @@
                         </div>
                         <div class="contact-item">
                             <i class="fa-solid fa-envelope"></i>
-                            <a href="mailto:info@calvarychurchvijayawada.org">info@calvarychurchvijayawada.org</a>
+                            <a href="mailto:Prayers@calvary.co.in">Prayers@calvary.co.in</a>
                         </div>
                     </div>
                 </div>
@@ -752,8 +1084,8 @@
 
         <div class="footer-bottom">
             <div class="section-container bottom-row">
-                <p>&copy; 2026 The Calvary Church Vijayawada. All Rights Reserved.</p>
-                <p>Designed for Spiritual Growth & Fellowship.</p>
+                <p>&copy; 2026 The Calvary Church Vijayawada – Guntur. All Rights Reserved.</p>
+                <p><a href="admin.html" style="color: var(--text-muted);"><i class="fa-solid fa-lock"></i> Media Team Portal</a></p>
             </div>
         </div>
     </footer>
@@ -766,7 +1098,7 @@
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
 
     <!-- JavaScript bindings -->
-    <script src="app.js?v=7"></script>
+    <script src="app.js?v=35"></script>
 </body>
 
 </html>

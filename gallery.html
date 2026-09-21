@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore authentic photographs of worship gatherings, Holy Communion services, church celebrations, and pastoral ministry at The Calvary Church Vijayawada – Guntur.">
+    <title>Photo Gallery & Sacred Memories | The Calvary Church Vijayawada – Guntur</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=35">
+</head>
+
+<body class="dark-theme">
+    <!-- Ambient Background Glows -->
+    <div class="glow-bg">
+        <div class="glow-sphere sphere-1"></div>
+        <div class="glow-sphere sphere-2"></div>
+        <div class="glow-sphere sphere-3"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header id="main-header" class="glass-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo-link" id="nav-logo">
+                <span class="logo-accent">THE CALVARY CHURCH</span>
+                <span class="logo-text">VIJAYAWADA – GUNTUR</span>
+            </a>
+
+            <nav class="nav-links" id="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="pastors.html">Pastors</a>
+                <a href="sermons.html">Sermons</a>
+                <a href="gallery.html" class="active">Gallery</a>
+                <a href="ministries.html">Ministries</a>
+                <a href="events.html">Events</a>
+                <a href="contact.html">Prayer & Contact</a>
+                <a href="admin.html" title="Media Team Portal"><i class="fa-solid fa-shield-halved"></i> Admin</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="theme-toggle-btn" class="theme-toggle" aria-label="Toggle dark/light theme">
+                    <i class="fa-solid fa-moon moon-icon"></i>
+                    <i class="fa-solid fa-sun sun-icon"></i>
+                </button>
+                <button id="mobile-menu-toggle" class="mobile-toggle" aria-label="Toggle navigation menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Banner -->
+        <section class="subpage-banner">
+            <span class="subpage-subtitle">Sacred Memories</span>
+            <h1 class="subpage-title">CHURCH PHOTO GALLERY</h1>
+            <p class="subpage-desc">
+                Witness moments of worship, fellowship, Holy Communion, and God's faithfulness in our Vijayawada and Guntur church families.
+            </p>
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i> <span>Photo Gallery</span>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="section-padding">
+            <div class="section-container">
+                <!-- Category Filter Bar -->
+                <div class="gallery-filter-bar">
+                    <button class="filter-btn active" data-filter="all">All Photos</button>
+                    <button class="filter-btn" data-filter="communion">Holy Communion</button>
+                    <button class="filter-btn" data-filter="worship">Worship & Gatherings</button>
+                    <button class="filter-btn" data-filter="leadership">Pastoral Ministry</button>
+                    <button class="filter-btn" data-filter="venues">Church Venues</button>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="gallery-grid">
+                    <!-- Item 1: Communion Table -->
+                    <div class="gallery-item" data-category="communion" data-title="The Table of Remembrance" data-desc="The sacred elements of bread and the cup set in reverence for First Sunday Communion.">
+                        <img src="assets/communion-4.png" alt="The Table of Remembrance" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4 class="gallery-item-title">The Table of Remembrance</h4>
+                            <span class="gallery-item-category">Holy Communion</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: Communion Prayer -->
+                    <div class="gallery-item" data-category="communion" data-title="Communion Prayer & Sanctification" data-desc="Pastor N. Michael Paul sanctifying the communion elements in prayer before the Lord.">
+                        <img src="assets/communion-1.png" alt="Communion Prayer" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4 class="gallery-item-title">Communion Prayer & Sanctification</h4>
+                            <span class="gallery-item-category">Holy Communion</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: Sunday Worship -->
+                    <div class="gallery-item" data-category="worship" data-title="United Sunday Praise & Worship" data-desc="The congregation lifting their voices in spirit-filled praise and adoration.">
+                        <img src="assets/church-service-worship.png" alt="Sunday Worship Gathering" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4 class="gallery-item-title">United Sunday Praise</h4>
+                            <span class="gallery-item-category">Worship & Gatherings</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: Congregation Gathering -->
+                    <div class="gallery-item" data-category="worship" data-title="Church Family Gathering" data-desc="Believers gathered in unity to receive the Word of God at Swarnas Convention.">
+                        <img src="assets/church-congregation.png" alt="Church Family Gathering" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4 class="gallery-item-title">Church Family Gathering</h4>
+                            <span class="gallery-item-category">Worship & Gatherings</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 5: Pastors in Prayer -->
+                    <div class="gallery-item" data-category="leadership" data-title="Built on the Rock" data-desc="Pastor N. Michael Paul & Sis. Sami Symphony Paul interceding for the church family.">
+                        <img src="assets/pastors-foundation.png" alt="Built on the Rock" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4 class="gallery-item-title">Built on the Rock</h4>
+                            <span class="gallery-item-category">Pastoral Ministry</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 6: Serving Communion -->
+                    <div class="gallery-item" data-category="communion" data-title="Serving the Sacred Elements" data-desc="Sharing the body and blood of Christ among believers in Christian love and unity.">
+                        <img src="assets/communion-6.png" alt="Serving the Sacred Elements" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4 class="gallery-item-title">Serving the Sacred Elements</h4>
+                            <span class="gallery-item-category">Holy Communion</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 7: The Bread of Life -->
+                    <div class="gallery-item" data-category="communion" data-title="The Bread of Life" data-desc="'Take, eat; this is My body which is broken for you; do this in remembrance of Me.' — 1 Cor 11:24">
+                        <img src="assets/communion-5.png" alt="The Bread of Life" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4 class="gallery-item-title">The Bread of Life</h4>
+                            <span class="gallery-item-category">Holy Communion</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 8: The New Covenant -->
+                    <div class="gallery-item" data-category="communion" data-title="The New Covenant in His Blood" data-desc="'This cup is the new covenant in My blood... in remembrance of Me.' — 1 Cor 11:25">
+                        <img src="assets/communion-3.png" alt="The New Covenant" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4 class="gallery-item-title">The New Covenant</h4>
+                            <span class="gallery-item-category">Holy Communion</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 9: The Cleansing Blood -->
+                    <div class="gallery-item" data-category="communion" data-title="The Blood of the Covenant" data-desc="Rejoicing in the forgiveness of sins and the redemptive power of the cross.">
+                        <img src="assets/communion-7.png" alt="The Blood of the Covenant" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4 class="gallery-item-title">The Blood of the Covenant</h4>
+                            <span class="gallery-item-category">Holy Communion</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 10: Vijayawada Venue -->
+                    <div class="gallery-item" data-category="venues" data-title="Swarnas Convention – Vijayawada" data-desc="Sunday morning gathering venue at Gurunanak Colony Main Road, Vijayawada.">
+                        <img src="assets/vijayawada-church.png" alt="Swarnas Convention Vijayawada" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4 class="gallery-item-title">Swarnas Convention Venue</h4>
+                            <span class="gallery-item-category">Church Venues</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 11: Guntur Church Venue -->
+                    <div class="gallery-item" data-category="venues" data-title="The Calvary Church – Guntur" data-desc="The church sanctuary located at Vidyanagar 1st Line Extension, New RTO Office Road, Guntur.">
+                        <img src="assets/guntur-church.png" alt="The Calvary Church Guntur" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4 class="gallery-item-title">The Calvary Church Guntur</h4>
+                            <span class="gallery-item-category">Church Venues</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 12: Lead Pastor -->
+                    <div class="gallery-item" data-category="leadership" data-title="Pastor N. Michael Paul" data-desc="Senior Pastor and spiritual leader of The Calvary Church Vijayawada – Guntur.">
+                        <img src="assets/pastor-michael.png" alt="Pastor N. Michael Paul" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4 class="gallery-item-title">Pastor N. Michael Paul</h4>
+                            <span class="gallery-item-category">Pastoral Ministry</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer-section">
+        <div class="footer-top">
+            <div class="section-container footer-grid">
+                <div class="footer-col col-about">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-accent">TCCV</span>
+                        <span class="logo-text">CALVARY CHURCH</span>
+                    </a>
+                    <p class="footer-desc">
+                        A vibrant community of believers dedicated to experiencing the love of God, preaching the word of truth, and serving our communities in Vijayawada and Guntur.
+                    </p>
+                </div>
+                <div class="footer-col col-links">
+                    <h4 class="footer-title">QUICK LINKS</h4>
+                    <div class="footer-links-list">
+                        <a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a>
+                        <a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Our Church</a>
+                        <a href="pastors.html"><i class="fa-solid fa-chevron-right"></i> Our Pastors</a>
+                        <a href="sermons.html"><i class="fa-solid fa-chevron-right"></i> Sermons Library</a>
+                        <a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Photo Gallery</a>
+                        <a href="ministries.html"><i class="fa-solid fa-chevron-right"></i> Ministries</a>
+                        <a href="events.html"><i class="fa-solid fa-chevron-right"></i> Church Events</a>
+                        <a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Prayer Request</a>
+                    </div>
+                </div>
+                <div class="footer-col col-contact">
+                    <h4 class="footer-title">GATHERINGS & CONTACT</h4>
+                    <div class="footer-contact-items">
+                        <div class="contact-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Vijayawada: Swarnas Convention, 10:00 AM</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-church"></i>
+                            <span>Guntur: The Calvary Church, 06:00 AM</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <a href="tel:8144123456">+91 8144123456</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:Prayers@calvary.co.in">Prayers@calvary.co.in</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="section-container bottom-row">
+                <p>&copy; 2026 The Calvary Church Vijayawada – Guntur. All Rights Reserved.</p>
+                <p><a href="admin.html" style="color: var(--text-muted);"><i class="fa-solid fa-lock"></i> Media Team Portal</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast-container" class="toast-container"></div>
+    <script src="app.js?v=35"></script>
+</body>
+
+</html>

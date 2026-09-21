@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church Media Admin Portal | The Calvary Church Vijayawada – Guntur</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=35">
+</head>
+
+<body class="dark-theme">
+    <!-- Ambient Background Glows -->
+    <div class="glow-bg">
+        <div class="glow-sphere sphere-1"></div>
+        <div class="glow-sphere sphere-2"></div>
+        <div class="glow-sphere sphere-3"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header id="main-header" class="glass-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo-link" id="nav-logo">
+                <span class="logo-accent">THE CALVARY CHURCH</span>
+                <span class="logo-text">MEDIA ADMIN PORTAL</span>
+            </a>
+
+            <nav class="nav-links" id="nav-menu">
+                <a href="index.html"><i class="fa-solid fa-arrow-left"></i> View Live Site</a>
+                <a href="sermons.html">Sermons</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="events.html">Events</a>
+                <a href="#" id="admin-logout-btn" style="color: #ef4444;"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="theme-toggle-btn" class="theme-toggle" aria-label="Toggle dark/light theme">
+                    <i class="fa-solid fa-moon moon-icon"></i>
+                    <i class="fa-solid fa-sun sun-icon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Passcode Login Gate Modal (if not authenticated) -->
+        <div id="admin-auth-overlay" style="position: fixed; inset: 0; background: rgba(7, 8, 11, 0.96); backdrop-filter: blur(20px); z-index: 3000; display: flex; align-items: center; justify-content: center; padding: 24px;">
+            <div class="glass-panel" style="max-width: 440px; width: 100%; padding: 40px; border-radius: var(--border-radius-md); text-align: center; border: 1px solid rgba(139, 92, 246, 0.3);">
+                <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--accent-gradient); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: #fff; margin: 0 auto 20px;">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h2 style="font-family: var(--font-heading); font-size: 1.6rem; margin-bottom: 8px;">Church Media Team Login</h2>
+                <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 24px;">
+                    Protected portal for managing church website content, sermons, photo carousels, and AI media workflows.
+                </p>
+
+                <form id="admin-login-form">
+                    <div style="margin-bottom: 20px;">
+                        <input type="password" id="admin-passcode" placeholder="Enter Media Team Passcode" style="width: 100%; padding: 14px 18px; border-radius: var(--border-radius-sm); background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-glass); color: var(--text-primary); font-size: 1rem; text-align: center; letter-spacing: 2px;" required>
+                    </div>
+                    <button type="submit" class="admin-btn admin-btn-primary" style="width: 100%; padding: 14px;">
+                        <i class="fa-solid fa-lock-open"></i> Unlock Media Dashboard
+                    </button>
+                    <p style="margin-top: 16px; font-size: 0.8rem; color: var(--text-muted);">
+                        Default authorized media team passcode: <code style="color: var(--accent-secondary); background: rgba(255, 255, 255, 0.05); padding: 2px 6px; border-radius: 4px;">calvary2026</code>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Admin Workspace Container -->
+        <div class="admin-wrapper" id="admin-dashboard-container" style="display: none;">
+            <!-- Header Bar -->
+            <div class="admin-header-bar">
+                <div>
+                    <h1 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 4px;">Church Media Management Studio</h1>
+                    <span style="color: var(--text-secondary); font-size: 0.95rem;">
+                        <i class="fa-solid fa-circle" style="color: #22c55e; font-size: 0.6rem; vertical-align: middle;"></i> Authorized Media Team Session Active
+                    </span>
+                </div>
+                <div style="display: flex; gap: 12px;">
+                    <a href="index.html" target="_blank" class="admin-btn admin-btn-secondary">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Preview Live Site
+                    </a>
+                    <button id="btn-export-backup" class="admin-btn admin-btn-secondary">
+                        <i class="fa-solid fa-download"></i> Export Data Backup
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dashboard Navigation Tabs -->
+            <div class="admin-tabs">
+                <button class="admin-tab active" data-tab="tab-overview"><i class="fa-solid fa-gauge"></i> Overview</button>
+                <button class="admin-tab" data-tab="tab-hero"><i class="fa-solid fa-images"></i> Hero Carousel</button>
+                <button class="admin-tab" data-tab="tab-sermons"><i class="fa-brands fa-youtube"></i> Sermons Library</button>
+                <button class="admin-tab" data-tab="tab-gallery"><i class="fa-solid fa-photo-film"></i> Gallery & Photos</button>
+                <button class="admin-tab" data-tab="tab-events"><i class="fa-solid fa-calendar-days"></i> Events</button>
+                <button class="admin-tab" data-tab="tab-prayer"><i class="fa-solid fa-hands-praying"></i> Prayer Inbox</button>
+                <button class="admin-tab" data-tab="tab-ai"><i class="fa-solid fa-wand-magic-sparkles"></i> AI Media Assistant</button>
+                <button class="admin-tab" data-tab="tab-gdrive"><i class="fa-brands fa-google-drive"></i> Google Drive Integration</button>
+            </div>
+
+            <!-- ==========================================================================
+                 TAB 1: OVERVIEW
+                 ========================================================================== -->
+            <div id="tab-overview" class="admin-panel active">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 30px;">
+                    <div class="admin-card" style="padding: 20px;">
+                        <span class="admin-label">Active Hero Slides</span>
+                        <h2 style="font-family: var(--font-heading); font-size: 2.2rem; color: var(--accent-primary);" id="stat-hero-count">4</h2>
+                        <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-circle-check" style="color: #22c55e;"></i> Ken Burns Activated</span>
+                    </div>
+                    <div class="admin-card" style="padding: 20px;">
+                        <span class="admin-label">Published Sermons</span>
+                        <h2 style="font-family: var(--font-heading); font-size: 2.2rem; color: var(--accent-secondary);" id="stat-sermon-count">6</h2>
+                        <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-brands fa-youtube" style="color: #ff0000;"></i> YouTube Video Embeds</span>
+                    </div>
+                    <div class="admin-card" style="padding: 20px;">
+                        <span class="admin-label">Gallery Photographs</span>
+                        <h2 style="font-family: var(--font-heading); font-size: 2.2rem; color: #3b82f6;" id="stat-gallery-count">12</h2>
+                        <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-expand"></i> Lightbox Enabled</span>
+                    </div>
+                    <div class="admin-card" style="padding: 20px;">
+                        <span class="admin-label">Upcoming Events</span>
+                        <h2 style="font-family: var(--font-heading); font-size: 2.2rem; color: #10b981;" id="stat-events-count">4</h2>
+                        <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-regular fa-calendar-check"></i> .ICS Sync Ready</span>
+                    </div>
+                </div>
+
+                <div class="admin-grid-2">
+                    <div class="admin-card">
+                        <h3 class="admin-card-title"><i class="fa-solid fa-list-check"></i> Media Team Publishing Workflow</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+                            Our church website operates on a 4-tier content safety lifecycle to protect ministry integrity:
+                        </p>
+                        <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px;">
+                            <div style="display: flex; align-items: center; gap: 12px; padding: 10px; background: rgba(255, 255, 255, 0.02); border-radius: var(--border-radius-sm);">
+                                <span class="status-badge status-draft">Draft</span>
+                                <span style="font-size: 0.9rem; color: var(--text-secondary);">Uploaded media or draft sermons awaiting review.</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px; padding: 10px; background: rgba(255, 255, 255, 0.02); border-radius: var(--border-radius-sm);">
+                                <span class="status-badge" style="background: rgba(139, 92, 246, 0.15); color: #c084fc; border: 1px solid rgba(139, 92, 246, 0.3);">AI Assisted</span>
+                                <span style="font-size: 0.9rem; color: var(--text-secondary);">AI suggested category, alt text, and draft caption generated.</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px; padding: 10px; background: rgba(255, 255, 255, 0.02); border-radius: var(--border-radius-sm);">
+                                <span class="status-badge" style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3);">Approved</span>
+                                <span style="font-size: 0.9rem; color: var(--text-secondary);">Verified by church media team director or pastoral staff.</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px; padding: 10px; background: rgba(255, 255, 255, 0.02); border-radius: var(--border-radius-sm);">
+                                <span class="status-badge status-published">Published</span>
+                                <span style="font-size: 0.9rem; color: var(--text-secondary);">Live on the public church website.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="admin-card">
+                        <h3 class="admin-card-title"><i class="fa-solid fa-clock-rotate-left"></i> System Sync & Services Status</h3>
+                        <div style="display: flex; flex-direction: column; gap: 16px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; border-bottom: 1px solid var(--border-glass);">
+                                <div>
+                                    <strong style="display: block;">Firebase Cloud Firestore</strong>
+                                    <span style="font-size: 0.82rem; color: var(--text-muted);">the-calvary-church-f8917 (Prayer Requests)</span>
+                                </div>
+                                <span class="status-badge status-published"><i class="fa-solid fa-check"></i> Connected</span>
+                            </div>
+
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; border-bottom: 1px solid var(--border-glass);">
+                                <div>
+                                    <strong style="display: block;">YouTube Video API & Embeds</strong>
+                                    <span style="font-size: 0.82rem; color: var(--text-muted);">@nmichaelpaul official channel integration</span>
+                                </div>
+                                <span class="status-badge status-published"><i class="fa-solid fa-check"></i> Operational</span>
+                            </div>
+
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; border-bottom: 1px solid var(--border-glass);">
+                                <div>
+                                    <strong style="display: block;">Google Drive Media Library</strong>
+                                    <span style="font-size: 0.82rem; color: var(--text-muted);">Cloud media import scaffold</span>
+                                </div>
+                                <span class="status-badge status-draft"><i class="fa-solid fa-sliders"></i> Scaffold Ready</span>
+                            </div>
+
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <strong style="display: block;">Static Hosting Compatibility</strong>
+                                    <span style="font-size: 0.82rem; color: var(--text-muted);">GitHub Pages deployment ready</span>
+                                </div>
+                                <span class="status-badge status-published"><i class="fa-solid fa-check"></i> 100% Compatible</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==========================================================================
+                 TAB 2: HERO CAROUSEL MANAGER
+                 ========================================================================== -->
+            <div id="tab-hero" class="admin-panel">
+                <div class="admin-grid-2">
+                    <div class="admin-card">
+                        <h3 class="admin-card-title"><i class="fa-solid fa-plus-circle"></i> Add / Edit Hero Slide</h3>
+                        <form id="form-add-hero-slide">
+                            <div class="admin-input-group">
+                                <label class="admin-label">Slide Image Path or URL</label>
+                                <input type="text" id="hero-input-img" class="admin-input" placeholder="e.g. assets/hero-bg.png or https://..." required>
+                            </div>
+                            <div class="admin-input-group">
+                                <label class="admin-label">Top Badge / Tagline</label>
+                                <input type="text" id="hero-input-badge" class="admin-input" placeholder="e.g. Welcome to Our Fellowship">
+                            </div>
+                            <div class="admin-input-group">
+                                <label class="admin-label">Headline Title</label>
+                                <input type="text" id="hero-input-title" class="admin-input" placeholder="e.g. Experience God's Love & Power" required>
+                            </div>
+                            <div class="admin-input-group">
+                                <label class="admin-label">Description Text</label>
+                                <textarea id="hero-input-desc" class="admin-textarea" rows="3" placeholder="Brief summary of worship service or invitation..."></textarea>
+                            </div>
+                            <div class="admin-input-group">
+                                <label class="admin-label">Ken Burns Motion Effect</label>
+                                <select id="hero-input-kb" class="admin-select">
+                                    <option value="kb-1">Ken Burns Zoom In (Deep Focus)</option>
+                                    <option value="kb-2">Ken Burns Zoom Out (Panoramic Reveal)</option>
+                                    <option value="kb-3">Ken Burns Pan Left (Dynamic Walkthrough)</option>
+                                    <option value="kb-4">Ken Burns Zoom In Alt (Subtle Elevation)</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="admin-btn admin-btn-primary"><i class="fa-solid fa-floppy-disk"></i> Save Hero Slide</button>
+                        </form>
+                    </div>
+
+                    <div class="admin-card">
+                        <h3 class="admin-card-title"><i class="fa-solid fa-layer-group"></i> Active Hero Slides</h3>
+                        <div id="hero-slides-admin-list" style="display: flex; flex-direction: column; gap: 14px;">
+                            <!-- Populated dynamically via JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==========================================================================
+                 TAB 3: SERMONS MANAGER
+                 ========================================================================== -->
+            <div id="tab-sermons" class="admin-panel">
+                <div class="admin-grid-2">
+                    <div class="admin-card">
+                        <h3 class="admin-card-title"><i class="fa-solid fa-plus-circle"></i> Add New Sermon Video</h3>
+                        <form id="form-add-sermon">
+                            <div class="admin-input-group">
+                                <label class="admin-label">YouTube Video ID</label>
+                                <input type="text" id="sermon-input-id" class="admin-input" placeholder="e.g. HsFLENGbS_G (from watch?v=ID)" required>
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">Enter the 11-character video ID from YouTube URL</span>
+                            </div>
+                            <div class="admin-input-group">
+                                <label class="admin-label">Sermon Title</label>
+                                <input type="text" id="sermon-input-title" class="admin-input" placeholder="e.g. Living in the Center of God's Will" required>
+                            </div>
+                            <div class="admin-input-group">
+                                <label class="admin-label">Preacher / Speaker</label>
+                                <input type="text" id="sermon-input-speaker" class="admin-input" value="Pastor N. Michael Paul" required>
+                            </div>
+                            <div class="admin-input-group">
+                                <label class="admin-label">Sermon Category</label>
+                                <select id="sermon-input-category" class="admin-select">
+                                    <option value="sunday">Sunday Service</option>
+                                    <option value="fasting">21 Days Fasting Prayer</option>
+                                    <option value="grace">Grace & Faith Series</option>
+                                    <option value="communion">Holy Communion</option>
+                                </select>
+                            </div>
+                            <div class="admin-input-group">
+                                <label class="admin-label">Duration (e.g. 48:20)</label>
+                                <input type="text" id="sermon-input-duration" class="admin-input" placeholder="48:20">
+                            </div>
+                            <button type="submit" class="admin-btn admin-btn-primary"><i class="fa-solid fa-upload"></i> Publish Sermon Video</button>
+                        </form>
+                    </div>
+
+                    <div class="admin-card">
+                        <h3 class="admin-card-title"><i class="fa-solid fa-video"></i> Sermon Video Archive</h3>
+                        <div id="admin-sermons-list" style="display: flex; flex-direction: column; gap: 14px;">
+                            <!-- Populated dynamically via JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==========================================================================
+                 TAB 4: GALLERY & PHOTOS MANAGER
+                 ========================================================================== -->
+            <div id="tab-gallery" class="admin-panel">
+                <div class="admin-grid-2">
+                    <div class="admin-card">
+                        <h3 class="admin-card-title"><i class="fa-solid fa-camera"></i> Upload Photo to Gallery</h3>
+                        <form id="form-add-gallery">
+                            <div class="admin-input-group">
+                                <label class="admin-label">Image File or Asset URL</label>
+                                <input type="text" id="gallery-input-src" class="admin-input" placeholder="e.g. assets/church-service-worship.png" required>
+                            </div>
+                            <div class="admin-input-group">
+                                <label class="admin-label">Photo Title</label>
+                                <input type="text" id="gallery-input-title" class="admin-input" placeholder="e.g. Sunday Morning Worship" required>
+                            </div>
+                            <div class="admin-input-group">
+                                <label class="admin-label">Gallery Category</label>
+                                <select id="gallery-input-category" class="admin-select">
+                                    <option value="communion">Holy Communion</option>
+                                    <option value="worship">Worship & Gatherings</option>
+                                    <option value="leadership">Pastoral Ministry</option>
+                                    <option value="venues">Church Venues</option>
+                                </select>
+                            </div>
+                            <div class="admin-input-group">
+                                <label class="admin-label">Description / Scripture Reference</label>
+                                <textarea id="gallery-input-desc" class="admin-textarea" rows="3" placeholder="Brief caption describing the sacred moment..."></textarea>
+                            </div>
+                            <button type="submit" class="admin-btn admin-btn-primary"><i class="fa-solid fa-plus"></i> Add to Photo Gallery</button>
+                        </form>
+                    </div>
+
+                    <div class="admin-card">
+                        <h3 class="admin-card-title"><i class="fa-solid fa-images"></i> Manage Current Photos</h3>
+                        <div id="admin-gallery-list" style="display: flex; flex-direction: column; gap: 12px; max-height: 500px; overflow-y: auto;">
+                            <!-- Populated dynamically via JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==========================================================================
+                 TAB 5: EVENTS MANAGER
+                 ========================================================================== -->
+            <div id="tab-events" class="admin-panel">
+                <div class="admin-grid-2">
+                    <div class="admin-card">
+                        <h3 class="admin-card-title"><i class="fa-regular fa-calendar-plus"></i> Add Church Event</h3>
+                        <form id="form-add-event">
+                            <div class="admin-input-group">
+                                <label class="admin-label">Event Name</label>
+                                <input type="text" id="event-input-title" class="admin-input" placeholder="e.g. Miracle Healing & Prayer Convention" required>
+                            </div>
+                            <div class="admin-input-group">
+                                <label class="admin-label">Branch / Venue</label>
+                                <select id="event-input-branch" class="admin-select">
+                                    <option value="vja">Vijayawada (Swarnas Convention)</option>
+                                    <option value="gnt">Guntur (Vidyanagar Church)</option>
+                                    <option value="special">Special Combined / Digital Gathering</option>
+                                </select>
+                            </div>
+                            <div class="admin-input-group">
+                                <label class="admin-label">Day / Frequency</label>
+                                <input type="text" id="event-input-day" class="admin-input" placeholder="e.g. Every Sunday or 1st Sunday" required>
+                            </div>
+                            <div class="admin-input-group">
+                                <label class="admin-label">Time Details</label>
+                                <input type="text" id="event-input-time" class="admin-input" placeholder="e.g. 10:00 AM – 12:30 PM" required>
+                            </div>
+                            <div class="admin-input-group">
+                                <label class="admin-label">Full Address / Location</label>
+                                <input type="text" id="event-input-location" class="admin-input" placeholder="Venue details..." required>
+                            </div>
+                            <button type="submit" class="admin-btn admin-btn-primary"><i class="fa-solid fa-calendar-check"></i> Save Event</button>
+                        </form>
+                    </div>
+
+                    <div class="admin-card">
+                        <h3 class="admin-card-title"><i class="fa-solid fa-calendar-days"></i> Active Scheduled Events</h3>
+                        <div id="admin-events-list" style="display: flex; flex-direction: column; gap: 14px;">
+                            <!-- Populated dynamically via JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==========================================================================
+                 TAB 6: PRAYER INBOX
+                 ========================================================================== -->
+            <div id="tab-prayer" class="admin-panel">
+                <div class="admin-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
+                        <h3 class="admin-card-title"><i class="fa-solid fa-inbox"></i> Incoming Prayer Requests & Testimonies</h3>
+                        <div style="display: flex; gap: 8px;">
+                            <button id="btn-refresh-prayers" class="admin-btn admin-btn-secondary" style="padding: 6px 14px; font-size: 0.85rem;">
+                                <i class="fa-solid fa-arrows-rotate"></i> Refresh Submissions
+                            </button>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">
+                        Showing prayer requests submitted through the live website form and stored in Cloud Firestore & LocalStorage backup.
+                    </p>
+
+                    <div style="overflow-x: auto;">
+                        <table class="admin-table" id="prayer-requests-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Name</th>
+                                    <th>Category</th>
+                                    <th>Location</th>
+                                    <th>Subject & Message</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="prayer-requests-tbody">
+                                <!-- Populated dynamically via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==========================================================================
+                 TAB 7: AI MEDIA ASSISTANT MODULE
+                 ========================================================================== -->
+            <div id="tab-ai" class="admin-panel">
+                <div class="admin-grid-2">
+                    <div class="ai-assistant-card">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+                            <h3 class="admin-card-title"><i class="fa-solid fa-wand-magic-sparkles" style="color: #c084fc;"></i> AI Church Media Intelligence</h3>
+                            <span class="ai-pill"><i class="fa-solid fa-brain"></i> Assistant Mode Active</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px;">
+                            Select or test an image below. The AI analyzer assists the church media team by evaluating resolution, suggesting category tags, crafting draft captions with appropriate biblical context, generating accessibility alt text, and previewing responsive crops.
+                        </p>
+
+                        <div class="admin-input-group">
+                            <label class="admin-label">Select Church Media to Analyze</label>
+                            <select id="ai-media-select" class="admin-select">
+                                <option value="assets/communion-1.png">assets/communion-1.png (Holy Communion Service)</option>
+                                <option value="assets/church-service-worship.png">assets/church-service-worship.png (Sunday Morning Worship)</option>
+                                <option value="assets/pastors-foundation.png">assets/pastors-foundation.png (Pastors in Prayer)</option>
+                                <option value="assets/vijayawada-church.png">assets/vijayawada-church.png (Vijayawada Church Venue)</option>
+                                <option value="assets/guntur-church.png">assets/guntur-church.png (Guntur Church Venue)</option>
+                            </select>
+                        </div>
+
+                        <button id="btn-run-ai-analysis" class="admin-btn admin-btn-primary" style="margin-top: 16px; width: 100%;">
+                            <i class="fa-solid fa-microchip"></i> Run AI Media Analysis
+                        </button>
+                    </div>
+
+                    <!-- AI Results Panel -->
+                    <div class="admin-card" id="ai-results-panel">
+                        <h3 class="admin-card-title"><i class="fa-solid fa-robot"></i> Analysis & Recommendation Report</h3>
+                        
+                        <div id="ai-loading-indicator" style="display: none; text-align: center; padding: 40px;">
+                            <i class="fa-solid fa-spinner fa-spin" style="font-size: 2rem; color: var(--accent-primary);"></i>
+                            <p style="margin-top: 12px; color: var(--text-secondary);">Analyzing composition, aspect ratio, resolution, and theme...</p>
+                        </div>
+
+                        <div id="ai-report-content" style="display: flex; flex-direction: column; gap: 16px;">
+                            <div>
+                                <span class="admin-label">Recommended Gallery Category</span>
+                                <div style="margin-top: 4px;" id="ai-result-category">
+                                    <span class="status-badge" style="background: rgba(139, 92, 246, 0.2); color: #c084fc; font-size: 0.9rem;">Holy Communion (Confidence: 96%)</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <span class="admin-label">AI Draft Caption (Human Reviewable)</span>
+                                <textarea id="ai-result-caption" class="admin-textarea" rows="3" style="margin-top: 4px;">Pastor N. Michael Paul sanctifying the elements of Holy Communion in solemn prayer and thanksgiving before the church congregation.</textarea>
+                            </div>
+
+                            <div>
+                                <span class="admin-label">Suggested SEO Alt Text</span>
+                                <input type="text" id="ai-result-alt" class="admin-input" value="Pastor N. Michael Paul sanctifying the bread and cup during First Sunday Holy Communion at The Calvary Church." style="margin-top: 4px;">
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                                <div style="padding: 12px; background: rgba(255, 255, 255, 0.02); border-radius: var(--border-radius-sm);">
+                                    <span class="admin-label">Resolution & Quality</span>
+                                    <p style="color: #22c55e; font-weight: 700; font-size: 0.9rem; margin-top: 4px;"><i class="fa-solid fa-check"></i> High Resolution (Crisp)</p>
+                                </div>
+                                <div style="padding: 12px; background: rgba(255, 255, 255, 0.02); border-radius: var(--border-radius-sm);">
+                                    <span class="admin-label">Usage Attribution</span>
+                                    <p style="color: #60a5fa; font-weight: 700; font-size: 0.9rem; margin-top: 4px;"><i class="fa-solid fa-shield-check"></i> Official Church Media</p>
+                                </div>
+                            </div>
+
+                            <!-- Responsive Crop Preview Simulator -->
+                            <div>
+                                <span class="admin-label">Responsive Layout Crop Preview</span>
+                                <div class="crop-preview-box">
+                                    <div class="crop-frame desktop">
+                                        <img id="ai-preview-desktop" src="assets/communion-1.png" alt="Desktop Preview">
+                                        <span class="crop-label"><i class="fa-solid fa-desktop"></i> Desktop Landscape (16:9)</span>
+                                    </div>
+                                    <div class="crop-frame mobile">
+                                        <img id="ai-preview-mobile" src="assets/communion-1.png" alt="Mobile Preview">
+                                        <span class="crop-label"><i class="fa-solid fa-mobile-screen"></i> Mobile Portrait</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Human Approval Actions -->
+                            <div style="display: flex; gap: 12px; margin-top: 8px;">
+                                <button id="btn-approve-ai" class="admin-btn admin-btn-primary" style="flex: 1;"><i class="fa-solid fa-check"></i> Approve & Apply</button>
+                                <button id="btn-reject-ai" class="admin-btn admin-btn-danger" style="flex: 1;"><i class="fa-solid fa-xmark"></i> Reject Suggestion</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==========================================================================
+                 TAB 8: GOOGLE DRIVE INTEGRATION SCAFFOLD
+                 ========================================================================== -->
+            <div id="tab-gdrive" class="admin-panel">
+                <div class="admin-grid-2">
+                    <div class="admin-card">
+                        <h3 class="admin-card-title"><i class="fa-brands fa-google-drive" style="color: #34a853;"></i> Google Drive Media Integration Scaffold</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">
+                            This interface allows the church media team to securely connect the official Google Drive church media archive with the website content manager.
+                        </p>
+
+                        <div class="admin-input-group">
+                            <label class="admin-label">Google Drive API Client ID</label>
+                            <input type="text" id="gdrive-client-id" class="admin-input" placeholder="e.g. 123456789-abc.apps.googleusercontent.com">
+                            <span style="font-size: 0.75rem; color: var(--text-muted);">Stored securely in your local browser storage; never committed to repository.</span>
+                        </div>
+
+                        <div class="admin-input-group">
+                            <label class="admin-label">Shared Media Folder ID</label>
+                            <input type="text" id="gdrive-folder-id" class="admin-input" placeholder="e.g. 1a2B3c4D5e6F7g8H9_CalvaryMedia">
+                            <span style="font-size: 0.75rem; color: var(--text-muted);">The alphanumeric ID from your Google Drive folder share link.</span>
+                        </div>
+
+                        <div style="display: flex; gap: 12px; margin-top: 10px;">
+                            <button id="btn-save-gdrive-config" class="admin-btn admin-btn-primary"><i class="fa-solid fa-link"></i> Save Configuration</button>
+                            <button id="btn-test-gdrive-sync" class="admin-btn admin-btn-secondary"><i class="fa-solid fa-arrows-rotate"></i> Test Sync</button>
+                        </div>
+
+                        <div id="gdrive-status-msg" style="margin-top: 16px; font-size: 0.88rem; color: var(--text-muted); display: none;"></div>
+                    </div>
+
+                    <div class="admin-card">
+                        <h3 class="admin-card-title"><i class="fa-solid fa-book"></i> Google Drive Setup Instructions</h3>
+                        <div style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.8;">
+                            <ol style="padding-left: 20px;">
+                                <li style="margin-bottom: 10px;">
+                                    <strong>Create a Media Folder in Google Drive:</strong> Create a dedicated folder (e.g., <em>"The Calvary Church - Website Media"</em>) and upload high-res photos and videos.
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <strong>Folder Permission:</strong> Set sharing to <em>"Anyone with the link can view"</em> or add church media team email accounts.
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <strong>Google Cloud Console:</strong> Enable the <em>Google Drive API</em> in your Google Cloud Console project and configure OAuth consent.
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <strong>Manual Fallback:</strong> If API keys are not yet configured, you can directly use the <strong>Gallery Upload</strong> tab to publish images immediately via relative paths or direct image links.
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+    <script src="app.js?v=35"></script>
+    <script src="admin.js?v=35"></script>
+</body>
+
+</html>

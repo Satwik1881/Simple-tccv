@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Watch sermons and spiritual teachings by Pastor N. Michael Paul from The Calvary Church Vijayawada – Guntur. Watch Sunday messages, fasting prayer broadcasts, and grace teachings.">
+    <title>Sermons & Messages | The Calvary Church Vijayawada – Guntur</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=35">
+</head>
+
+<body class="dark-theme">
+    <!-- Ambient Background Glows -->
+    <div class="glow-bg">
+        <div class="glow-sphere sphere-1"></div>
+        <div class="glow-sphere sphere-2"></div>
+        <div class="glow-sphere sphere-3"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header id="main-header" class="glass-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo-link" id="nav-logo">
+                <span class="logo-accent">THE CALVARY CHURCH</span>
+                <span class="logo-text">VIJAYAWADA – GUNTUR</span>
+            </a>
+
+            <nav class="nav-links" id="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="pastors.html">Pastors</a>
+                <a href="sermons.html" class="active">Sermons</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="ministries.html">Ministries</a>
+                <a href="events.html">Events</a>
+                <a href="contact.html">Prayer & Contact</a>
+                <a href="admin.html" title="Media Team Portal"><i class="fa-solid fa-shield-halved"></i> Admin</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="theme-toggle-btn" class="theme-toggle" aria-label="Toggle dark/light theme">
+                    <i class="fa-solid fa-moon moon-icon"></i>
+                    <i class="fa-solid fa-sun sun-icon"></i>
+                </button>
+                <button id="mobile-menu-toggle" class="mobile-toggle" aria-label="Toggle navigation menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Banner -->
+        <section class="subpage-banner">
+            <span class="subpage-subtitle">Word of Truth</span>
+            <h1 class="subpage-title">SERMONS & VIDEO MESSAGES</h1>
+            <p class="subpage-desc">
+                Be spiritually enriched with biblical teaching, Sunday morning messages, and fasting prayer sermons by Pastor N. Michael Paul.
+            </p>
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i> <span>Sermons Library</span>
+            </div>
+        </section>
+
+        <!-- Sermons Section with Filters & Search -->
+        <section class="section-padding">
+            <div class="section-container">
+                <!-- Search & Filters -->
+                <div style="max-width: 800px; margin: 0 auto 40px;">
+                    <div style="position: relative; margin-bottom: 24px;">
+                        <input type="text" id="sermon-search-input" placeholder="Search sermons by title or topic..." style="width: 100%; padding: 14px 20px 14px 50px; border-radius: 30px; background: var(--bg-glass); border: 1px solid var(--border-glass); color: var(--text-primary); font-size: 1rem; backdrop-filter: blur(10px);">
+                        <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 1.1rem;"></i>
+                    </div>
+
+                    <div class="gallery-filter-bar" id="sermon-filter-bar">
+                        <button class="filter-btn active" data-sermon-filter="all">All Messages</button>
+                        <button class="filter-btn" data-sermon-filter="sunday">Sunday Services</button>
+                        <button class="filter-btn" data-sermon-filter="fasting">Fasting Prayer</button>
+                        <button class="filter-btn" data-sermon-filter="grace">Grace & Faith</button>
+                        <button class="filter-btn" data-sermon-filter="communion">Communion</button>
+                    </div>
+                </div>
+
+                <!-- Sermon Grid -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 28px;" id="sermons-library-grid">
+                    <!-- Sermon 1 -->
+                    <div class="sermon-card sermon-item" data-category="fasting" data-youtube-id="HsFLENGbS_G" data-video-title="21 Days Fasting Prayer - Seeking God's Will">
+                        <div class="sermon-thumb-wrap">
+                            <img src="assets/church-service-worship.png" alt="21 Days Fasting Prayer" class="sermon-thumb-img">
+                            <div class="sermon-play-overlay">
+                                <div class="sermon-play-btn"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <span class="sermon-duration-tag"><i class="fa-solid fa-clock"></i> 48:20</span>
+                        </div>
+                        <div class="sermon-info">
+                            <div class="sermon-meta-row">
+                                <span class="sermon-category-tag">Fasting Prayer</span>
+                                <span class="sermon-date">Recent Series</span>
+                            </div>
+                            <h3 class="sermon-title">21 Days Fasting Prayer – Seeking God's Will</h3>
+                            <div class="sermon-speaker">
+                                <i class="fa-solid fa-user-tie"></i> Pastor N. Michael Paul
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sermon 2 -->
+                    <div class="sermon-card sermon-item" data-category="sunday" data-youtube-id="GdrjN90YE-u" data-video-title="Are You Really Living in God's Will?">
+                        <div class="sermon-thumb-wrap">
+                            <img src="assets/pastor-michael.png" alt="Are You Really Living in God's Will?" class="sermon-thumb-img">
+                            <div class="sermon-play-overlay">
+                                <div class="sermon-play-btn"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <span class="sermon-duration-tag"><i class="fa-solid fa-clock"></i> 52:10</span>
+                        </div>
+                        <div class="sermon-info">
+                            <div class="sermon-meta-row">
+                                <span class="sermon-category-tag">Sunday Message</span>
+                                <span class="sermon-date">Vijayawada Gathering</span>
+                            </div>
+                            <h3 class="sermon-title">Are You Really Living in God's Will?</h3>
+                            <div class="sermon-speaker">
+                                <i class="fa-solid fa-user-tie"></i> Pastor N. Michael Paul
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sermon 3 -->
+                    <div class="sermon-card sermon-item" data-category="grace" data-youtube-id="evbuuMHI24O" data-video-title="Built on the Rock - 1 Corinthians 3:11">
+                        <div class="sermon-thumb-wrap">
+                            <img src="assets/pastors-foundation.png" alt="Built on the Rock" class="sermon-thumb-img">
+                            <div class="sermon-play-overlay">
+                                <div class="sermon-play-btn"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <span class="sermon-duration-tag"><i class="fa-solid fa-clock"></i> 44:15</span>
+                        </div>
+                        <div class="sermon-info">
+                            <div class="sermon-meta-row">
+                                <span class="sermon-category-tag">Grace & Truth</span>
+                                <span class="sermon-date">Foundation Word</span>
+                            </div>
+                            <h3 class="sermon-title">Built on the Rock – 1 Corinthians 3:11</h3>
+                            <div class="sermon-speaker">
+                                <i class="fa-solid fa-user-tie"></i> Pastor N. Michael Paul
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sermon 4 -->
+                    <div class="sermon-card sermon-item" data-category="communion" data-youtube-id="YpY_nY7lBa" data-video-title="The Power of the Blood & Holy Communion">
+                        <div class="sermon-thumb-wrap">
+                            <img src="assets/communion-4.png" alt="Holy Communion Message" class="sermon-thumb-img">
+                            <div class="sermon-play-overlay">
+                                <div class="sermon-play-btn"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <span class="sermon-duration-tag"><i class="fa-solid fa-clock"></i> 39:40</span>
+                        </div>
+                        <div class="sermon-info">
+                            <div class="sermon-meta-row">
+                                <span class="sermon-category-tag">Holy Communion</span>
+                                <span class="sermon-date">Sacred Remembrance</span>
+                            </div>
+                            <h3 class="sermon-title">The Power of the Blood & Holy Communion</h3>
+                            <div class="sermon-speaker">
+                                <i class="fa-solid fa-user-tie"></i> Pastor N. Michael Paul
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sermon 5 -->
+                    <div class="sermon-card sermon-item" data-category="sunday" data-youtube-id="QzIhqzXTfw" data-video-title="Walking by Faith, Not by Sight">
+                        <div class="sermon-thumb-wrap">
+                            <img src="assets/hero-bg.png" alt="Walking by Faith" class="sermon-thumb-img">
+                            <div class="sermon-play-overlay">
+                                <div class="sermon-play-btn"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <span class="sermon-duration-tag"><i class="fa-solid fa-clock"></i> 55:30</span>
+                        </div>
+                        <div class="sermon-info">
+                            <div class="sermon-meta-row">
+                                <span class="sermon-category-tag">Sunday Message</span>
+                                <span class="sermon-date">Guntur Gathering</span>
+                            </div>
+                            <h3 class="sermon-title">Walking by Faith, Not by Sight</h3>
+                            <div class="sermon-speaker">
+                                <i class="fa-solid fa-user-tie"></i> Pastor N. Michael Paul
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sermon 6 -->
+                    <div class="sermon-card sermon-item" data-category="communion" data-youtube-id="Krmb0E9Wj3" data-video-title="The Table of the Lord - 1 Corinthians 11">
+                        <div class="sermon-thumb-wrap">
+                            <img src="assets/communion-1.png" alt="The Table of the Lord" class="sermon-thumb-img">
+                            <div class="sermon-play-overlay">
+                                <div class="sermon-play-btn"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <span class="sermon-duration-tag"><i class="fa-solid fa-clock"></i> 41:00</span>
+                        </div>
+                        <div class="sermon-info">
+                            <div class="sermon-meta-row">
+                                <span class="sermon-category-tag">Holy Communion</span>
+                                <span class="sermon-date">Ordinance Service</span>
+                            </div>
+                            <h3 class="sermon-title">The Table of the Lord – 1 Corinthians 11</h3>
+                            <div class="sermon-speaker">
+                                <i class="fa-solid fa-user-tie"></i> Pastor N. Michael Paul
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- YouTube Subscribe Card -->
+                <div class="glass-panel" style="margin-top: 60px; padding: 40px; border-radius: var(--border-radius-md); text-align: center; border: 1px solid rgba(255, 0, 0, 0.3); background: linear-gradient(135deg, rgba(255, 0, 0, 0.1) 0%, rgba(14, 16, 23, 0.6) 100%);">
+                    <i class="fa-brands fa-youtube" style="font-size: 3rem; color: #ff0000; margin-bottom: 16px;"></i>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 12px;">Never Miss a Sunday Livestream</h3>
+                    <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 24px; font-size: 1.05rem;">
+                        Subscribe to Pastor N. Michael Paul's official YouTube channel for notifications when Sunday services and fasting prayers go live.
+                    </p>
+                    <a href="https://www.youtube.com/@nmichaelpaul?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="cta-btn" style="background: #ff0000; color: #ffffff; padding: 14px 32px; font-size: 1rem; border-radius: 30px;">
+                        <i class="fa-brands fa-youtube"></i> Subscribe on YouTube (@nmichaelpaul)
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer-section">
+        <div class="footer-top">
+            <div class="section-container footer-grid">
+                <div class="footer-col col-about">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-accent">TCCV</span>
+                        <span class="logo-text">CALVARY CHURCH</span>
+                    </a>
+                    <p class="footer-desc">
+                        A vibrant community of believers dedicated to experiencing the love of God, preaching the word of truth, and serving our communities in Vijayawada and Guntur.
+                    </p>
+                </div>
+                <div class="footer-col col-links">
+                    <h4 class="footer-title">QUICK LINKS</h4>
+                    <div class="footer-links-list">
+                        <a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a>
+                        <a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Our Church</a>
+                        <a href="pastors.html"><i class="fa-solid fa-chevron-right"></i> Our Pastors</a>
+                        <a href="sermons.html"><i class="fa-solid fa-chevron-right"></i> Sermons Library</a>
+                        <a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Photo Gallery</a>
+                        <a href="ministries.html"><i class="fa-solid fa-chevron-right"></i> Ministries</a>
+                        <a href="events.html"><i class="fa-solid fa-chevron-right"></i> Church Events</a>
+                        <a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Prayer Request</a>
+                    </div>
+                </div>
+                <div class="footer-col col-contact">
+                    <h4 class="footer-title">GATHERINGS & CONTACT</h4>
+                    <div class="footer-contact-items">
+                        <div class="contact-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Vijayawada: Swarnas Convention, 10:00 AM</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-church"></i>
+                            <span>Guntur: The Calvary Church, 06:00 AM</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <a href="tel:8144123456">+91 8144123456</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:Prayers@calvary.co.in">Prayers@calvary.co.in</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="section-container bottom-row">
+                <p>&copy; 2026 The Calvary Church Vijayawada – Guntur. All Rights Reserved.</p>
+                <p><a href="admin.html" style="color: var(--text-muted);"><i class="fa-solid fa-lock"></i> Media Team Portal</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast-container" class="toast-container"></div>
+    <script src="app.js?v=35"></script>
+    <script>
+        // Inline sermon filter and search behavior
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('[data-sermon-filter]');
+            const sermonItems = document.querySelectorAll('.sermon-item');
+            const searchInput = document.getElementById('sermon-search-input');
+
+            let currentFilter = 'all';
+            let searchQuery = '';
+
+            const applyFilters = () => {
+                sermonItems.forEach(item => {
+                    const cat = item.getAttribute('data-category');
+                    const title = (item.getAttribute('data-video-title') || '').toLowerCase();
+                    const matchesCat = currentFilter === 'all' || cat === currentFilter;
+                    const matchesSearch = searchQuery === '' || title.includes(searchQuery);
+
+                    if (matchesCat && matchesSearch) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            };
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentFilter = btn.getAttribute('data-sermon-filter');
+                    applyFilters();
+                });
+            });
+
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    searchQuery = e.target.value.toLowerCase().trim();
+                    applyFilters();
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

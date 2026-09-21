@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Calendar of upcoming services, Sunday gatherings, Holy Communion services, and special fasting prayer meetings at The Calvary Church Vijayawada – Guntur.">
+    <title>Events & Calendar | The Calvary Church Vijayawada – Guntur</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=35">
+</head>
+
+<body class="dark-theme">
+    <!-- Ambient Background Glows -->
+    <div class="glow-bg">
+        <div class="glow-sphere sphere-1"></div>
+        <div class="glow-sphere sphere-2"></div>
+        <div class="glow-sphere sphere-3"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header id="main-header" class="glass-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo-link" id="nav-logo">
+                <span class="logo-accent">THE CALVARY CHURCH</span>
+                <span class="logo-text">VIJAYAWADA – GUNTUR</span>
+            </a>
+
+            <nav class="nav-links" id="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="pastors.html">Pastors</a>
+                <a href="sermons.html">Sermons</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="ministries.html">Ministries</a>
+                <a href="events.html" class="active">Events</a>
+                <a href="contact.html">Prayer & Contact</a>
+                <a href="admin.html" title="Media Team Portal"><i class="fa-solid fa-shield-halved"></i> Admin</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="theme-toggle-btn" class="theme-toggle" aria-label="Toggle dark/light theme">
+                    <i class="fa-solid fa-moon moon-icon"></i>
+                    <i class="fa-solid fa-sun sun-icon"></i>
+                </button>
+                <button id="mobile-menu-toggle" class="mobile-toggle" aria-label="Toggle navigation menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Banner -->
+        <section class="subpage-banner">
+            <span class="subpage-subtitle">Church Calendar</span>
+            <h1 class="subpage-title">EVENTS & GATHERINGS</h1>
+            <p class="subpage-desc">
+                Plan your visit to our weekly Sunday services, monthly Holy Communion, and special seasonal prayer conventions in Vijayawada and Guntur.
+            </p>
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i> <span>Events</span>
+            </div>
+        </section>
+
+        <!-- Events List Section -->
+        <section class="section-padding">
+            <div class="section-container">
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 32px;">
+                    <!-- Event 1 -->
+                    <div class="event-card glass-panel animate-on-scroll">
+                        <div class="event-card-header">
+                            <div class="event-date-box">
+                                <span class="event-month">Weekly</span>
+                                <span class="event-day">SUN</span>
+                            </div>
+                            <span class="event-badge badge-vja">Vijayawada Branch</span>
+                        </div>
+                        <h3 class="event-title">Sunday Morning Celebration Service</h3>
+                        <div class="event-info-items">
+                            <div class="event-info-item">
+                                <i class="fa-regular fa-clock"></i> <strong>10:00 AM – 12:30 PM</strong>
+                            </div>
+                            <div class="event-info-item">
+                                <i class="fa-solid fa-location-dot"></i> Swarnas Convention, Gurunanak Colony Main Road, Vijayawada
+                            </div>
+                            <div class="event-info-item">
+                                <i class="fa-solid fa-user-tie"></i> Preaching: Pastor N. Michael Paul
+                            </div>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-top: 8px;">
+                            Dynamic worship, praise, biblical preaching, and corporate prayer. Children's Sunday school available during the service.
+                        </p>
+                        <div class="event-actions">
+                            <button class="event-cal-btn" data-title="Vijayawada Sunday Morning Celebration" data-location="Swarnas Convention, Gurunanak Colony Main Rd, Vijayawada" data-time="10:00" data-desc="Sunday morning worship and sound preaching with Pastor N. Michael Paul.">
+                                <i class="fa-regular fa-calendar-plus"></i> Add to Calendar (.ics)
+                            </button>
+                            <a href="https://maps.google.com/?q=Swarnas+Convention+Gurunanak+Colony+Vijayawada" target="_blank" class="event-cal-btn" style="background: rgba(139, 92, 246, 0.2); border-color: rgba(139, 92, 246, 0.4);">
+                                <i class="fa-solid fa-route"></i> Directions
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Event 2 -->
+                    <div class="event-card glass-panel animate-on-scroll">
+                        <div class="event-card-header">
+                            <div class="event-date-box">
+                                <span class="event-month">Weekly</span>
+                                <span class="event-day">SUN</span>
+                            </div>
+                            <span class="event-badge badge-gnt">Guntur Branch</span>
+                        </div>
+                        <h3 class="event-title">Early Dawn Sunday Gathering</h3>
+                        <div class="event-info-items">
+                            <div class="event-info-item">
+                                <i class="fa-regular fa-clock"></i> <strong>06:00 AM – 08:30 AM</strong>
+                            </div>
+                            <div class="event-info-item">
+                                <i class="fa-solid fa-location-dot"></i> The Calvary Church, Vidyanagar 1st Line Extension, Guntur
+                            </div>
+                            <div class="event-info-item">
+                                <i class="fa-solid fa-user-tie"></i> Worship & Preaching: Sis. Sami & Pastor Michael
+                            </div>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-top: 8px;">
+                            Start your Lord's Day seeking God's presence at dawn. Fervent prayer, intimate praise, and life-building truth.
+                        </p>
+                        <div class="event-actions">
+                            <button class="event-cal-btn" data-title="Guntur Early Dawn Sunday Gathering" data-location="The Calvary Church, Vidyanagar 1st Line Ext., Guntur" data-time="06:00" data-desc="Early dawn service led by Sis. Sami Symphony Paul & Pastor N. Michael Paul.">
+                                <i class="fa-regular fa-calendar-plus"></i> Add to Calendar (.ics)
+                            </button>
+                            <a href="https://maps.app.goo.gl/oteY1XMa8VdzAvPS6" target="_blank" class="event-cal-btn" style="background: rgba(239, 68, 68, 0.2); border-color: rgba(239, 68, 68, 0.4);">
+                                <i class="fa-solid fa-route"></i> Directions
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Event 3 -->
+                    <div class="event-card glass-panel animate-on-scroll">
+                        <div class="event-card-header">
+                            <div class="event-date-box">
+                                <span class="event-month">Monthly</span>
+                                <span class="event-day">1st SUN</span>
+                            </div>
+                            <span class="event-badge badge-special">Ordinance</span>
+                        </div>
+                        <h3 class="event-title">Holy Communion Sunday</h3>
+                        <div class="event-info-items">
+                            <div class="event-info-item">
+                                <i class="fa-regular fa-clock"></i> <strong>06:00 AM (GNT) | 10:00 AM (VJA)</strong>
+                            </div>
+                            <div class="event-info-item">
+                                <i class="fa-solid fa-location-dot"></i> Both Vijayawada & Guntur Branches
+                            </div>
+                            <div class="event-info-item">
+                                <i class="fa-solid fa-wine-glass"></i> Sacred Ordinance of Remembrance
+                            </div>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-top: 8px;">
+                            Held on the first Sunday of every calendar month. Partaking of the bread and the cup in solemn thanksgiving for the cross.
+                        </p>
+                        <div class="event-actions">
+                            <button class="event-cal-btn" data-title="First Sunday Holy Communion" data-location="The Calvary Church Vijayawada & Guntur" data-time="10:00" data-desc="Sacred ordinance of Holy Communion service.">
+                                <i class="fa-regular fa-calendar-plus"></i> Add to Calendar (.ics)
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Event 4 -->
+                    <div class="event-card glass-panel animate-on-scroll">
+                        <div class="event-card-header">
+                            <div class="event-date-box">
+                                <span class="event-month">Special</span>
+                                <span class="event-day">21 DAYS</span>
+                            </div>
+                            <span class="event-badge badge-special">Prayer Series</span>
+                        </div>
+                        <h3 class="event-title">21 Days Fasting Prayer Season</h3>
+                        <div class="event-info-items">
+                            <div class="event-info-item">
+                                <i class="fa-regular fa-clock"></i> <strong>Daily Evening Sessions</strong>
+                            </div>
+                            <div class="event-info-item">
+                                <i class="fa-solid fa-location-dot"></i> In-Person Gathering & YouTube Livestream
+                            </div>
+                            <div class="event-info-item">
+                                <i class="fa-solid fa-fire"></i> Theme: Seeking God's Will & Deliverance
+                            </div>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-top: 8px;">
+                            A consecrated season of corporate fasting, intercession, and daily biblical sermons broadcasted live across digital channels.
+                        </p>
+                        <div class="event-actions">
+                            <button class="event-cal-btn" data-title="21 Days Fasting Prayer Series" data-location="The Calvary Church Vijayawada & YouTube" data-time="18:00" data-desc="Annual churchwide fasting and prayer season.">
+                                <i class="fa-regular fa-calendar-plus"></i> Add to Calendar (.ics)
+                            </button>
+                            <a href="https://www.youtube.com/@nmichaelpaul" target="_blank" class="event-cal-btn">
+                                <i class="fa-brands fa-youtube"></i> Watch Online
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Planning Your Visit Banner -->
+        <section class="section-padding" style="background: rgba(14, 16, 23, 0.4); text-align: center;">
+            <div class="section-container">
+                <h2 style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 16px;">Planning Your First Visit?</h2>
+                <p style="color: var(--text-secondary); max-width: 650px; margin: 0 auto 30px; font-size: 1.05rem;">
+                    We want your visit to be warm, comfortable, and spiritually fulfilling. Reach out to our welcome team or call us directly if you need travel assistance or venue directions.
+                </p>
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <a href="tel:8144123456" class="cta-btn primary-btn"><i class="fa-solid fa-phone"></i> Call Church Office (+91 8144123456)</a>
+                    <a href="contact.html" class="cta-btn secondary-btn"><i class="fa-solid fa-hand-holding-heart"></i> Send Prayer Request</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer-section">
+        <div class="footer-top">
+            <div class="section-container footer-grid">
+                <div class="footer-col col-about">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-accent">TCCV</span>
+                        <span class="logo-text">CALVARY CHURCH</span>
+                    </a>
+                    <p class="footer-desc">
+                        A vibrant community of believers dedicated to experiencing the love of God, preaching the word of truth, and serving our communities in Vijayawada and Guntur.
+                    </p>
+                </div>
+                <div class="footer-col col-links">
+                    <h4 class="footer-title">QUICK LINKS</h4>
+                    <div class="footer-links-list">
+                        <a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a>
+                        <a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Our Church</a>
+                        <a href="pastors.html"><i class="fa-solid fa-chevron-right"></i> Our Pastors</a>
+                        <a href="sermons.html"><i class="fa-solid fa-chevron-right"></i> Sermons Library</a>
+                        <a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Photo Gallery</a>
+                        <a href="ministries.html"><i class="fa-solid fa-chevron-right"></i> Ministries</a>
+                        <a href="events.html"><i class="fa-solid fa-chevron-right"></i> Church Events</a>
+                        <a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Prayer Request</a>
+                    </div>
+                </div>
+                <div class="footer-col col-contact">
+                    <h4 class="footer-title">GATHERINGS & CONTACT</h4>
+                    <div class="footer-contact-items">
+                        <div class="contact-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Vijayawada: Swarnas Convention, 10:00 AM</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-church"></i>
+                            <span>Guntur: The Calvary Church, 06:00 AM</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <a href="tel:8144123456">+91 8144123456</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:Prayers@calvary.co.in">Prayers@calvary.co.in</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="section-container bottom-row">
+                <p>&copy; 2026 The Calvary Church Vijayawada – Guntur. All Rights Reserved.</p>
+                <p><a href="admin.html" style="color: var(--text-muted);"><i class="fa-solid fa-lock"></i> Media Team Portal</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast-container" class="toast-container"></div>
+    <script src="app.js?v=35"></script>
+</body>
+
+</html>
